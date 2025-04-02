@@ -42,9 +42,15 @@ spcblock $1651 nspc
 endspcblock
 spcblock !SPCFreespace nspc
 ResumeEchoOnNewNote:
-	mov a,$4F ; Echo enable flags |= [$4F] & [current music voice bitset]
+	mov a,$4F ; If [$4F] & [current music voice bitset] != 0:
 	and a,$47
-	tset $004A,a
+	beq .disable
+	tset $004A,a ; Echo enable flags |= [current music voice bitset] (enable echo)
+	bra +
+.disable
+	mov a,$47 ; Else: Echo enable flags &= ~[current music voice bitset] (disable echo)
+	tclr $004A,a
++
 	mov a,$0381+x ; restore from hijack
 	ret
 endspcblock execute $1500
