@@ -221,25 +221,23 @@ DoSamusChargingBeamPal:
     RTS
 }
 
-DoSamusAbsorbXPal:
-{
-    LDA.W #48+1 : SEC : SBC $0B18 : LSR : XBA : LSR : LSR : LSR
-    CLC : ADC.W #SamusAbsorbXPals : TAX
-    RTS
-}
-
 SetSamusAbsorbXPalTimer:
 {
-    LDA.W #48+1 : STA $0B18
+    LDA.W #48+1 : STA $0DE2
     LDA $14 : AND #$000F : RTL
 }
 
 SetSamusAbsorbBlueXPalTimer:
 {
-    LDA.W #48+1 : STA $0B18
+    LDA.W #48+1 : STA $0DE2
     JML $91DF12
 }
 assert pc() <= $91D829
+
+; Samus absorb X pal (replaces charged shot glow)
+org $91D743
+    LDA $0DE2 : BNE DoSamusAbsorbXPal
+    JSR HyperBeamGlowCheck
 
 org $91D75A
     JSR DoSamusChargingBeamPal
@@ -247,13 +245,21 @@ org $91D75A
     INC $0B62
     CLC : RTS
 
-org $91D794 ; Samus absorb X pal (replaces charged shot glow)
-    JSR DoSamusAbsorbXPal
+DoSamusAbsorbXPal:
+    LDA.W #48+1 : SEC : SBC $0DE2 : LSR : XBA : LSR : LSR : LSR
+    CLC : ADC.W #SamusAbsorbXPals : TAX
     JSR $DD5B
-    DEC $0B18 : BEQ +
+    DEC $0DE2 : BEQ +
     CLC : RTS
 +
     SEC : RTS
+
+HyperBeamGlowCheck:
+    LDA $0A76 : BEQ .noHyper
+    LDA $0B18 : BEQ .noHyper
+    PLA : JMP $D7B6
+.noHyper
+    LDA $0D32 : RTS
 
 org $90BA36 : JSL $91DEBA : PLP : RTS ; remove charged shot glow
 
