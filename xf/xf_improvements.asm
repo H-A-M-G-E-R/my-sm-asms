@@ -1,5 +1,5 @@
 ; Patches for Meta's X-Fusion hack (https://metroidconstruction.com/hack.php?id=837) that makes it feel a bit more like Fusion.
-; Patch it on xf_v1.2_gba-eng-fre-jap-ger.
+; Patch it (or xf_improvements.ips) on xf_v1.2_gba-eng-fre-jap-ger.
 lorom
 
 org $90FF6D ; little bit of freespace :)
