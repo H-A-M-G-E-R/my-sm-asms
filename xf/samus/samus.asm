@@ -83,7 +83,7 @@ UnderwaterCheck2:
 CanSamusSkid:
 {
   LDA $0A1F : AND #$00FF : CMP #$0001 : BNE .rts ; return if movement type != running
-  LDA $0B3E : AND #$FF00 : CMP #$0400 : BNE .rts ; skid if speedboosting
+  LDA $0B3E : AND #$FF00 : CMP #$0400 : BMI .rts ; skid if speedboosting
   LDX #$005B ; skid pose
   LDA $0A1E : AND #$00FF : CMP #$0008 : BEQ + ; if facing left:
     INX ; set left-facing pose
@@ -109,6 +109,15 @@ ToggleArmCannonWhileSkidding:
 .rtl
   LDA $0A1C ; restore from hijack
   RTL
+}
+StoreShinesparkWhileSkidding:
+{
+  LDA $0A20 : DEC : LSR : CMP.W #($005B-1)/2 : BNE .notSkidding
+  JMP $F7BB ; store shinespark
+
+.notSkidding
+  LDA $0B3E ; restore from hijack
+  JMP $F7B3
 }
 padbyte $FF : pad $91F758
 
@@ -147,6 +156,9 @@ JSR $81A9
 
 org $91EC50 ; in Prospective pose change command 1 - decelerate
 JSR CanSamusSkid
+
+org $91F7B0 ; in Initialise Samus pose - crouching transition
+JMP StoreShinesparkWhileSkidding
 
 org $908011 ; in Animate Samus
 JSL ToggleArmCannonWhileSkidding
