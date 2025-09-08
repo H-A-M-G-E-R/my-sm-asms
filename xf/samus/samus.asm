@@ -100,7 +100,7 @@ ToggleArmCannonWhileSkidding:
   LDA $0A1C : DEC : LSR : CMP.W #($005B-1)/2 : BNE .rtl
   ; Samus is skidding
   LDA $0AA8 : BEQ .unarmed
-  LDA #$0003 : STA $0A96 ; anim frame = 3 (armed)
+  LDA #$0002 : STA $0A96 ; anim frame = 2 (armed)
 .rtl
   LDA $0A1C ; restore from hijack
   RTL
