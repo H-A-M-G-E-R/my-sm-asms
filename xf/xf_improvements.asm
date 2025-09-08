@@ -1,5 +1,7 @@
 ; Patches for Meta's X-Fusion hack (https://metroidconstruction.com/hack.php?id=837) that makes it feel a bit more like Fusion.
 ; Patch it (or xf_improvements.ips) on xf_v1.2_gba-eng-fre-jap-ger.
+asar 1.91
+
 lorom
 
 org $90FF6D ; little bit of freespace :)
@@ -357,9 +359,6 @@ org $90C264 ; charged beam cooldowns
 
 org $938268 : BRA + : org $9382A6 : + ; no beam flicker
 
-org $91FA7A : CLC : RTS ; goodbye walljump dust
-org $90EE64 : RTS ; and speed boost dust
-
 ;;; touch AI rewrite
 org $A0A4A1
     LDA $0A6E : BNE ContactDamage
@@ -419,3 +418,5 @@ org $A0A096 : BRA + : org $A0A0B8 : + ; for non-extended spritemap
 ; lower iframes from 96 to 60
 org $A09864 : LDA.w #60
 org $A09923 : LDA.w #60
+
+incsrc "samus/samus.asm"
