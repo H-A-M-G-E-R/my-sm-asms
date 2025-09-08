@@ -82,7 +82,6 @@ UnderwaterCheck2:
 ;;; new code
 CanSamusSkid:
 {
-  ; skid if standing or turning on ground
   LDA $0A1F : AND #$00FF : CMP #$0001 : BNE .rts ; return if movement type != running
   LDA $0B3E : AND #$FF00 : CMP #$0400 : BNE .rts ; skid if speedboosting
   LDX #$005B ; skid pose
