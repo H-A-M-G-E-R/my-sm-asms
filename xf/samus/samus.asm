@@ -90,6 +90,10 @@ CanSamusSkid:
     INX ; set left-facing pose
   +
   STX $0A1C ; Samus pose = skidding
+  LDA $0AA8 : BEQ .unarmed
+    LDA #$0002 ; new pose anim frame = 2 (armed)
+  .unarmed
+  STA $0A9A ; new pose anim frame = 0 (unarmed)
   JSL $91FB08 ; Set Samus animation frame if pose changed
 .rts
   LDA $0B46 ; restore from hijack
@@ -100,14 +104,12 @@ ToggleArmCannonWhileSkidding:
   LDA $0A1C : DEC : LSR : CMP.W #($005B-1)/2 : BNE .rtl
   ; Samus is skidding
   LDA $0AA8 : BEQ .unarmed
-  LDA #$0002 : STA $0A96 ; anim frame = 2 (armed)
+    LDA #$0002 ; anim frame = 2 (armed)
+  .unarmed
+  STA $0A96 ; anim frame = 0 (unarmed)
 .rtl
   LDA $0A1C ; restore from hijack
   RTL
-
-.unarmed
-  STZ $0A96 ; anim frame = 0 (unarmed)
-  BRA .rtl
 }
 padbyte $FF : pad $91F758
 
