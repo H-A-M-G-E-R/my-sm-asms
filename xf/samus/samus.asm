@@ -150,4 +150,4 @@ JSR CanSamusSkid
 
 org $908011 ; in Animate Samus
 JSL ToggleArmCannonWhileSkidding
-BRA $00 : DEC : ASL : CMP.W #($004D-1)/2
+BRA $00 : DEC : LSR : CMP.W #($004D-1)/2

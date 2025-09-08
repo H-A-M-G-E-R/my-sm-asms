@@ -219,7 +219,12 @@ DoSamusChargingBeamPal:
     LDA $09A6 : AND #$000F : ASL : TAX ; equipped beams
     LDA.L SamusChargingBeamPalPtrTbl,x : STA $24
     LDA $0B62 : AND #$000C : ASL : ASL : ASL : ADC $24 : STA $24 ; charge palette index
+    LDX $0A76 : BNE .hyper
     LDA $0A74 : XBA : LSR : LSR : ADC $24 : TAX ; suit palette index
+    RTS
+
+.hyper
+    ADC #$0180 : TAX ; SA-X suit
     RTS
 }
 
