@@ -143,7 +143,7 @@ padbyte $FF : pad $90848B
 
 ;;; Hijacks
 org $918069 ; in Normal Samus pose input handler - [Samus movement type] = running
-JSR $81A9;JSR CanSamusSkid
+JSR $81A9
 
 org $91EC50 ; in Prospective pose change command 1 - decelerate
 JSR CanSamusSkid
