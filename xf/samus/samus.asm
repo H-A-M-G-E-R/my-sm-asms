@@ -148,7 +148,42 @@ dw $E732 ; RTS out the routine to update animation frame while unpausing while w
 
 ; yeah $90:841D..848A are free now
 org $90841D
+SetSamusUsingElevatorPose:
+{
+  LDA $0A1E : PHA ; save pose X direction
+  JSL $91E3F6
+  LDX #$005D ; using an elevator pose
+  PLA : AND #$00FF : CMP #$0008 : BEQ + ; if facing left:
+    INX ; set left-facing pose
+  +
+  STX $0A1C
+  JML $91FB08 ; Set Samus animation frame if pose changed
+}
+; A must be Bh here
+FinishSamusUsingElevatorPose:
+{
+  LDA $0A1C : DEC : LSR : CMP.W #($005D-1)/2 : BNE .rts ; sanity check for elevator pose
+  LDA #$0004 : STA $0A96 : STZ $0A94 ; set anim frame (finished riding elevator)
+.rts
+  LDA #$EB52
+  RTS
+}
+IsSamusFacingForward:
+{
+  LDA $0A1C : BEQ .facingForward
+  CMP #$009B : BEQ .facingForward
+  DEC : LSR : CMP.W #($005D-1)/2 : BEQ .facingForward
+  CLC : RTL
+.facingForward:
+  SEC : RTL
+}
 padbyte $FF : pad $90848B
+
+org $90A386 ; in Samus movement - standing
+JSL IsSamusFacingForward
+BCS + : BRA ++
+org $90A392 : + : LDA $0E18
+org $90A3AD : ++
 
 ;;; Hijacks
 org $918069 ; in Normal Samus pose input handler - [Samus movement type] = running
@@ -163,3 +198,9 @@ JMP StoreShinesparkWhileSkidding
 org $908011 ; in Animate Samus
 JSL ToggleArmCannonWhileSkidding
 BRA $00 : DEC : LSR : CMP.W #($004D-1)/2
+
+org $90F1C8 ; in Samus command 7: set up Samus for elevator
+JSL SetSamusUsingElevatorPose
+
+org $90F295 ; in Samus command Bh: unlock Samus from facing forward
+JSR FinishSamusUsingElevatorPose
