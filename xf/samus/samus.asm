@@ -146,6 +146,36 @@ org $90EE64 : RTS ; and speed boost dust
 org 2*$14+$91E6E1
 dw $E732 ; RTS out the routine to update animation frame while unpausing while walljumping
 
+; change some routines to account for skidding
+org $91F50C ; Initialise Samus pose - running
+{
+  LDA $0A23 : AND #$00FF : DEC : BNE .notPreviouslyRunning
+  LDA $0A20 : DEC : LSR : CMP.W #($005B-1)/2 : BEQ .notPreviouslyRunning
+  LDA #$8000 : STA $0A9A
+.notPreviouslyRunning
+  CLC : RTS
+}
+
+org $9084EF ; in Handle normal animation delay
+{
+  JSR IsSamusInRunAnimation
+  BCC + : BRA ++
+  org $9084FF : ++
+  org $90851D : +
+}
+
+org $908538 ; in Handle speed booster animation delay
+{
+  LDA $8B : BIT $09B6 : BEQ +
+    JMP $85DA
+  +
+  JSR IsSamusInRunAnimation
+  BCS +
+    JMP $85DA
+  +
+  BRA + : org $908558 : +
+}
+
 ; yeah $90:841D..848A are free now
 org $90841D
 SetSamusUsingElevatorPose:
@@ -176,6 +206,15 @@ IsSamusFacingForward:
   CLC : RTL
 .facingForward:
   SEC : RTL
+}
+IsSamusInRunAnimation:
+{
+  LDA $0B3C : BEQ .notRunning
+  LDA $0A1F : AND #$00FF : DEC : BNE .notRunning
+  LDA $0A1C : DEC : LSR : CMP.W #($005B-1)/2 : BEQ .notRunning
+  SEC : RTS
+.notRunning
+  CLC : RTS
 }
 padbyte $FF : pad $90848B
 
