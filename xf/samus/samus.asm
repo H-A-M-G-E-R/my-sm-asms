@@ -146,6 +146,12 @@ org $90EE64 : RTS ; and speed boost dust
 org 2*$14+$91E6E1
 dw $E732 ; RTS out the routine to update animation frame while unpausing while walljumping
 
+org $91EBCA : BRA $01 ; restore that dumb animation of samus running against the wall, but no more arm pump
+org $91EADE ; i don't need that "Check if prospective pose runs into a wall" routine anymore
+padbyte $FF : pad $91EB88
+
+org $90A4FD : BRA $02 ; pseudo screw works underwater just like in fusion
+
 ; change some routines to account for skidding
 org $91F50C ; Initialise Samus pose - running
 {
