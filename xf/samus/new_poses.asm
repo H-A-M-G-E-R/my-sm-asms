@@ -39,8 +39,8 @@ dw read2(2*$09+$919EE2), read2(2*$0A+$919EE2)
 ;                      |   |   |   |   |   |   |   |
 org 8*$5B+$91B629 : db $08,$01,$01,$02,$07,$00,$10,$00 ; Facing right - skidding
 org 8*$5C+$91B629 : db $04,$01,$02,$07,$07,$00,$10,$00 ; Facing left - skidding
-org 8*$5D+$91B629 : db $08,$01,$FF,$FF,$07,$00,$14,$00 ; Facing right - using an elevator
-org 8*$5E+$91B629 : db $04,$01,$FF,$FF,$07,$00,$14,$00 ; Facing left - using an elevator
+org 8*$5D+$91B629 : db $08,$00,$FF,$FF,$07,$00,$14,$00 ; Facing right - using an elevator
+org 8*$5E+$91B629 : db $04,$00,$FF,$FF,$07,$00,$14,$00 ; Facing left - using an elevator
 
 ;;; Animation delays
 org 2*$83+$91B010 ; change walljump animation delay tables to transition to spinjump pose as soon as the walljump animation ends, and also free up space for my new poses

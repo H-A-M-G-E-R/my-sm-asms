@@ -193,9 +193,10 @@ SetSamusUsingElevatorPose:
     INX ; set left-facing pose
   +
   STX $0A1C
-  JML $91FB08 ; Set Samus animation frame if pose changed
+  JSL $91FB08 ; Set Samus animation frame if pose changed
+  JSR $F0EE ; Update Samus previous pose
+  RTL
 }
-; A must be Bh here
 FinishSamusUsingElevatorPose:
 {
   LDA $0A1C : DEC : LSR : CMP.W #($005D-1)/2 : BNE .rts ; sanity check for elevator pose
@@ -229,6 +230,9 @@ JSL IsSamusFacingForward
 BCS + : BRA ++
 org $90A392 : + : LDA $0E18
 org $90A3AD : ++
+
+org $8A90E8 ; in Door transition function - nudge Samus if she's intercepting the door
+BRA + : org $8A9102 : +
 
 ;;; Hijacks
 org $918069 ; in Normal Samus pose input handler - [Samus movement type] = running
