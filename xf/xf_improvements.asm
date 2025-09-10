@@ -443,3 +443,5 @@ org $A09864 : LDA.w #60
 org $A09923 : LDA.w #60
 
 incsrc "samus/samus.asm"
+
+incsrc "compressed_fx_tilemaps.asm"
