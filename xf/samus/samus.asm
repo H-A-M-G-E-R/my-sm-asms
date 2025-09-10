@@ -17,7 +17,7 @@ UpdateSpinjumpDueToChangeOfEquipment:
   JSR $E719 ; Update Samus previous pose
   RTS
 }
-padbyte $FF : pad $91E83A
+%padSafe($91E83A)
 
 org $91F624 ; Initialise Samus pose - spin jumping
 SpinjumpInit:
@@ -93,7 +93,9 @@ CanSamusSkid:
     LDA #$0002 ; new pose anim frame = 2 (armed)
   .unarmed
   STA $0A9A ; new pose anim frame = 0 (unarmed)
+  JSL $91F433 ; Initialise Samus pose
   JSL $91FB08 ; Set Samus animation frame if pose changed
+  JSR $E719 ; Update Samus previous pose
 .rts
   LDA $0B46 ; restore from hijack
   RTS
@@ -119,7 +121,8 @@ StoreShinesparkWhileSkidding:
   LDA $0B3E ; restore from hijack
   JMP $F7B3
 }
-padbyte $FF : pad $91F758
+; 0 bytes left
+%padSafe($91F758)
 
 org $90F41E
 SamusCommand1C:
@@ -148,7 +151,7 @@ dw $E732 ; RTS out the routine to update animation frame while unpausing while w
 
 org $91EBCA : BRA $01 ; restore that dumb animation of samus running against the wall, but no more arm pump
 org $91EADE ; i don't need that "Check if prospective pose runs into a wall" routine anymore
-padbyte $FF : pad $91EB88
+%padSafe($91EB88)
 
 org $90A4FD : BRA $02 ; pseudo screw works underwater just like in fusion
 
@@ -156,7 +159,7 @@ org $90A4FD : BRA $02 ; pseudo screw works underwater just like in fusion
 org $91F50C ; Initialise Samus pose - running
 {
   LDA $0A23 : AND #$00FF : DEC : BNE .notPreviouslyRunning
-  LDA $0A20 : DEC : LSR : CMP.W #($005B-1)/2 : BEQ .notPreviouslyRunning
+  LDA $0A1C : DEC : LSR : CMP.W #($005B-1)/2 : BEQ .notPreviouslyRunning ; current pose (not previous pose), this is important when calling from CanSamusSkid
   LDA #$8000 : STA $0A9A
 .notPreviouslyRunning
   CLC : RTS
@@ -223,7 +226,7 @@ IsSamusInRunAnimation:
 .notRunning
   CLC : RTS
 }
-padbyte $FF : pad $90848B
+%padSafe($90848B)
 
 org $90A386 ; in Samus movement - standing
 JSL IsSamusFacingForward

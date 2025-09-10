@@ -45,7 +45,7 @@ Fireflea: incbin "fx_tilemaps/fireflea.bin.comp"
 
 incsrc "bank83_stuff.asm"
 
-padbyte $FF : pad $83FC00
+%padSafe($83FC00)
 
 ;0000 ; 0: None
 ;BA00 ; 2: Lava

@@ -64,7 +64,7 @@ UsingAnElevatorDelayTable:
 db $06, $06, $10, $FE,$01
 db $04, $FD,$00 ; transition to facing forward pose after finishing riding the elevator
 
-padbyte $FF : pad $91B39D
+%padSafe($91B39D)
 
 ;;; OAM
 org 2*$5B+$929263

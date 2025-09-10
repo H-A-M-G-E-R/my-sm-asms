@@ -4,6 +4,11 @@ asar 1.91
 
 lorom
 
+macro padSafe(addr)
+  assert pc() <= <addr>
+  padbyte $FF : pad <addr>
+endmacro
+
 org $90FF6D ; little bit of freespace :)
 DoRShot:
 {
