@@ -308,6 +308,7 @@ SamusHurtPal:
 org $91D8D4 : BRA $00
 
 org $91D8D9
+    CMP #$0001 : BEQ ++ ; don't write palette if hurt flash counter == 1 (for shinespark)
     BIT #$0002
     BNE +
         LDX #$A380 : JSR $DD5B ; hurt flash palette
@@ -317,6 +318,11 @@ org $91D8D9
         BRA ++
 
 org $91D8FC : ++
+
+; fix shinespark palette for new hurt flash
+org $90D0B1 : LDA #$0001
+org $90D0DD : LDA #$0001
+org $90D10C : LDA #$0001
 
 ; don't flicker Samus
 org $9085EC : BRA + : org $908606 : +
