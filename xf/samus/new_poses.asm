@@ -12,7 +12,7 @@ macro spritemapEntry(Size, XOffset, YOffset, YFlip, XFlip, Priority, Palette, Ti
 ;     p = priority (relative to background)
 ;     P = palette (often unused)
 ;     t = tile number
-    dw <Size><<15|<XOffset>
+    dw <Size><<15|(<XOffset>&$1FF)
     db <YOffset>
     dw <YFlip><<15|<XFlip><<14|<Priority><<12|<Palette><<9|<Tile>
 endmacro

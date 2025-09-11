@@ -450,3 +450,5 @@ org $A09923 : LDA.w #60
 incsrc "samus/samus.asm"
 
 incsrc "compressed_fx_tilemaps.asm"
+
+incsrc "common_oam_repoint.asm"

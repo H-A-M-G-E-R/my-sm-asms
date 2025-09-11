@@ -44,6 +44,7 @@ CeresElevator: incbin "fx_tilemaps/ceres_elevator.bin.comp"
 Fireflea: incbin "fx_tilemaps/fireflea.bin.comp"
 
 incsrc "bank83_stuff.asm"
+incsrc "charge_flare/charge_flare.asm"
 
 %padSafe($83FC00)
 
