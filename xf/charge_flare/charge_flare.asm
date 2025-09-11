@@ -7,7 +7,9 @@
 pushpc
 
 org $90BAFC : JSL DoDatFlare : RTS
+%padSafe($90BCBE)
 org $90EB9F : JSL DoDatGrappleFlare : LDA $0AAC
+org $9BC036 : %padSafe($9BC0DB)
 
 org $90BD41 ; hyper beam flare
 LDA.W #HyperBeamFlareAnim : STA !FlareAnimPtr+0
@@ -95,14 +97,14 @@ UpdateFlarePartAnim:
   STA !FlareAnimTimer,x
   LDA $0002,y
   STA !FlareOamFrame,x
-  LDA $0004,y : JSR DoFlareDma
+  LDA $0004,y : JSL DoDmaDef
   TYA : CLC : ADC #$0006 : STA !FlareAnimPtr,x
 
 .rts
   RTS
 }
 
-DoFlareDma:
+DoDmaDef:
 {
   PHX
   PHY
@@ -110,12 +112,12 @@ DoFlareDma:
   TAY
 .loop
   ; size
-  LDA $0000,y : AND #$00FF : BEQ .rts
+  LDA $0000,y : AND #$00FF : BEQ .rtl
   XBA : LSR : LSR : LSR : STA $D0,x
   ; source
   LDA $0001,y
   STA $D2,x
-  LDA #$0083
+  PHB : PHB : PLA
   STA $D4,x
   ; dest
   LDA $0003,y : AND #$00FF : ASL : ASL : ASL : ASL : ORA #$6000 : STA $D5,x
@@ -123,11 +125,11 @@ DoFlareDma:
   INY : INY : INY : INY
   BRA .loop
 
-.rts
-  PLY : PLX : RTS
+.rtl
+  PLY : PLX : RTL
 }
 
-; DB must be $93, also clobbers X
+; DB must be $83, also clobbers X
 DrawFlarePart:
 {
   LDY !FlareOamFrame,x : BPL .skip
@@ -312,15 +314,14 @@ db 0
 
 ChargingBeamDma_Frame11:
 db 1 : dw ChargingBeamGfx+5*$20 : db $42
-db 2 : dw ChargingBeamGfx+6*$20 : db $51
 db 0
 
 ChargingBeamDma_Frame12:
-db 1 : dw ChargingBeamGfx+8*$20 : db $42
+db 1 : dw ChargingBeamGfx+6*$20 : db $42
 db 0
 
 ChargingBeamDma_Frame13:
-db 1 : dw ChargingBeamGfx+9*$20 : db $42
+db 1 : dw ChargingBeamGfx+7*$20 : db $42
 db 0
 
 ChargingSparksBeginDma:
@@ -348,8 +349,26 @@ ChargingSparksChargedDma_Frame4:
 db 1 : dw ChargingSparksGfx+2*$20 : db $3B
 db 0
 
+PowerBombDma_Frame0:
+db 1 : dw PowerBombGfx+0*$20 : db $7B
+db 0
+
+PowerBombDma_Frame1:
+db 1 : dw PowerBombGfx+1*$20 : db $7B
+db 0
+
+PowerBombDma_Frame2:
+db 1 : dw PowerBombGfx+2*$20 : db $7B
+db 0
+
+PowerBombDmaPtrs:
+dw PowerBombDma_Frame0, PowerBombDma_Frame1, PowerBombDma_Frame2
+
 ChargingBeamGfx:
 incbin "charge_flare_dma.gfx"
 
 ChargingSparksGfx:
 incbin "charge_sparks_dma.gfx"
+
+PowerBombGfx:
+incbin "power_bomb_dma.gfx"
