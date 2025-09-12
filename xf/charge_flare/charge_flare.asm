@@ -9,7 +9,12 @@ pushpc
 org $90BAFC : JSL DoDatFlare : RTS
 %padSafe($90BCBE)
 org $90EB9F : JSL DoDatGrappleFlare : LDA $0AAC
-org $9BC036 : %padSafe($9BC0DB)
+org $9BC036
+FireGrappleLong:
+PHB : PHK : PLB
+JSR $C51E
+PLB : RTL
+%padSafe($9BC0DB)
 
 org $90BD41 ; hyper beam flare
 LDA.W #HyperBeamFlareAnim : STA !FlareAnimPtr+0

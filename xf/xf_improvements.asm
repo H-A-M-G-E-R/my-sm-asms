@@ -9,24 +9,6 @@ macro padSafe(addr)
   padbyte $FF : pad <addr>
 endmacro
 
-org $90FF6D ; little bit of freespace :)
-DoRShot:
-{
-    ; branch if [charge counter] < 60
-    LDA $0CD0
-    CMP.W #60
-    BMI .dontDoIt
-        STZ $0CD0 ; Beam charge counter = 0
-        JSR $BCBE ; Clear charge beam animation state
-        PHP
-        JMP $B986 ; Go to fire charged beam
-    .dontDoIt
-    STZ $0CD0 ; Beam charge counter = 0
-    JSR $BCBE ; Clear charge beam animation state
-    JSL $91DEBA ; Load Samus suit palette
-    RTS
-}
-
 org $9BCBFB ; 9b freespace
 SamusChargingNormalBeamPals:
 {
@@ -184,36 +166,6 @@ SamusChargingBeamPalPtrTbl:
     dw SamusChargingNormalBeamPals
     dw SamusChargingNormalBeamPals
 
-; charge while spinjumping
-HandleChargingBeam:
-{
-    LDA $0CD0 : STA $0DC2 ; previous charge counter = [charge counter]
-    LDA $0A78 : BNE .ret ; return if time is frozen
-    LDA $0A1F : AND #$00FF : CMP #$001B : BNE + ; reset charge and return if movement type = shinespark / crystal flash / drained by metroid / damaged by MB's attacks
-        STZ $0CD0 : BRA .ret
-    +
-    LDA $0D32 : CMP #$C4F0 : BNE .ret ; return if grappling
-    LDX $09D2 : LDA.l AllowedChargeBeamHUDSelections-1,x : BPL .ret ; return if charging beam isn't allowed
-
-    LDA $0A76 : BNE .hyperOrNoCharge ; branch if hyper beam
-    LDA $09A6 : BIT #$1000 : BNE .charge ; branch if charge equipped
-
-    .hyperOrNoCharge
-    ;STZ $0CD0 ; reset charge counter if hyper beam or no charge
-    BRA .ret
-
-    .charge
-    LDA $8B : AND $09B2 : BEQ .ret ; return if not pressing shoot
-    LDA $0CD0 : CMP #$0078 : BPL .ret ; return if [charge counter] >= 120
-    INC : STA $0CD0 ; increment charge counter
-
-    .ret
-    LDA $0A1F : AND #$00FF : RTL
-
-AllowedChargeBeamHUDSelections:
-    db $FF,$00,$00,$FF,$00,$FF
-}
-
 SamusGfx_Top_Left_UsingAnElevator_Frame0:
 incbin "samus/gfx/Top_Left_UsingAnElevator_Frame0.gfx":0..4*$20
 incbin "samus/gfx/Top_Left_UsingAnElevator_Frame0.gfx":$100..$100+2*$20
@@ -231,10 +183,6 @@ incbin "samus/gfx/Top_Right_UsingAnElevator_Frame0.gfx":0..5*$20
 incbin "samus/gfx/Top_Right_UsingAnElevator_Frame0.gfx":$100..$100+3*$20
 
 assert pc() <= $9BE000
-
-org $90C541
-    JSR DoRShot
-    CLC : RTS
 
 org $91D7D5 ; pointers to old charge palettes
 DoSamusChargingBeamPal:
@@ -327,17 +275,6 @@ org $90D10C : LDA #$0001
 ; don't flicker Samus
 org $9085EC : BRA + : org $908606 : +
 org $90C66B : BRA + : org $90C67A : +
-
-; hijack right before executing HUD selection handler
-org $90DCF0 : JSL HandleChargingBeam : BMI $00
-
-org $90B846
-DEC : BEQ +
-CMP #$0077 : BPL ++
-PLP : RTS
-
-org $90B854 : +
-org $90B876 : ++
 
 org $90C2D1 ; beam speeds
     dw $0600,$0600*3/4
@@ -458,3 +395,5 @@ incsrc "samus/samus.asm"
 incsrc "compressed_fx_tilemaps.asm"
 
 incsrc "common_oam_repoint.asm"
+
+incsrc "shoot.asm"
