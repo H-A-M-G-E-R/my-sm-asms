@@ -150,6 +150,17 @@ DoRShot:
 .rts
   RTS
 }
+
+; fixes sound when shooting out of spinjump
+EndSpinjumpSoundIfNoQueuedLibrary1Sounds:
+{
+  LDA $0646 : CMP $0643 : BNE .rtl ; return if there are any queued library 1 sounds
+  LDA #$0032 : JML $809021 ; Go to queue sound 32h, sound library 1, max queued sounds allowed = 15 (spin jump end)
+
+.rtl
+  RTL
+}
+
 assert pc() <= $90BCBE
 
 org $90B80D ; HUD selection handler - nothing / power bombs
@@ -322,3 +333,6 @@ org $91F5CF : CLC : RTS ; in Initialise Samus pose - normal jumping
 
 org $91F8F3 ; in Initialise Samus pose - turning around - on ground (for turning after moonwalk)
 BRA + : org $91F906 : +
+
+
+org $90F5CB : JSL EndSpinjumpSoundIfNoQueuedLibrary1Sounds
