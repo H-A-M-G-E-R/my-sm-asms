@@ -1,6 +1,7 @@
 lorom
 
 incsrc "new_poses.asm"
+incsrc "transition_table.asm"
 
 !screwAttack = $0008
 !spaceJump = $0200

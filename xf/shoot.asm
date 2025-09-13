@@ -154,7 +154,7 @@ DoRShot:
 ; fixes sound when shooting out of spinjump
 EndSpinjumpSoundIfNoQueuedLibrary1Sounds:
 {
-  LDA $0646 : CMP $0643 : BNE .rtl ; return if there are any queued library 1 sounds
+  LDA $0646 : EOR $0643 : AND #$00FF : BNE .rtl ; return if there are any queued library 1 sounds
   LDA #$0032 : JML $809021 ; Go to queue sound 32h, sound library 1, max queued sounds allowed = 15 (spin jump end)
 
 .rtl
@@ -266,58 +266,7 @@ dw $DD3D ; 19h: Damage boost
 dw $DD3D ; 1Ah: Grabbed by Draygon
 dw $DDB6 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
-org $9181A9 ; in Determine prospective pose from transition table
-;JMP PressingNothingCheck
-BRA $02
-
-org $9181F4 ; Translate custom controller bindings to default bindings
-{
-  ; d-pad
-  LDA $8F : AND #$0F00 : EOR #$FFFF : STA $12
-  LDA $8B : AND #$0F00 : EOR #$FFFF : STA $14
-  ; newly pressed shoot
-  LDA !NewProjectile : BNE +
-  LDA $8F : BIT $09B2 : BNE +
-  BIT $09B8 : BEQ ++
-  +
-    LDA #$0040 : TRB $12
-    LDA $8F
-  ++
-  ; newly pressed jump
-  BIT $09B4 : BEQ +
-    LDA #$0080 : TRB $12
-    LDA $8F
-  +
-  ; newly pressed aim
-  BIT $09BE : BEQ +
-    LDA #$0010 : TRB $12
-  +
-  ; pressing shoot
-  LDA !NewProjectile : BNE +
-  LDA $8B : BIT $09B2 : BNE +
-  BIT $09B8 : BEQ ++
-  +
-    LDA #$0040 : TRB $14
-    LDA $8B
-  ++
-  ; pressing jump
-  BIT $09B4 : BEQ +
-    LDA #$0080 : TRB $14
-    LDA $8B
-  +
-  ; pressing aim
-  BIT $09BE : BEQ +
-    LDA #$0010 : TRB $14
-  +
-  RTS
-}
-CancelNewProjectile:
-{
-  STZ !NewProjectile
-  LDA $0A23
-  CLC : RTS
-}
-%padSafe($9182D9)
+; see "transition_table.asm" for modified controller binding translation and CancelNewProjectile
 
 org 2*$A+$91F4A2 : dw CancelNewProjectile ; cancel new projectile when initing knockback pose
 org $91F9F4 : JSR CancelNewProjectile ; morph ball init

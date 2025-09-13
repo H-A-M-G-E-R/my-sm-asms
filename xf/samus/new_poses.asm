@@ -21,12 +21,6 @@ endmacro
 ; $5B and $5C are for skidding
 ; $5D and $5E are for using an elevator
 
-;;; Transition table
-
-; same as running
-org 2*$5B+$919EE2
-dw read2(2*$09+$919EE2), read2(2*$0A+$919EE2)
-
 ;;; Pose definitions
 ;                       ______________________ $B629: Pose X direction
 ;                      |    ___________________ $B62A: Movement type
