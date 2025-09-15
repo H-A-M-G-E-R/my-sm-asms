@@ -126,9 +126,15 @@ TDC : INC : STA !NewProjectile : RTS
 SetNewProjectileToChargedShot:
 LDA #$0002 : STA !NewProjectile : RTS
 SetNewProjectileToBomb:
-LDA #$0005 : STA !NewProjectile : PLP : RTS
+LDA $0CCC : BNE +
+LDA #$0005 : STA !NewProjectile
++
+PLP : RTS
 SetNewProjectileToPowerBomb:
-LDA #$0006 : STA !NewProjectile : PLP : RTS
+LDA $0CCC : BNE +
+LDA #$0006 : STA !NewProjectile
++
+PLP : RTS
 SetNewProjectileToBombSpread:
 LDA #$0007 : STA !NewProjectile : RTS
 
@@ -149,16 +155,6 @@ DoRShot:
   JSL $91DEBA ; Load Samus suit palette
 .rts
   RTS
-}
-
-; fixes sound when shooting out of spinjump
-EndSpinjumpSoundIfNoQueuedLibrary1Sounds:
-{
-  LDA $0646 : EOR $0643 : AND #$00FF : BNE .rtl ; return if there are any queued library 1 sounds
-  LDA #$0032 : JML $809021 ; Go to queue sound 32h, sound library 1, max queued sounds allowed = 15 (spin jump end)
-
-.rtl
-  RTL
 }
 
 assert pc() <= $90BCBE
@@ -207,6 +203,7 @@ HudSelectionHandler_Nothing:
 
 org $90BE62 ; HUD selection handler - missiles / super missiles
 {
+  LDA $0CCC : BNE + ; if not cooldown:
   LDA $8F : BIT $09B2 : BEQ + ; if newly pressing shoot:
   LDA #$0003 : STA !NewProjectile
 +
@@ -284,4 +281,4 @@ org $91F8F3 ; in Initialise Samus pose - turning around - on ground (for turning
 BRA + : org $91F906 : +
 
 
-org $90F5CB : JSL EndSpinjumpSoundIfNoQueuedLibrary1Sounds
+org $90F5CB : JSL $80903F ; change it to Queue sound 32h, sound library 1, max queued sounds allowed = 1 (spin jump end) to fix sound when shooting out of spinjump

@@ -963,14 +963,22 @@ db !none, !down, $BE ; facing left  - grabbed by Draygon - moving
 db !end
 
 TrC7: ; C7h: Facing right - vertical shinespark windup
-db !none, !up, $CB ; facing right - shinespark - vertical
+db !none, !aim|!left, $CE ; facing left  - shinespark - diagonal
 db !none, !aim, $CD ; facing right - shinespark - diagonal
+db !none, !up|!left, $CE ; facing left  - shinespark - diagonal
+db !none, !up|!right, $CD ; facing right - shinespark - diagonal
+db !none, !up, $CB ; facing right - shinespark - vertical
+db !none, !left, $CA ; facing left  - shinespark - horizontal
 db !none, !right, $C9 ; facing right - shinespark - horizontal
 db !end
 
 TrC8: ; C8h: Facing left  - vertical shinespark windup
-db !none, !up, $CC ; facing left  - shinespark - vertical
+db !none, !aim|!right, $CD ; facing right - shinespark - diagonal
 db !none, !aim, $CE ; facing left  - shinespark - diagonal
+db !none, !up|!right, $CD ; facing right - shinespark - diagonal
+db !none, !up|!left, $CE ; facing left  - shinespark - diagonal
+db !none, !up, $CC ; facing left  - shinespark - vertical
+db !none, !right, $C9 ; facing right - shinespark - horizontal
 db !none, !left, $CA ; facing left  - shinespark - horizontal
 db !end
 
