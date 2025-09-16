@@ -44,6 +44,12 @@ org 2*$5B+$91B010
 dw SkiddingAnimationDelayTable, SkiddingAnimationDelayTable
 dw UsingAnElevatorDelayTable, UsingAnElevatorDelayTable
 
+org 2*1+$91B010
+dw StandingAnimationDelayTable, StandingAnimationDelayTable ; forward
+dw StandingAnimationDelayTable, StandingAnimationDelayTable ; up
+dw StandingAnimationDelayTable, StandingAnimationDelayTable ; diagonal up
+dw StandingAnimationDelayTable, StandingAnimationDelayTable ; diagonal down
+
 org $91B36C
 WalljumpRightAnimationDelayTable:
 db $05, $05, $FD,$19
@@ -57,6 +63,10 @@ db $10, $FF ; armed
 UsingAnElevatorDelayTable:
 db $06, $06, $10, $FE,$01
 db $04, $FD,$00 ; transition to facing forward pose after finishing riding the elevator
+
+StandingAnimationDelayTable:
+db $12, $12, $12, $FF
+db $04, $04, $FF ; shooting
 
 %padSafe($91B39D)
 
@@ -167,9 +177,56 @@ dl SamusGfx_Top_UsingAnElevator_Frame2 : dw 6*$20, 3*$20 ; 8
 dl SamusGfx_Bottom_UsingAnElevator_Frame2 : dw 3*$20, 3*$20 ; 9
 dl SamusGfx_Top_Right_UsingAnElevator_Frame0 : dw 5*$20, 3*$20 ; A
 
+dl SamusGfx_Top_Right_Shooting_Frame0 : dw 5*$20, 4*$20 ; B
+dl SamusGfx_Top_Left_Shooting_Frame0 : dw 5*$20, 5*$20 ; C
+
+db $FF ; filler byte so oam table addresses are odd
+
+StandingRightOamTableTop:
+dw $9830, $9830, $9830, $9830, SamusOam_Top_Right_Shooting_Frame0, $9830
+StandingRightOamTableBottom:
+dw $9846, $9846, $9846, $9846, $9846, $9846
+StandingLeftOamTableTop:
+dw $9857, $9857, $9857, $9857, SamusOam_Top_Left_Shooting_Frame0, $9857
+StandingLeftOamTableBottom:
+dw $986D, $986D, $986D, $986D, $986D, $986D
+
+SamusOam_Top_Right_Shooting_Frame0:
+dw 3
+%spritemapEntry(1, $002, $E3+$16, 0, 0, 2, 4, $02)
+%spritemapEntry(1, $1FB, $DF+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(0, $1FF, $D7+$16, 0, 1, 2, 4, $04)
+
+SamusOam_Top_Left_Shooting_Frame0:
+dw 4
+%spritemapEntry(1, $1F4+1, $DF+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(0, $1F4+1, $D7+$16, 0, 0, 2, 4, $02)
+%spritemapEntry(0, $1FC+1, $D7+$16, 0, 0, 2, 4, $12)
+%spritemapEntry(1, $1EE+1, $E3+$16, 0, 0, 2, 4, $03)
+
+SamusAnimationDefinition_StandingRight:
+db $01,$00,$01,$00, $01,$01,$01,$01, $01,$02,$01,$02, $00,$00,$00,$00
+db $17,$0B,$01,$02, $01,$00,$01,$00
+
+SamusAnimationDefinition_StandingLeft:
+db $01,$00,$01,$00, $01,$01,$01,$01, $01,$02,$01,$02, $00,$00,$00,$00
+db $17,$0C,$01,$02, $01,$00,$01,$00
+
 org 2*$5B+$92D94E
 dw SamusAnimationDefinition_SkiddingRight, SamusAnimationDefinition_SkiddingLeft
 dw SamusAnimationDefinition_UsingAnElevatorRight, SamusAnimationDefinition_UsingAnElevatorLeft
+
+; shooting frames
+org 2*1+$929263
+dw (StandingRightOamTableTop-$808D)/2 ; was $2C0
+dw (StandingLeftOamTableTop-$808D)/2 ; was $2CA
+
+org 2*1+$92945D
+dw (StandingRightOamTableBottom-$808D)/2 ; was $2C5
+dw (StandingLeftOamTableBottom-$808D)/2 ; was $2CF
+
+org 2*1+$92D94E
+dw SamusAnimationDefinition_StandingRight, SamusAnimationDefinition_StandingLeft
 
 org $8BF760 ; not much freespace for new samus tiles
 SamusGfx_Top_Left_Skidding_Frame0:

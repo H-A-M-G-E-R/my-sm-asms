@@ -1000,4 +1000,40 @@ db !none, !up, $F0 ; facing right - grabbed by Draygon - moving
 db !none, !down, $F0 ; facing right - grabbed by Draygon - moving
 db !end
 
+DoShootAnim:
+{
+  LDA !NewProjectile : BEQ .ret ; return if no new projectile
+
+  ; scan through list for shooting anims
+  LDX #$0000
+.loop
+  LDA.W .list,x : BEQ .ret ; branch if terminator
+  AND #$00FF : CMP $0A1C : BEQ .found
+  INX : INX : BRA .loop
+
+.found
+  ; set shoot anim frame
+  LDA.W .list+1,x : AND #$00FF : STA $0A9A
+  LDA $0A20 : PHA : STZ $0A20
+  JSL $91FB08
+  PLA : STA $0A20
+.ret
+  ; restore from hijack
+  STZ $0DC6 : PLB : PLP : RTL
+
+.list
+  db $01, $04 ; 1: Facing right - normal
+  db $02, $04 ; 2: Facing left - normal
+  ;db $03, $04 ; 3: Facing right - aiming up
+  ;db $04, $04 ; 4: Facing left  - aiming up
+  ;db $05, $04 ; 5: Facing right - aiming up-right
+  ;db $06, $04 ; 6: Facing left  - aiming up-left
+  ;db $07, $04 ; 7: Facing right - aiming down-right
+  ;db $08, $04 ; 8: Facing left  - aiming down-left
+  dw $0000
+}
+
 %padSafe($91AFE4)
+
+org $91EC10 : JMP DoShootAnim
+org $90A3AD : BRA + : org $90A3CA : +
