@@ -126,15 +126,9 @@ TDC : INC : STA !NewProjectile : RTS
 SetNewProjectileToChargedShot:
 LDA #$0002 : STA !NewProjectile : RTS
 SetNewProjectileToBomb:
-LDA $0CCC : BNE +
-LDA #$0005 : STA !NewProjectile
-+
-PLP : RTS
+LDA #$0005 : STA !NewProjectile : PLP : RTS
 SetNewProjectileToPowerBomb:
-LDA $0CCC : BNE +
-LDA #$0006 : STA !NewProjectile
-+
-PLP : RTS
+LDA #$0006 : STA !NewProjectile : PLP : RTS
 SetNewProjectileToBombSpread:
 LDA #$0007 : STA !NewProjectile : RTS
 
