@@ -157,15 +157,16 @@ org $90B80D ; HUD selection handler - nothing / power bombs
 HudSelectionHandler_Nothing:
 {
   LDA $0CD0 : STA $0DC2 ; Previous beam charge counter = [beam charge counter]
-  LDA $0CCC : ORA !NewProjectile : BNE .cooldown ; branch if cooldown timer != 0 or if already have a new projectile
   LDA $0A76 : BNE .hyperOrNoCharge ; branch if hyper
   LDA $09A6 : BIT #$1000 : BNE .charge ; branch if charge equipped
 .hyperOrNoCharge
+  LDA $0CCC : ORA !NewProjectile : BNE .rts ; return if cooldown timer != 0 or if already have a new projectile
   LDA $8B : AND $09B2 : BEQ .rts ; branch if not pressing shoot
 -
   JMP SetNewProjectileToUnchargedShot
 
 .charge
+  LDA $0CCC : ORA !NewProjectile : BNE .cooldown ; branch if cooldown timer != 0 or if already have a new projectile
   LDA $8F : AND $09B2 : BNE - ; fire uncharged shot if newly pressing shoot
   LDA $8B : AND $09B2 : BEQ .releasedShoot
 .incrementCharge
@@ -179,11 +180,12 @@ HudSelectionHandler_Nothing:
 
 .notFullyCharged
   CMP.W #16 : BPL -
-  STZ $0CD0 : JMP $BCBE
+  STZ $0CD0
+  RTS
 
 .sba
   JSR $CCC0 : BCC .rts
-  STZ $0CD0 : JSR $BCBE
+  STZ $0CD0
   JSL $91DEBA
 .rts
   RTS
