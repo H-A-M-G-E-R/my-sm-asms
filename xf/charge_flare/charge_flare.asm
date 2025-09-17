@@ -253,9 +253,9 @@ dw 6
 
 ChargingSparksBegin_Frame3:
 dw 6
-%spritemapEntry(0, $1F3, $F1, 0, 0, 3, 6, $3C)
-%spritemapEntry(0, $009, $F4, 0, 0, 3, 6, $3C)
-%spritemapEntry(0, $1FC, $09, 0, 0, 3, 6, $3C)
+%spritemapEntry(0, $1F3, $F1, 0, 0, 3, 6, $3B)
+%spritemapEntry(0, $009, $F4, 0, 0, 3, 6, $3B)
+%spritemapEntry(0, $1FC, $09, 0, 0, 3, 6, $3B)
 %spritemapEntry(0, $1FA, $F9, 0, 0, 3, 6, $3B)
 %spritemapEntry(0, $001, $FC, 0, 0, 3, 6, $3B)
 %spritemapEntry(0, $1FC, $FF, 0, 0, 3, 6, $3B)
@@ -276,10 +276,10 @@ dw 4
 
 ChargingSparksCharged_Frame3:
 dw 8
-%spritemapEntry(0, $1F2, $F2, 0, 0, 3, 6, $3C)
-%spritemapEntry(0, $006, $F2, 0, 1, 3, 6, $3C)
-%spritemapEntry(0, $006, $06, 1, 1, 3, 6, $3C)
-%spritemapEntry(0, $1F2, $06, 1, 0, 3, 6, $3C)
+%spritemapEntry(0, $1F6, $F6, 0, 0, 3, 6, $3C)
+%spritemapEntry(0, $002, $F6, 0, 1, 3, 6, $3C)
+%spritemapEntry(0, $002, $02, 1, 1, 3, 6, $3C)
+%spritemapEntry(0, $1F6, $02, 1, 0, 3, 6, $3C)
 %spritemapEntry(0, $1EE, $EE, 0, 0, 3, 6, $3B)
 %spritemapEntry(0, $00A, $EE, 0, 1, 3, 6, $3B)
 %spritemapEntry(0, $00A, $0A, 1, 1, 3, 6, $3B)
