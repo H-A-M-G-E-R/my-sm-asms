@@ -397,3 +397,5 @@ incsrc "compressed_fx_tilemaps.asm"
 incsrc "common_oam_repoint.asm"
 
 incsrc "shoot.asm"
+
+incsrc "extended_spritemap_draw_fix.asm"

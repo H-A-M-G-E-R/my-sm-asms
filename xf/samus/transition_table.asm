@@ -57,6 +57,7 @@ org $9181A9 ; Determine prospective pose from transition table
 .loop
   ; check if inputs match
   LDA $0000,y : AND $12 : BEQ .found
+.next
   ; next input
   INY : INY : INY
   ; loop if not eot
@@ -68,7 +69,13 @@ org $9181A9 ; Determine prospective pose from transition table
   CLC : RTS
 
 .found
-  LDA $0002,y : AND #$00FF : CMP $0A1C : BEQ .samePose
+  LDA $0002,y : AND #$00FF
+  CMP #$00C7 : BEQ .shinesparkWindup
+  CMP #$00C8 : BNE .notWindup
+.shinesparkWindup
+  LDX $0A68 : BEQ .next ; don't trigger shinespark if shine timer == 0
+.notWindup
+  CMP $0A1C : BEQ .samePose
     STA $0A28 ; new prospective pose
     STZ $0A56 ; cancel bomb jump
   .samePose
@@ -102,8 +109,12 @@ dw TrE0, TrE1, TrE2, TrE3, TrE4, TrE5, TrE6, TrE7,    0,    0,    0,    0, TrEC,
 dw TrF0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 
 Tr03: ; 3: Facing right - aiming up
-db !jump, !up, $55 ; facing right - normal jump transition - aiming up
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
 db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !down, !aim, $F3 ; facing right - crouching transition - aiming up-right
 db !down, !none, $35 ; facing right - crouching transition
@@ -119,8 +130,12 @@ db !none, !right, $09 ; moving right - not aiming
 db !end
 
 Tr05: ; 5: Facing right - aiming up-right
-db !jump, !up, $55 ; facing right - normal jump transition - aiming up
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
 db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !down, !aim, $07 ; facing right - aiming down-right
 db !none, !left|!shoot|!aim, $76 ; facing right - moonwalk - aiming up-right
@@ -134,8 +149,12 @@ db !none, !right, $09 ; moving right - not aiming
 db !end
 
 Tr07: ; 7: Facing right - aiming down-right
-db !jump, !up, $55 ; facing right - normal jump transition - aiming up
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !up|!aim, $57 ; facing right - normal jump transition - aiming up-right
 db !jump, !aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !down, !aim, $F5 ; facing right - crouching transition - aiming down-right
 db !down, !none, $35 ; facing right - crouching transition
@@ -155,6 +174,12 @@ db !up, !aim, $F9 ; facing right - standing transition - aiming up-right
 db !up, !none, $3B ; facing right - standing transition
 db !left, !none, $43 ; facing right - turning - crouching
 db !down, !none, $73 ; facing right - crouching - aiming down-right
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !none, !right, $01 ; facing right - normal
 db !none, !aim, $71 ; facing right - crouching - aiming up-right
@@ -165,14 +190,24 @@ db !up, !aim, $71 ; facing right - crouching - aiming up-right
 db !up, !none, $3B ; facing right - standing transition
 db !left, !none, $43 ; facing right - turning - crouching
 db !down, !none, $37 ; facing right - morphing transition
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !up|!aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !none, !right, $01 ; facing right - normal
 db !none, !aim, $73 ; facing right - crouching - aiming down-right
 db !end
 
 Tr04: ; 4: Facing left  - aiming up
-db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
 db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !down, !aim, $F4 ; facing left  - crouching transition - aiming up-left
 db !down, !none, $36 ; facing left  - crouching transition
@@ -188,8 +223,12 @@ db !none, !left, $0A ; moving left  - not aiming
 db !end
 
 Tr06: ; 6: Facing left  - aiming up-left
-db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
 db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !down, !aim, $08 ; facing left  - aiming down-left
 db !none, !right|!shoot|!aim, $75 ; facing left  - moonwalk - aiming up-left
@@ -203,8 +242,12 @@ db !none, !left, $0A ; moving left  - not aiming
 db !end
 
 Tr08: ; 8: Facing left  - aiming down-left
-db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !up|!aim, $58 ; facing left  - normal jump transition - aiming up-left
 db !jump, !aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !down, !aim, $F6 ; facing left  - crouching transition - aiming down-left
 db !down, !none, $36 ; facing left  - crouching transition
@@ -224,6 +267,12 @@ db !up, !aim, $FA ; facing left  - standing transition - aiming up-left
 db !up, !none, $3C ; facing left  - standing transition
 db !right, !none, $44 ; facing left  - turning - crouching
 db !down, !none, $74 ; facing left  - crouching - aiming down-left
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !none, !left, $02 ; facing left  - normal
 db !none, !aim, $72 ; facing left  - crouching - aiming up-left
@@ -234,6 +283,12 @@ db !up, !aim, $72 ; facing left  - crouching - aiming up-left
 db !up, !none, $3C ; facing left  - standing transition
 db !right, !none, $44 ; facing left  - turning - crouching
 db !down, !none, $38 ; facing left  - morphing transition
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !up|!aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !none, !left, $02 ; facing left  - normal
 db !none, !aim, $74 ; facing left  - crouching - aiming down-left
@@ -318,8 +373,12 @@ TrA6: ; A6h: Facing right - landing from spin jump
 TrE0: ; E0h: Facing right - landing from normal jump - aiming up
 TrE2: ; E2h: Facing right - landing from normal jump - aiming up-right
 TrE6: ; E6h: Facing right - landing from normal jump - firing
-db !jump, !up, $55 ; facing right - normal jump transition - aiming up
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
 db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !down, !aim, $F3 ; facing right - crouching transition - aiming up-right
 db !down, !none, $35 ; facing right - crouching transition
@@ -343,8 +402,12 @@ TrA7: ; A7h: Facing left  - landing from spin jump
 TrE1: ; E1h: Facing left  - landing from normal jump - aiming up
 TrE3: ; E3h: Facing left  - landing from normal jump - aiming up-left
 TrE7: ; E7h: Facing left  - landing from normal jump - firing
-db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
 db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !down, !aim, $F4 ; facing left  - crouching transition - aiming up-left
 db !down, !none, $36 ; facing left  - crouching transition
@@ -414,6 +477,7 @@ db !none, !aim, $06 ; facing left  - aiming up-left
 db !end
 
 Tr13: ; 13h: Facing right - normal jump - not aiming - not moving - gun extended
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !none, !up|!right, $69 ; facing right - normal jump - aiming up-right
 db !none, !down|!right, $6B ; facing right - normal jump - aiming down-right
@@ -429,6 +493,7 @@ db !none, !shoot, $13 ; facing right - normal jump - not aiming - not moving - g
 db !end
 
 Tr14: ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !none, !up|!left, $6A ; facing left  - normal jump - aiming up-left
 db !none, !down|!left, $6C ; facing left  - normal jump - aiming down-left
@@ -447,6 +512,7 @@ Tr15: ; 15h: Facing right - normal jump - aiming up
 Tr4D: ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended
 Tr51: ; 51h: Facing right - normal jump - not aiming - moving forward
 Tr69: ; 69h: Facing right - normal jump - aiming up-right
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !none, !up|!right, $69 ; facing right - normal jump - aiming up-right
 db !none, !down|!right, $6B ; facing right - normal jump - aiming down-right
@@ -464,6 +530,7 @@ db !none, !shoot, $13 ; facing right - normal jump - not aiming - not moving - g
 db !end
 
 Tr6B: ; 6Bh: Facing right - normal jump - aiming down-right
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !none, !up|!right, $69 ; facing right - normal jump - aiming up-right
 db !none, !down|!right, $6B ; facing right - normal jump - aiming down-right
@@ -484,6 +551,7 @@ Tr16: ; 16h: Facing left  - normal jump - aiming up
 Tr4E: ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended
 Tr52: ; 52h: Facing left  - normal jump - not aiming - moving forward
 Tr6A: ; 6Ah: Facing left  - normal jump - aiming up-left
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !none, !up|!left, $6A ; facing left  - normal jump - aiming up-left
 db !none, !down|!left, $6C ; facing left  - normal jump - aiming down-left
@@ -501,6 +569,7 @@ db !none, !shoot, $14 ; facing left  - normal jump - not aiming - not moving - g
 db !end
 
 Tr6C: ; 6Ch: Facing left  - normal jump - aiming down-left
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !none, !up|!left, $6A ; facing left  - normal jump - aiming up-left
 db !none, !down|!left, $6C ; facing left  - normal jump - aiming down-left
@@ -518,6 +587,7 @@ db !none, !shoot, $14 ; facing left  - normal jump - not aiming - not moving - g
 db !end
 
 Tr17: ; 17h: Facing right - normal jump - aiming down
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !down, !none, $37 ; facing right - morphing transition
 db !none, !up|!right, $69 ; facing right - normal jump - aiming up-right
@@ -536,6 +606,7 @@ db !none, !shoot, $13 ; facing right - normal jump - not aiming - not moving - g
 db !end
 
 Tr18: ; 18h: Facing left  - normal jump - aiming down
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !down, !none, $38 ; facing left  - morphing transition
 db !none, !up|!left, $6A ; facing left  - normal jump - aiming up-left
@@ -624,12 +695,24 @@ db !end
 
 Tr25: ; 25h: Facing right - turning - standing
 db !none, !left|!jump, $1A ; facing left  - spin jump
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !none, !left, $25 ; facing right - turning - standing
 db !end
 
 Tr26: ; 26h: Facing left  - turning - standing
 db !none, !right|!jump, $19 ; facing right - spin jump
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !none, !right, $26 ; facing left  - turning - standing
 db !end
@@ -640,6 +723,12 @@ db !up, !aim, $F9 ; facing right - standing transition - aiming up-right
 db !up, !none, $3B ; facing right - standing transition
 db !left, !none, $43 ; facing right - turning - crouching
 db !down, !none, $37 ; facing right - morphing transition
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !none, !right, $01 ; facing right - normal
 db !none, !aim, $71 ; facing right - crouching - aiming up-right
@@ -651,6 +740,12 @@ db !up, !aim, $FA ; facing left  - standing transition - aiming up-left
 db !up, !none, $3C ; facing left  - standing transition
 db !right, !none, $44 ; facing left  - turning - crouching
 db !down, !none, $38 ; facing left  - morphing transition
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !none, !left, $02 ; facing left  - normal
 db !none, !aim, $72 ; facing left  - crouching - aiming up-left
@@ -660,6 +755,7 @@ Tr29: ; 29h: Facing right - falling
 Tr2B: ; 2Bh: Facing right - falling - aiming up
 Tr6D: ; 6Dh: Facing right - falling - aiming up-right
 Tr6F: ; 6Fh: Facing right - falling - aiming down-right
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !none, !up|!right, $6D ; facing right - falling - aiming up-right
 db !none, !down|!right, $6F ; facing right - falling - aiming down-right
@@ -677,6 +773,7 @@ Tr2A: ; 2Ah: Facing left  - falling
 Tr2C: ; 2Ch: Facing left  - falling - aiming up
 Tr6E: ; 6Eh: Facing left  - falling - aiming up-left
 Tr70: ; 70h: Facing left  - falling - aiming down-left
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !none, !up|!left, $6E ; facing left  - falling - aiming up-left
 db !none, !down|!left, $70 ; facing left  - falling - aiming down-left
@@ -691,6 +788,7 @@ db !none, !left, $2A ; facing left  - falling
 db !end
 
 Tr2D: ; 2Dh: Facing right - falling - aiming down
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !down, !none, $37 ; facing right - morphing transition
 db !none, !up|!right, $6D ; facing right - falling - aiming up-right
@@ -706,6 +804,7 @@ db !none, !right, $29 ; facing right - falling
 db !end
 
 Tr2E: ; 2Eh: Facing left  - falling - aiming down
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !down, !none, $38 ; facing left  - morphing transition
 db !none, !up|!left, $6E ; facing left  - falling - aiming up-left
@@ -806,6 +905,7 @@ db !none, !right|!jump, $4F ; facing left  - damage boost
 db !end
 
 Tr67: ; 67h: Facing right - falling - gun extended
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
 db !jump, !none, $19 ; facing right - spin jump
 db !none, !up|!right, $6D ; facing right - falling - aiming up-right
 db !none, !down|!right, $6F ; facing right - falling - aiming down-right
@@ -818,6 +918,7 @@ db !none, !right, $67 ; facing right - falling - gun extended
 db !end
 
 Tr68: ; 68h: Facing left  - falling - gun extended
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
 db !jump, !none, $1A ; facing left  - spin jump
 db !none, !up|!left, $6E ; facing left  - falling - aiming up-left
 db !none, !down|!left, $70 ; facing left  - falling - aiming down-left
@@ -904,7 +1005,30 @@ db !end
 
 Tr89: ; 89h: Facing right - ran into a wall
 TrCF: ; CFh: Facing right - ran into a wall - aiming up-right
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
+db !jump, !none, $4B ; facing right - normal jump transition
+db !none, !up|!right, $0F ; moving right - aiming up-right
+db !none, !down|!right, $11 ; moving right - aiming down-right
+db !down, !none, $35 ; facing right - crouching transition
+db !none, !left|!aim, $76 ; facing right - moonwalk - aiming up-right
+db !none, !up, $03 ; facing right - aiming up
+db !none, !aim, $05 ; facing right - aiming up-right
+db !none, !left, $25 ; facing right - turning - standing
+db !none, !right, $09 ; moving right - not aiming
+db !end
+
 TrD1: ; D1h: Facing right - ran into a wall - aiming down-right
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !up|!aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !none, !up|!right, $0F ; moving right - aiming up-right
 db !none, !down|!right, $11 ; moving right - aiming down-right
@@ -918,7 +1042,30 @@ db !end
 
 Tr8A: ; 8Ah: Facing left  - ran into a wall
 TrD0: ; D0h: Facing left  - ran into a wall - aiming up-left
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
+db !jump, !none, $4C ; facing left  - normal jump transition
+db !none, !up|!left, $10 ; moving left  - aiming up-left
+db !none, !down|!left, $12 ; moving left  - aiming down-left
+db !down, !none, $36 ; facing left  - crouching transition
+db !none, !right|!aim, $75 ; facing left  - moonwalk - aiming up-left
+db !none, !up, $04 ; facing left  - aiming up
+db !none, !aim, $06 ; facing left  - aiming up-left
+db !none, !right, $26 ; facing left  - turning - standing
+db !none, !left, $0A ; moving left  - not aiming
+db !end
+
 TrD2: ; D2h: Facing left  - ran into a wall - aiming down-left
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !up|!aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !none, !up|!left, $10 ; moving left  - aiming up-left
 db !none, !down|!left, $12 ; moving left  - aiming down-left
@@ -931,20 +1078,52 @@ db !none, !left, $0A ; moving left  - not aiming
 db !end
 
 Tr8B: ; 8Bh: Facing right - turning - standing - aiming up
-Tr8D: ; 8Dh: Facing right - turning - standing - aiming down-right
 TrBF: ; BFh: Facing right - moonwalking - turn/jump left
 TrC1: ; C1h: Facing right - moonwalking - turn/jump left  - aiming up-right
+db !jump, !left, $1A ; facing left  - spin jump
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !down|!aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
+db !jump, !none, $4C ; facing left  - normal jump transition
+db !end
+
+Tr8D: ; 8Dh: Facing right - turning - standing - aiming down-right
 TrC3: ; C3h: Facing right - moonwalking - turn/jump left  - aiming down-right
 db !jump, !left, $1A ; facing left  - spin jump
+db !jump, !none, $C8 ; facing left  - vertical shinespark windup
+db !jump, !up|!aim, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !aim, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up|!left, $58 ; facing left  - normal jump transition - aiming up-left
+db !jump, !down|!left, $5A ; facing left  - normal jump transition - aiming down-left
+db !jump, !up, $56 ; facing left  - normal jump transition - aiming up
 db !jump, !none, $4C ; facing left  - normal jump transition
 db !end
 
 Tr8C: ; 8Ch: Facing left  - turning - standing - aiming up
-Tr8E: ; 8Eh: Facing left  - turning - standing - aiming down-left
 TrC0: ; C0h: Facing left  - moonwalking - turn/jump right
 TrC2: ; C2h: Facing left  - moonwalking - turn/jump right - aiming up-left
+db !jump, !right, $19 ; facing right - spin jump
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !down|!aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
+db !jump, !none, $4B ; facing right - normal jump transition
+db !end
+
+Tr8E: ; 8Eh: Facing left  - turning - standing - aiming down-left
 TrC4: ; C4h: Facing left  - moonwalking - turn/jump right - aiming down-left
 db !jump, !right, $19 ; facing right - spin jump
+db !jump, !none, $C7 ; facing right - vertical shinespark windup
+db !jump, !up|!aim, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !aim, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up|!right, $57 ; facing right - normal jump transition - aiming up-right
+db !jump, !down|!right, $59 ; facing right - normal jump transition - aiming down-right
+db !jump, !up, $55 ; facing right - normal jump transition - aiming up
 db !jump, !none, $4B ; facing right - normal jump transition
 db !end
 
@@ -1033,7 +1212,22 @@ DoShootAnim:
   dw $0000
 }
 
+ShinesparkWindupCheckForFACA: ; for Initialise Samus pose - shinespark / crystal flash / drained by metroid / damaged by MB's attacks
+{
+  LDA $0A1C : DEC : LSR : CMP.W #($C7-1)/2 : BNE .notWindup
+  JSL $90CFFA ; Trigger shinespark windup
+  CLC : RTS
+.notWindup
+  JMP $FACA ; restore from hijack
+}
+
 %padSafe($91AFE4)
 
 org $91EC10 : JMP DoShootAnim
 org $90A3AD : BRA + : org $90A3CA : +
+
+org 2*2+$91F4A2 : dw $F59A ; relocate Initialise Samus pose - normal jumping
+org 2*$1B+$91F4A2 : dw ShinesparkWindupCheckForFACA
+
+org $91F543
+%padSafe($91F59A)
