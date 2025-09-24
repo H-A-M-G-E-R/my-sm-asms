@@ -239,6 +239,18 @@ org $90A3AD : ++
 org $8A90E8 ; in Door transition function - nudge Samus if she's intercepting the door
 BRA + : org $8A9102 : +
 
+org $A2964C
+JSL IsSamusFacingForward
+BCS +
+LDA #$968D : STA $0F90,x : RTS
+org $A29660 : +
+
+org $A3ABE9
+JSL IsSamusFacingForward
+BCC +
+RTS
+org $A3ABF8 : +
+
 ;;; Hijacks
 org $918069 ; in Normal Samus pose input handler - [Samus movement type] = running
 JSR $81A9
