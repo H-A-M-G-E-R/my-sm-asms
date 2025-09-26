@@ -1,5 +1,6 @@
 ; Patches for Meta's X-Fusion hack (https://metroidconstruction.com/hack.php?id=837) that makes it feel a bit more like Fusion.
 ; Patch it (or xf_improvements.ips) on xf_v1.2_gba-eng-fre-jap-ger.
+; The improved SPC engine with my new sounds is from (https://github.com/H-A-M-G-E-R/SM-SPC/tree/xf).
 asar 1.91
 
 lorom
@@ -399,3 +400,5 @@ incsrc "common_oam_repoint.asm"
 incsrc "shoot.asm"
 
 incsrc "extended_spritemap_draw_fix.asm"
+
+incsrc "spc.asm"

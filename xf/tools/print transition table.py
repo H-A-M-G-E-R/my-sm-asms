@@ -378,5 +378,5 @@ def printTransitionTable():
 def main():
     printTransitionTable()
 
-rom = open('xf_v1.2_gba-eng-fre-jap-ger_original.sfc', 'rb')
+rom = open('xf_v1.2_gba-eng-fre-jap-ger.sfc', 'rb')
 main()
