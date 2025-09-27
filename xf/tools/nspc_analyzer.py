@@ -52,10 +52,16 @@ rom = open('xf_v1.2_gba-eng-fre-jap-ger.sfc', 'rb')
 # music pointer table is at $FFF52F
 # swappable sample pointer table is at $FFF5DA
 
+unique_song_sets = {}
 for i_songSet in range(0, 0xAB, 3):
     rom.seek(snes2hex(0xFF_F52F+i_songSet))
-    print(f'Song set ${i_songSet:02X}:')
     p_songSet = romRead(3)
+    if p_songSet in unique_song_sets:
+        print(f'Song set ${i_songSet:02X} (duplicate of ${unique_song_sets[p_songSet]:02X})\n')
+        break
+    else:
+        unique_song_sets[p_songSet] = i_songSet
+        print(f'Song set ${i_songSet:02X}:')
     analyze_nspc(p_songSet)
 
     nspc_file = open(f'test/xf/songs/{i_songSet:02X}.nspc', 'wb')
@@ -64,11 +70,17 @@ for i_songSet in range(0, 0xAB, 3):
     rom.seek(snes2hex(p_songSet))
     nspc_file.write(rom.read(p_end - snes2hex(p_songSet)))
 
+unique_swappable_samples = {}
 for i_swappableSample in range(0x2A):
     rom.seek(snes2hex(0xFF_F5DA+i_swappableSample*3))
     p_nspc = romRead(3)
     if p_nspc != 0:
-        print(f'Swappable sample ${i_swappableSample:02X}:')
+        if p_nspc in unique_swappable_samples:
+            print(f'Swappable sample ${i_swappableSample:02X} (duplicate of ${unique_swappable_samples[p_nspc]:02X})\n')
+            break
+        else:
+            unique_swappable_samples[p_nspc] = i_swappableSample
+            print(f'Swappable sample ${i_swappableSample:02X}:')
         analyze_nspc(p_nspc)
 
         nspc_file = open(f'test/xf/swappable_samples/{i_swappableSample:02X}.nspc', 'wb')

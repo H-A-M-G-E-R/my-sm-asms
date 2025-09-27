@@ -102,7 +102,7 @@ SongPointers:
   dl Song8A
   dl Song8D
   dl Song90
-  dl Song93
+  dl Song3C
   dl Song96
   dl Song99
   dl Song9C
@@ -206,7 +206,6 @@ Song87: incbin "music/87.nspc"
 Song8A: incbin "music/8A.nspc"
 Song8D: incbin "music/8D.nspc"
 Song90: incbin "music/90.nspc"
-Song93: incbin "music/93.nspc"
 Song96: incbin "music/96.nspc"
 Song99: incbin "music/99.nspc"
 Song9C: incbin "music/9C.nspc"
@@ -257,6 +256,7 @@ SwappableSample28: incbin "swappable_samples/28.nspc"
 SwappableSample29: incbin "swappable_samples/29.nspc"
 
 check bankcross full
+%padSafe($FFFFFF) : db $FF
 }
 
 org $98C180
@@ -287,6 +287,14 @@ org $A0D680+$E : dw $004E ; gold sciser
 org $A0DB00+$E : dw $0051 ; geemer
 org $A0F0C0+$E : dw $0059 ; kihunter
 org $A0F080+$E : dw $0060 ; reo
+org $A0E9C0+$E : dw $0063 ; sidehopper
+org $A0F2C0+$E : dw $0063 ; sidehopper
+org $A0EA00+$E : dw $0068 ; dessgeega
+org $A0ED80+$E : dw $006A ; geruda
+org $A0ECC0+$E : dw $006F ; yard
+org $A0EAC0+$E : dw $0070 ; geruboss
+org $A0F600+$E : dw $0070 ; geruboss
+org $A0F5C0+$E : dw $0016 ; waver
 
 org $A4F8D8 : dw $0033 ; halzyn lunge
 

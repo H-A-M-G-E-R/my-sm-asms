@@ -1,16 +1,16 @@
 ; Change these below if you repoint the SPC engine.
 !p_spcEngine = $307
-!p_instrumentTable = $1D80
-!p_sampleTable = $1F00
-!p_sampleData = $2000
-!p_sampleDataEnd = $7778
+!p_instrumentTable = $1E80
+!p_sampleTable = $2000
+!p_sampleData = $2100
+!p_sampleDataEnd = $7C8C
 !p_extra = $E0
 
-!p_sounds2Low = $13E9
-!p_sounds2High = $1468
+!p_sounds2Low = $13E2
+!p_sounds2High = $1461
 
-!p_sample04 = $3035
-!p_sample0B = $5222
+!p_sample04 = $3135
+!p_sample0B = $5322
 
 !zero = $11
 

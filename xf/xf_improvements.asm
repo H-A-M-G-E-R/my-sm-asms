@@ -286,7 +286,7 @@ org $90C2D1 ; beam speeds
     dw $0600,$0600*3/4
     dw $0700,$0700*3/4
     dw $0700,$0700*3/4
-    dw $0600,$0600*3/4
+    dw $0700,$0700*3/4 ; disruptor
     dw $0600,$0600*3/4
     dw $0600,$0600*3/4
     dw $0600,$0600*3/4
@@ -390,6 +390,10 @@ org $A0A096 : BRA + : org $A0A0B8 : + ; for non-extended spritemap
 ; lower iframes from 96 to 60
 org $A09864 : LDA.w #60
 org $A09923 : LDA.w #60
+
+; TEST (invincibility)
+org $90EAF0 : BRA $00
+org $8A9590 : BRA + : org $8A95B2 : +
 
 incsrc "samus/samus.asm"
 
