@@ -16,13 +16,16 @@ spcblock 4*$18+!p_sampleTable nspc
   dw Sample1B,Sample1B
 endspcblock
 
-spcblock $A800-$9F80+!p_sampleDataEnd+$400 nspc
-  Sample18: incbin "Sample_ad838049f259a4f1171d73e2a9ff0c30.brr"
-  Sample19: incbin "Sample_297f19f5a80928febb2ded9fc02251b9.brr"
-  Sample1A: incbin "Sample_9281b998d07d46507b9aed19337b9a6c.brr"
-  Sample1B: incbin "Sample_b76c6f0440c68cfc41d66ec60f326c7b.brr"
+pushpc
+org $A800-$9F80+!p_sampleDataEnd+$400
+  Sample18: skip filesize("Sample_ad838049f259a4f1171d73e2a9ff0c30.brr")
+  Sample19: skip filesize("Sample_297f19f5a80928febb2ded9fc02251b9.brr")
+  Sample1A: skip filesize("Sample_9281b998d07d46507b9aed19337b9a6c.brr")
+  Sample1B: skip filesize("Sample_b76c6f0440c68cfc41d66ec60f326c7b.brr")
+  Trackers:
+pullpc
 
-Trackers:
+spcblock Trackers nspc
   dw Tracker5
 
 Tracker5:

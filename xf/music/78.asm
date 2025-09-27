@@ -34,17 +34,20 @@ spcblock 4*$18+!p_sampleTable nspc
   dw Sample18_21_24,Sample18_21_24+675
 endspcblock
 
-spcblock $9F80-$9F80+!p_sampleDataEnd+$400 nspc
-  Sample18_21_24: incbin "Sample_070774228d4d8b89d9ca1ed89dad328a.brr"
-  Sample19: incbin "Sample_ef25c5b6dec0eb9284501ed4e7b4825a.brr"
-  Sample1A_1B: incbin "Sample_ef6b054116253361d675341632d6a4d7.brr"
-  Sample1C_20: incbin "Sample_24f2776ccd9c9315c85798b6b5e78a00.brr"
-  Sample1D: incbin "Sample_0a8fa0e3956011649dbbdef01c7f5e4b.brr"
-  Sample1E_1F: incbin "Sample_952149bda8c138e34f1b41d599c4243f.brr"
-  Sample22: incbin "Sample_791c11a320b992357fb30654bb72da96.brr"
-  Sample23: incbin "Sample_f4ee4d04d4846fb534a4e559e83cbdf5.brr"
+pushpc
+org $9F80-$9F80+!p_sampleDataEnd+$400
+  Sample18_21_24: skip filesize("Sample_070774228d4d8b89d9ca1ed89dad328a.brr")
+  Sample19: skip filesize("Sample_ef25c5b6dec0eb9284501ed4e7b4825a.brr")
+  Sample1A_1B: skip filesize("Sample_ef6b054116253361d675341632d6a4d7.brr")
+  Sample1C_20: skip filesize("Sample_24f2776ccd9c9315c85798b6b5e78a00.brr")
+  Sample1D: skip filesize("Sample_0a8fa0e3956011649dbbdef01c7f5e4b.brr")
+  Sample1E_1F: skip filesize("Sample_952149bda8c138e34f1b41d599c4243f.brr")
+  Sample22: skip filesize("Sample_791c11a320b992357fb30654bb72da96.brr")
+  Sample23: skip filesize("Sample_f4ee4d04d4846fb534a4e559e83cbdf5.brr")
+  Trackers:
+pullpc
 
-Trackers:
+spcblock Trackers nspc
   dw Tracker5, Tracker6, Tracker7
 
 Tracker5:

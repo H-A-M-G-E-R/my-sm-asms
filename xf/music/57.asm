@@ -10,10 +10,13 @@ spcblock 4*$18+!p_sampleTable nspc
   dw Sample18,Sample18
 endspcblock
 
-spcblock $9F80-$9F80+!p_sampleDataEnd+$400 nspc
-  Sample18: incbin "Sample_aa8041956e85a1b08499011624d59627.brr"
+pushpc
+org $9F80-$9F80+!p_sampleDataEnd+$400
+  Sample18: skip filesize("Sample_aa8041956e85a1b08499011624d59627.brr")
+  Trackers:
+pullpc
 
-Trackers:
+spcblock Trackers nspc
   dw Tracker5
 
 Tracker5:

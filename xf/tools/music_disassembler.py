@@ -49,9 +49,14 @@ def extract_samples(block_size, p_aram, sample_labels, sample_path, p_sounds=[],
         return rom.tell() - p_block_start + p_aram
 
     if music:
-        out = f"spcblock ${p_aram:04X}-$9F80+!p_sampleDataEnd+$400 nspc\n"
+        out = "pushpc\n"
+        out += f"org ${p_aram:04X}-$9F80+!p_sampleDataEnd+$400\n"
     else:
         out = f"spcblock ${p_aram:04X} nspc\n"
+
+    sample_transfer_def = f"  dw ${p_aram:04X}-$9F80+!p_sampleDataEnd+$400\n"
+
+    rom_sample_labels = []
 
     sound_command_lengths = {
         0xF5: 2,
@@ -90,9 +95,14 @@ def extract_samples(block_size, p_aram, sample_labels, sample_path, p_sounds=[],
                 if header & 1: # end of sample
                     break
             fn = f"Sample_{hashlib.md5(sample).hexdigest()}.brr"
-            out += f'  {sample_labels[p_sample]}: incbin "{fn}"\n'
-            sample_file = open(os.path.join(sample_path, fn), "wb")
-            sample_file.write(sample)
+            if music:
+                out += f'  {sample_labels[p_sample]}: skip filesize("{fn}")\n'
+                sample_transfer_def += f"  dl Sample_{hashlib.md5(sample).hexdigest()}\n"
+                rom_sample_labels.append(f"Sample_{hashlib.md5(sample).hexdigest()}")
+            else:
+                out += f'  {sample_labels[p_sample]}: incbin "{fn}"\n'
+                sample_file = open(os.path.join(sample_path, fn), "wb")
+                sample_file.write(sample)
         else:
             while rom.tell() - p_block_start < block_size and aram_tell() not in sample_labels:
                 if aram_tell() in p_sounds:
@@ -129,8 +139,13 @@ def extract_samples(block_size, p_aram, sample_labels, sample_path, p_sounds=[],
                     else:
                         romRead(1)
 
-    out += "endspcblock\n\n"
-    return out
+    if music:
+        out += "  Trackers:\n"
+        out += "pullpc\n\n"
+        sample_transfer_def += "  dw 0\n\n"
+    else:
+        out += "endspcblock\n\n"
+    return out, sample_transfer_def, rom_sample_labels
 
 def extract_instrs(block_size, p_aram):
     if block_size % 6 != 0:
@@ -230,8 +245,9 @@ def extract_trackers(block_size, p_aram):
     def aram_tell():
         return rom.tell() - p_block_start + p_aram
 
-    out = f"spcblock ${p_aram:04X} nspc\n"
-    out += "Trackers:\n"
+    #out = f"spcblock ${p_aram:04X} nspc\n"
+    #out += "Trackers:\n"
+    out = f"spcblock Trackers nspc\n"
 
     i_first_tracker = (p_aram - 0x5820) // 2 + 1
     p_trackers = []
@@ -381,6 +397,8 @@ def extract_p_sounds(block_size, p_aram):
     return p_sounds, out
 
 if __name__ == "__main__":
+    sample_transfer_defs = ""
+    all_sample_labels = []
     #for i_song_set in range(0, 0xAB, 3):
     for i_song_set in range(3, 0xAB, 3):
         rom = open(f'test/xf/songs/{i_song_set:02X}.nspc', 'rb')
@@ -388,6 +406,17 @@ if __name__ == "__main__":
         out += "norom : org 0\n"
         out += 'incsrc "../spc_defines.asm"\n\n'
 
+        while True:
+            size = romRead(2)
+            if size == 0:
+                break
+            p_aram = romRead(2)
+            p_next = rom.tell() + size
+            if p_aram >= 0x6C00 and p_aram < 0x6D00:
+                out += extract_instrs(size, p_aram)
+            rom.seek(p_next)
+
+        rom.seek(0)
         sample_labels = {}
         while True:
             size = romRead(2)
@@ -403,9 +432,15 @@ if __name__ == "__main__":
                         0x0C1A: "Sample11"
                     }
             elif p_aram >= 0x6E00 or (p_aram >= 0x0500 and p_aram < 0x1500):
-                out += extract_samples(size, p_aram, sample_labels, "xf/music/", music=True)
-            elif p_aram >= 0x6C00 and p_aram < 0x6D00:
-                out += extract_instrs(size, p_aram)
+                out1, sample_transfer_def, rom_sample_labels = extract_samples(size, p_aram, sample_labels, "xf/music/", print_unknown=False, music=True)
+                out += out1
+                sample_transfer_defs += f"SampleTransferDef{i_song_set:02X}:\n"
+                sample_transfer_defs += sample_transfer_def
+                for label in rom_sample_labels:
+                    if label not in all_sample_labels:
+                        all_sample_labels.append(label)
+            #elif p_aram >= 0x6C00 and p_aram < 0x6D00:
+            #    out += extract_instrs(size, p_aram)
             elif p_aram == 0x5800:
                 #out += extract_note_len_table(size, p_aram)
                 pass
@@ -422,13 +457,18 @@ if __name__ == "__main__":
                 p_aram = romRead(2)
                 p_next = rom.tell() + size
                 if p_aram == 0x1500 or p_aram == 0x2FF0 or (p_aram >= 0x6800 and p_aram < 0x6C00):
-                    out += extract_samples(size, p_aram, sample_labels, "xf/music/", print_unknown=False)
+                    out += extract_samples(size, p_aram, sample_labels, "xf/music/", print_unknown=False)[0]
                 rom.seek(p_next)
 
         out += "dw $0000\n"
-        outfile = open(f"xf/music/{i_song_set:02X}.asm", "w")
-        outfile.write(out)
+        #outfile = open(f"xf/music/{i_song_set:02X}.asm", "w")
+        #outfile.write(out)
 
+    print(sample_transfer_defs)
+    for label in all_sample_labels:
+        print(f'{label}: dw filesize("music/{label}.brr") : incbin "music/{label}.brr"')
+
+    '''
     for i_swappable_sample in range(0, 0x2A):
         if i_swappable_sample == 0x21:
             continue
@@ -480,9 +520,10 @@ if __name__ == "__main__":
             p_aram = romRead(2)
             p_next = rom.tell() + size
             if p_aram == 0x4A90 or p_aram >= 0x6E00 or (p_aram >= 0x0500 and p_aram < 0x1500):
-                out += extract_samples(size, p_aram, sample_labels, "xf/swappable_samples/", p_sounds)
+                out += extract_samples(size, p_aram, sample_labels, "xf/swappable_samples/", p_sounds)[0]
             rom.seek(p_next)
 
         out += "dw $0000\n"
         outfile = open(f"xf/swappable_samples/{i_swappable_sample:02X}.asm", "w")
         outfile.write(out)
+    '''

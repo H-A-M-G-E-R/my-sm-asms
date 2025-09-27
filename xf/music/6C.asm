@@ -38,23 +38,26 @@ spcblock 4*$18+!p_sampleTable nspc
   dw Sample26,Sample26
 endspcblock
 
-spcblock $A080-$9F80+!p_sampleDataEnd+$400 nspc
-  Sample18: incbin "Sample_ad838049f259a4f1171d73e2a9ff0c30.brr"
-  Sample19_1A: incbin "Sample_f1b3383538467c6d9585a3089f2bff09.brr"
-  Sample1B: incbin "Sample_878ea10e42cb89660db51cb44f1c0fc8.brr"
-  Sample1C: incbin "Sample_3d03eefd2e3912bacdc75766d9f89c08.brr"
-  Sample1D: incbin "Sample_ecfd273f3f42fe8a26eaca051537db5c.brr"
-  Sample1E: incbin "Sample_fc0a703f3d90d9667c60e64cfe3d7cf9.brr"
-  Sample1F: incbin "Sample_441d4eac476cad49850f2c9cc81a9aec.brr"
-  Sample20: incbin "Sample_ff8b37e06639ca6f4c8983178b73c75f.brr"
-  Sample21: incbin "Sample_da1530af58462df8494ebdc079f396b3.brr"
-  Sample22: incbin "Sample_e4ec38024ef64ca23f8bb5aecc52c3d6.brr"
-  Sample23: incbin "Sample_ae8e1de965071e6c9210ea1074e4ae53.brr"
-  Sample24: incbin "Sample_eefb57a8c45455334318ad6ef8bcf9dd.brr"
-  Sample25: incbin "Sample_bdd3ed2bb8600fa03669172d5130595d.brr"
-  Sample26: incbin "Sample_3ce56ddc06d6279f0865433c167956a4.brr"
+pushpc
+org $A080-$9F80+!p_sampleDataEnd+$400
+  Sample18: skip filesize("Sample_ad838049f259a4f1171d73e2a9ff0c30.brr")
+  Sample19_1A: skip filesize("Sample_f1b3383538467c6d9585a3089f2bff09.brr")
+  Sample1B: skip filesize("Sample_878ea10e42cb89660db51cb44f1c0fc8.brr")
+  Sample1C: skip filesize("Sample_3d03eefd2e3912bacdc75766d9f89c08.brr")
+  Sample1D: skip filesize("Sample_ecfd273f3f42fe8a26eaca051537db5c.brr")
+  Sample1E: skip filesize("Sample_fc0a703f3d90d9667c60e64cfe3d7cf9.brr")
+  Sample1F: skip filesize("Sample_441d4eac476cad49850f2c9cc81a9aec.brr")
+  Sample20: skip filesize("Sample_ff8b37e06639ca6f4c8983178b73c75f.brr")
+  Sample21: skip filesize("Sample_da1530af58462df8494ebdc079f396b3.brr")
+  Sample22: skip filesize("Sample_e4ec38024ef64ca23f8bb5aecc52c3d6.brr")
+  Sample23: skip filesize("Sample_ae8e1de965071e6c9210ea1074e4ae53.brr")
+  Sample24: skip filesize("Sample_eefb57a8c45455334318ad6ef8bcf9dd.brr")
+  Sample25: skip filesize("Sample_bdd3ed2bb8600fa03669172d5130595d.brr")
+  Sample26: skip filesize("Sample_3ce56ddc06d6279f0865433c167956a4.brr")
+  Trackers:
+pullpc
 
-Trackers:
+spcblock Trackers nspc
   dw Tracker5
 
 Tracker5:

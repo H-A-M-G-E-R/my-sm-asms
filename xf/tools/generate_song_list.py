@@ -2,6 +2,10 @@ print("SongPointers:")
 for i in range(0, 0xAB, 3):
     print(f'  dl Song{i:02X}')
 print()
+print("SampleTransferDefPointers:")
+for i in range(0, 0xAB, 3):
+    print(f'  dl SampleTransferDef{i:02X}')
+print()
 print("SwappableSamplePointers:")
 for i in range(0x2A):
     print(f'  dl SwappableSample{i:02X}')
