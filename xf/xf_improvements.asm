@@ -392,8 +392,8 @@ org $A09864 : LDA.w #60
 org $A09923 : LDA.w #60
 
 ; TEST (invincibility)
-org $90EAF0 : BRA $00
-org $8A9590 : BRA + : org $8A95B2 : +
+;org $90EAF0 : BRA $00
+;org $8A9590 : BRA + : org $8A95B2 : +
 
 incsrc "samus/samus.asm"
 
