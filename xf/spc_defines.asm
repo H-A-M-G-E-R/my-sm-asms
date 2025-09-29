@@ -3,14 +3,20 @@
 !p_instrumentTable = $1E80
 !p_sampleTable = $2000
 !p_sampleData = $2100
-!p_sampleDataEnd = $7C8C
+!p_sampleDataEnd = $8640
 !p_extra = $E0
 
-!p_sounds2Low = $13E2
-!p_sounds2High = $1461
+!p_chargingBeamSound = $112D
+!p_resumeChargingBeamSound = $1156
+
+!p_sounds2Low = $138F
+!p_sounds2High = $140E
 
 !p_sample04 = $3135
-!p_sample0B = $5322
+!p_sample0B = $5CD6
+
+!sampleChargingBeamCommon = $36
+!sampleChargingBeam1 = $37
 
 !zero = $11
 
@@ -129,3 +135,22 @@ endmacro
 !setNoteLengthTable = "db $FB, $00"
 !echoFirFilter = "db $FB, $01"
 !setDPMiscCommand = "db $FB, $02"
+
+macro make_sound_subnote_with_instr(instr, note, delta, vol, len)
+  if <delta> < 0
+    db $F7,-<delta>*256
+  else
+    db $F7,<delta>*256
+  endif
+  db <instr>
+  <note>+<delta>,<vol>,<len>
+endmacro
+
+macro make_sound_subnote(note, delta, vol, len)
+  if <delta> < 0
+    db $F7,-<delta>*256
+  else
+    db $F7,<delta>*256
+  endif
+  <note>+<delta>,<vol>,<len>
+endmacro
