@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Power down
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E0,$B8,$0B,$60
   db $19,$F4,$E0,$B8,$02,$99

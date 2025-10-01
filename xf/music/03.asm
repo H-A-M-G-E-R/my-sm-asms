@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Elevator
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$F7,$E7,$B8,$0B,$60
   db $19,$FD,$E0,$B8,$02,$E0

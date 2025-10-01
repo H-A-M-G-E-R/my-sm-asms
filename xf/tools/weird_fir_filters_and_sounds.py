@@ -85,6 +85,8 @@ def extract_fir_filters_and_sounds(size, p_aram):
                 if i_current_instr != command:
                     i_current_instr = command
                     print(f"db ${i_current_instr:02X}")
+                if params[2] == 0xF6: # tie
+                    params[2] = 0xF0
                 print(f"db ${",$".join(f"{b:02X}" for b in (params[2], params[0], params[3]))}")
 
     for i_sound in range(1, 0x43):

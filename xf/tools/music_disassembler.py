@@ -132,6 +132,8 @@ def extract_samples(block_size, p_aram, sample_labels, sample_path, p_sounds=[],
                                 if i_current_instr != command:
                                     i_current_instr = command
                                     out += f"  db ${i_current_instr:02X}\n"
+                                if params[2] == 0xF6: # tie
+                                    params[2] = 0xF0
                                 out += f"  db ${",$".join(f"{b:02X}" for b in (params[2], params[0], params[3]))}\n"
                 else:
                     if print_unknown:

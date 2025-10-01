@@ -6,11 +6,11 @@
 !p_sampleDataEnd = $8640
 !p_extra = $E0
 
-!p_chargingBeamSound = $112D
-!p_resumeChargingBeamSound = $1156
+!p_chargingBeamSound = $1130
+!p_resumeChargingBeamSound = $1159
 
-!p_sounds2Low = $138F
-!p_sounds2High = $140E
+!p_sounds2Low = $1392
+!p_sounds2High = $1411
 
 !p_sample04 = $3135
 !p_sample0B = $5CD6

@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Vs. Arachnus
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E2,$B8,$00,$9E
   db $19,$FF,$F3,$B8,$01,$3D

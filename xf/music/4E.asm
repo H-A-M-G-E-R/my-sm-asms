@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Item fanfare
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E0,$B8,$04,$F4
   db $19,$FF,$E0,$B8,$0A,$67

@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Boss tension
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$F7,$E0,$B8,$00,$9E
   db $19,$FF,$F0,$B8,$01,$3C
