@@ -391,6 +391,13 @@ org $A0A096 : BRA + : org $A0A0B8 : + ; for non-extended spritemap
 org $A09864 : LDA.w #60
 org $A09923 : LDA.w #60
 
+; fix an enemy set causing wrong frozen palette
+org $B48282
+  dw $F0C0,$0001
+  dw $D380,$0002
+  dw $D400,$0007
+  dw $FFFF
+
 ; TEST (invincibility)
 ;org $90EAF0 : BRA $00
 ;org $8A9590 : BRA + : org $8A95B2 : +
@@ -406,3 +413,5 @@ incsrc "shoot.asm"
 incsrc "extended_spritemap_draw_fix.asm"
 
 incsrc "spc.asm"
+
+incsrc "EnemyTileLoadingRewrite1_03.asm"

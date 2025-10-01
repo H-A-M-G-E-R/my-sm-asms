@@ -18,7 +18,6 @@ MusicUpload:
     - : CMP $2140 : BNE - ; wait for apu
     ; samples
     REP #$20
-    STZ $00
     STZ $03 ; ctr
     .loop_samples
         LDA.l SampleTransferDefPointers&$FF0000,x : BEQ .done_sampleBlock

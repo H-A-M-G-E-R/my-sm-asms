@@ -751,6 +751,14 @@ SwappableSamplePointers:
   dl SwappableSample27
   dl SwappableSample28
   dl SwappableSample29
+  dl SwappableSampleZeela ; 2A
+  dl SwappableSampleRipper ; 2B
+  dl SwappableSampleChoot ; 2C
+  dl SwappableSampleGenesis ; 2D
+  dl SwappableSampleOwtch ; 2E
+  dl SwappableSamplePuyo ; 2F
+  dl SwappableSampleSova ; 30
+  dl SwappableSamplePowamp ; 31
 
 check bankcross off
 
@@ -1043,6 +1051,14 @@ SwappableSample26: incbin "swappable_samples/26.nspc"
 SwappableSample27: incbin "swappable_samples/27.nspc"
 SwappableSample28: incbin "swappable_samples/28.nspc"
 SwappableSample29: incbin "swappable_samples/29.nspc"
+SwappableSampleZeela: incbin "swappable_samples/zeela.nspc"
+SwappableSampleRipper: incbin "swappable_samples/ripper.nspc"
+SwappableSampleChoot: incbin "swappable_samples/choot.nspc"
+SwappableSampleGenesis: incbin "swappable_samples/genesis.nspc"
+SwappableSampleOwtch: incbin "swappable_samples/owtch.nspc"
+SwappableSamplePuyo: incbin "swappable_samples/puyo.nspc"
+SwappableSampleSova: incbin "swappable_samples/sova.nspc"
+SwappableSamplePowamp: incbin "swappable_samples/powamp.nspc"
 
 padbyte $FF : pad $FFFFFF : db $FF
 check bankcross full

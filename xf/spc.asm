@@ -86,6 +86,15 @@ org $A0EAC0+$E : dw $0070 ; geruboss
 org $A0F600+$E : dw $0070 ; geruboss
 org $A0F5C0+$E : dw $0016 ; waver
 
+org $A0EB80+$E : dw $2A72 ; zeela
+org $A0E840+$E : dw $2B73 ; ripper II
+org $A0EB00+$E : dw $2C72 ; choot
+org $A0F7C0+$E : dw $2D72 ; genesis
+org $A0D8C0+$E : dw $2E7D ; owtch
+org $A0EA80+$E : dw $2F7E ; puyo
+org $A0EB40+$E : dw $3072 ; sova
+org $A0EE00+$E : dw $3173 ; powamp
+
 org $A4F8D8 : dw $0033 ; halzyn lunge
 
 ; lava damage

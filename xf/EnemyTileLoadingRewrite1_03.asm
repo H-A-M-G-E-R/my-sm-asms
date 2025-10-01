@@ -10,11 +10,13 @@
 ; 1.01: skipped debug code that assumed a maximum of 12 enemy types
 lorom
 
-!EnemySetEntry = $12
+!EnemySetEntry = $10 ; was $12 but $809507 is using it
 !EnemyTilesOffset = $14
 !EnemyPalette = $16 ; 3 bytes long
 !EnemyTilesOffsetDataIndex = $19
 !EnemyTilesSize = $1B
+!PrevEnemyTilesPtr = $1D; 3 bytes long
+!PrevEnemyTilesOffset = $20
 !EnemyTilesOffsetData = $7EEF5C
 
 !EnemySetEnemyID = $B40000
@@ -38,50 +40,64 @@ LDA $000B,x : STA !EnemyPalette+1 : LDA $0002,x : STA !EnemyPalette
 LDX !EnemySetEntry : LDA !EnemySetEnemyProperties-1,x : AND #$0700 : LSR #3 : TAX ; X = (enemy palette index) * 20h
 TDC : TAY : - : LDA [!EnemyPalette],y : STA $7EC300,x : INY #2 : INX #2 : CPY #$0020 : BNE - ; Target enemy palette = 20h bytes from [[enemy palette]]
 
-; Tiles
 LDX !EnemySetEntry : LDA !EnemySetEnemyID,x : TAY ; Y = (enemy ID)
-LDA $0000,y : ASL : LSR : STA !EnemyTilesSize
+; check if the tiles are the same as the previous one
+LDA $0036,y : CMP !PrevEnemyTilesPtr : BNE .different
+LDA $0037,y : CMP !PrevEnemyTilesPtr+1 : BNE .different
+; tiles are the same
+LDX !EnemyTilesOffsetDataIndex : LDA !PrevEnemyTilesOffset : LSR #4 : SBC #$06FF : STA !EnemyTilesOffsetData,x
+JMP .nextEntry
+
+.different
+; Swappable sample
+LDA $000F,y : AND #$00FF : BEQ + ; upper byte of enemy cry
+JSL $809507 ; load swappable sample (uses $12)
+
+; Tiles
++ : LDA $0000,y : ASL : LSR : STA !EnemyTilesSize
 LDA !EnemySetEnemyProperties,x : BPL .Automatic
 LSR #4 : ORA #$6000
 PHA : TDC ; so it won't break crocomire
+LDA #$8000 : TSB !EnemyTilesSize
 BRA +
 .Automatic
 LDA !EnemyTilesOffset
-PHA : LSR #4 : SEC : SBC #$0700 ; ([A] >> 4) - 700h and restore it afterwards
+PHA : LSR #4 : SBC #$06FF ; ([A] >> 4) - 700h and restore it afterwards
 + : LDX !EnemyTilesOffsetDataIndex : STA !EnemyTilesOffsetData,x : PLA
 LDX $0795 : BNE .DoorTransition
 ; Loading enemy tiles when starting game
 STA $2116 ; target address
 LDA !EnemyTilesSize : STA $4305 ; size
-LDA $0036,y : STA $4302 : LDA $0037,y : STA $4303 ; source address
+LDA $0036,y : STA $4302 : STA !PrevEnemyTilesPtr : LDA $0037,y : STA $4303 : STA !PrevEnemyTilesPtr+1 ; source address
 TDC : INC : STA $420B ; do DMA (there's no HDMA)
 BRA +
 .DoorTransition
 ; Loading enemy tiles in door transition
 STA $05BE ; target address
 LDA !EnemyTilesSize : STA $05C3 ; size
-LDA $0036,y : STA $05C0 : LDA $0037,y : STA $05C1 ; source address
+LDA $0036,y : STA $05C0 : STA !PrevEnemyTilesPtr : LDA $0037,y : STA $05C1 : STA !PrevEnemyTilesPtr+1 ; source address
 LDA #$8000 : TSB $05BC ; Flag door transition VRAM update
 - : LDA $05BC : BMI - ; Wait for door transition VRAM update
-+ : LDA !EnemyTilesSize : LSR : ADC !EnemyTilesOffset : STA !EnemyTilesOffset
++ : LDA !EnemyTilesOffset : STA !PrevEnemyTilesOffset
+LDA !EnemyTilesSize : LSR : ADC !EnemyTilesOffset : STA !EnemyTilesOffset
+
+.nextEntry
 INC !EnemyTilesOffsetDataIndex : INC !EnemyTilesOffsetDataIndex
 LDX !EnemySetEntry : INX #4 : STX !EnemySetEntry
 JMP .LoopEntries
+
+%padSafe($A08EB5)
 }
 
 ; remove old routine to transfer enemy tiles when starting game
-org $8280C3 : JSL $A08A9E : BRA 13 ; same as NOP 15 times but faster
-org $8280F3 : JSL $A08A9E : BRA 13
-org $828146 : JSL $A08A9E : BRA 13
+org $8A8147 : JSL $A08A9E : BRA 13 ; same as NOP 15 times but faster
+org $8A81AE : JSL $A08A9E : BRA 13
 
 ; remove old routine to load enemy tile data
 org $A08A5C : BRA 2
 
 ; remove old routine to transfer enemy tiles in door transition
-org $82E4AA : BRA 1
-
-; remove debug code that assumes a maximum of 12 enemy types
-org $A08A27 : BRA 2
+org $8A8FAA : BRA 1
 
 !TargetEnemyID = $12
 !EnemyIndex = $14
@@ -113,6 +129,8 @@ LDA !EnemySetEnemyProperties-1,x : TYX : LDY !EnemyIndex : AND #$0700 : ASL : ST
 LDA !EnemyTilesOffsetData,x : STA $0F98,y : RTS
 }
 
+%padSafe($A08D3A)
+
 org $A092DB
 LoadEnemyGFXIndicesWhenSpawningEnemy:
 {
@@ -121,4 +139,39 @@ LDX $0E20 : LDA $0000,x : STA !TargetEnemyID
 JSR LoadEnemyGFXIndices
 LDX !TargetEnemyID : BRA +
 org $A0932A : +
+}
+
+
+;;; Don't reload same tileset in door transition to speed it up
+!PrevTilesetTiles = $0E5A ; 3 bytes long
+
+org $8A8C1E
+SavePrevTilesetTilesAndLoadStateHeader:
+{
+  LDA $07C3 : STA !PrevTilesetTiles : LDA $07C4 : STA !PrevTilesetTiles+1
+  JMP $87B8
+}
+
+CheckShouldLoadTilesetInDoor:
+{
+  LDA $07C3 : CMP !PrevTilesetTiles : BNE .different
+  LDA $07C4 : CMP !PrevTilesetTiles+1 : BNE .different
+  JMP $8F4D
+
+.different
+  LDA $07C4 : JMP $8F21
+}
+%padSafe($8A8C83)
+
+org $8A8E71 : JSR SavePrevTilesetTilesAndLoadStateHeader
+
+org $8A8F0D
+{
+  ; have to load target palettes regardless
+  LDA $07C7 : STA $48 : LDA $07C6 : STA $47
+  JSL $80B0FF : dl $7EC200
+  JMP CheckShouldLoadTilesetInDoor
+
+  STA $48 : LDA $07C3 : STA $47
+  JSL $80B0FF : dl $7E2000
 }

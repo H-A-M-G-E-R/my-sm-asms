@@ -15,6 +15,12 @@
 !p_sample04 = $3135
 !p_sample0B = $5CD6
 
+!sampleSamusFootstep = $30
+!sampleSamusLand = $31
+!sampleHeatDamage = $32
+!sampleLavaDamage = $33
+!sampleMotoCry = $34
+!sampleSidehopperCry = $35
 !sampleChargingBeamCommon = $36
 !sampleChargingBeam1 = $37
 
