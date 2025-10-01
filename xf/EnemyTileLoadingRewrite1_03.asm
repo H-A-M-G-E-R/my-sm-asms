@@ -57,8 +57,7 @@ JSL $809507 ; load swappable sample (uses $12)
 + : LDA $0000,y : ASL : LSR : STA !EnemyTilesSize
 LDA !EnemySetEnemyProperties,x : BPL .Automatic
 LSR #4 : ORA #$6000
-PHA : TDC ; so it won't break crocomire
-LDA #$8000 : TSB !EnemyTilesSize
+PHA : TDC ; so it won't break omega metroid
 BRA +
 .Automatic
 LDA !EnemyTilesOffset
