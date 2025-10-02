@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Sector 1 (SRX)
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FD,$48,$B8,$02,$7A
   db $19,$FF,$E3,$B8,$0B,$FD

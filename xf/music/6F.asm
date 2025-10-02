@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; SA-X ambience
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FC,$E0,$B8,$09,$EC
   db $19,$FE,$F2,$B8,$04,$F4

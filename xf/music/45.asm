@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Vs. Crocomire
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$B1,$B8,$02,$C1
   db $19,$FF,$B2,$B8,$02,$C1

@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Vs. Zazabi, varia core-X
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E7,$B8,$01,$3D
   db $19,$FF,$E6,$B8,$01,$3D

@@ -95,6 +95,8 @@ org $A0EA80+$E : dw $2F7E ; puyo
 org $A0EB40+$E : dw $3072 ; sova
 org $A0EE00+$E : dw $3173 ; powamp
 
+org $A0E340+$E : dw $0074 ; Zazabi
+
 org $A4F8D8 : dw $0033 ; halzyn lunge
 
 ; lava damage

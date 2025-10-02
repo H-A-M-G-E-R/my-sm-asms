@@ -128,6 +128,14 @@ LDA !EnemySetEnemyProperties-1,x : TYX : LDY !EnemyIndex : AND #$0700 : ASL : ST
 LDA !EnemyTilesOffsetData,x : STA $0F98,y : RTS
 }
 
+LoadEnemyGFXIndicesWhenSpawningFromX:
+{
+  LDA $0F78,y : STA !TargetEnemyID
+  STY !EnemyIndex
+  JSR LoadEnemyGFXIndices
+  TYX : JML $90FA38
+}
+
 %padSafe($A08D3A)
 
 org $A092DB
@@ -140,6 +148,7 @@ LDX !TargetEnemyID : BRA +
 org $A0932A : +
 }
 
+org $90F9D7 : JML LoadEnemyGFXIndicesWhenSpawningFromX
 
 ;;; Don't reload same tileset in door transition to speed it up
 !PrevTilesetTiles = $0E5A ; 3 bytes long
