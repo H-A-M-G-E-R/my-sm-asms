@@ -377,6 +377,9 @@ Sub5A00:
   !cs3
   !end
 
+if defined("print_freespace")
+  print "Song 8A: Space left: $",hex($10000-(2*$800)-pc())
+endif
 assert pc() <= $10000-(2*$800)
 endspcblock
 

@@ -402,6 +402,9 @@ Sub5A33:
   !tie
   !end
 
+if defined("print_freespace")
+  print "Song 6F: Space left: $",hex($10000-(0*$800)-pc())
+endif
 assert pc() <= $10000-(0*$800)
 endspcblock
 

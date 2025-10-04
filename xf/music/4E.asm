@@ -309,6 +309,9 @@ Track5975:
   !loop : dw Sub588C : db 255
   !end
 
+if defined("print_freespace")
+  print "Song 4E: Space left: $",hex($10000-(0*$800)-pc())
+endif
 assert pc() <= $10000-(0*$800)
 endspcblock
 

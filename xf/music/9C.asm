@@ -262,6 +262,9 @@ Track59BB:
   !echoParameters,5,16,0
   !end
 
+if defined("print_freespace")
+  print "Song 9C: Space left: $",hex($10000-(5*$800)-pc())
+endif
 assert pc() <= $10000-(5*$800)
 endspcblock
 

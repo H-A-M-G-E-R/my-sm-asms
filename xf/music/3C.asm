@@ -391,6 +391,9 @@ Track5A27:
   !tie
   !end
 
+if defined("print_freespace")
+  print "Song 3C: Space left: $",hex($10000-(4*$800)-pc())
+endif
 assert pc() <= $10000-(4*$800)
 endspcblock
 
