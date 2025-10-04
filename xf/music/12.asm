@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Sector 3 (PYR)
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$F4,$E4,$B8,$09,$EC
   db $19,$FE,$E3,$B8,$04,$F4

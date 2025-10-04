@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Varia Core-X fight
+
 spcblock !p_sounds2Low+$72-1 nspc
   db !zero, !zero, !zero, !zero, !zero, Sound77, Sound78, !zero, Sound7A, !zero, !zero
 endspcblock

@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Main Deck
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$F7,$B8,$02,$98
   db $19,$FF,$F1,$B8,$02,$98

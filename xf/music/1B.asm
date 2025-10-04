@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Sector 4 depths
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$CC,$90,$B8,$02,$00
   db $19,$FC,$8D,$B8,$02,$00

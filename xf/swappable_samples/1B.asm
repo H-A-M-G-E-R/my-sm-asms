@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Nightmare shadow
+
 spcblock !p_sounds2Low+$72-1 nspc
   db !zero, !zero, !zero, !zero, !zero, !zero, !zero, !zero, Sound7A, !zero, !zero
 endspcblock

@@ -2,7 +2,7 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
-; Data station
+; Save pad / data station
 
 spcblock !p_sounds2Low+$72-1 nspc
   db Sound72, !zero, !zero, !zero, !zero, Sound77, !zero, !zero, !zero, !zero, !zero

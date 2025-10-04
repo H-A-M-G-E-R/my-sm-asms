@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Sector 3 Restore the Cooling Unit Timer Mission
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$BB,$C3,$B8,$02,$FF
   db $19,$DC,$E4,$B8,$00,$9E

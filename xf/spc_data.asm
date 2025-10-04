@@ -442,6 +442,7 @@ SampleTransferDef60:
   dl Sample_fe57609e4a845c8073dd4012e9b2f49e
   dl Sample_73a339645833dc5c4a7c268916578efa
   dl Sample_d76a1e2bcbc403bc9360d154294dce53
+  dl SampleNightmareBeam
   dw 0
 
 SampleTransferDef63:
@@ -759,6 +760,7 @@ SwappableSamplePointers:
   dl SwappableSamplePuyo ; 2F
   dl SwappableSampleSova ; 30
   dl SwappableSamplePowamp ; 31
+  dl SwappableSampleZebetite ; 32
 
 check bankcross off
 
@@ -1010,6 +1012,8 @@ Sample_ac5a192f01928e331bdd5d5ad51b0b23: dw filesize("music/Sample_ac5a192f01928
 Sample_21ce681da14ac9d581f19b02776116a9: dw filesize("music/Sample_21ce681da14ac9d581f19b02776116a9.brr") : incbin "music/Sample_21ce681da14ac9d581f19b02776116a9.brr"
 Sample_a80ea0fc490094056ac89913c1d71887: dw filesize("music/Sample_a80ea0fc490094056ac89913c1d71887.brr") : incbin "music/Sample_a80ea0fc490094056ac89913c1d71887.brr"
 
+SampleNightmareBeam: dw filesize("music/nightmare_beam_10512_noloop.brr") : incbin "music/nightmare_beam_10512_noloop.brr"
+
 SwappableSample00: incbin "swappable_samples/00.nspc"
 SwappableSample01: incbin "swappable_samples/01.nspc"
 SwappableSample02: incbin "swappable_samples/02.nspc"
@@ -1059,6 +1063,7 @@ SwappableSampleOwtch: incbin "swappable_samples/owtch.nspc"
 SwappableSamplePuyo: incbin "swappable_samples/puyo.nspc"
 SwappableSampleSova: incbin "swappable_samples/sova.nspc"
 SwappableSamplePowamp: incbin "swappable_samples/powamp.nspc"
+SwappableSampleZebetite: incbin "swappable_samples/zebetite.nspc"
 
 padbyte $FF : pad $FFFFFF : db $FF
 check bankcross full

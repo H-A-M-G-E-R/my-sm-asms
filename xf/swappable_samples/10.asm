@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Neo-Ridley
+
 spcblock !p_sounds2Low+$72-1 nspc
   db !zero, !zero, Sound74, Sound75, Sound76, !zero, !zero, !zero, Sound7A, Sound7B, !zero
 endspcblock

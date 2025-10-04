@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Vs. Nightmare
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$8F,$10,$00,$02,$7A
   db $19,$FF,$E0,$B8,$02,$7A
@@ -15,6 +17,7 @@ spcblock 6*$18+!p_instrumentTable nspc
   db $21,$FF,$E0,$B8,$05,$83
   db $22,$FF,$E0,$B8,$04,$F4
   db $23,$FF,$E0,$B8,$02,$00
+  db $24,$FF,$E0,$00,$02,$84
 endspcblock
 
 spcblock 4*$18+!p_sampleTable nspc
@@ -30,6 +33,7 @@ spcblock 4*$18+!p_sampleTable nspc
   dw Sample21,Sample21
   dw Sample22,Sample22+9
   dw Sample23,Sample23
+  dw SampleNightmareBeam,0
 endspcblock
 
 pushpc
@@ -44,6 +48,7 @@ org $A180-$9F80+!p_sampleDataEnd+$400
   Sample21: skip filesize("Sample_fe57609e4a845c8073dd4012e9b2f49e.brr")
   Sample22: skip filesize("Sample_73a339645833dc5c4a7c268916578efa.brr")
   Sample23: skip filesize("Sample_d76a1e2bcbc403bc9360d154294dce53.brr")
+  SampleNightmareBeam: skip filesize("nightmare_beam_10512_noloop.brr")
   Trackers:
 pullpc
 

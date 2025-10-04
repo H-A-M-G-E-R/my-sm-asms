@@ -48,6 +48,15 @@ RTS
 LDY #$8000 ; Y = $8000
 RTS
 
+
+ClearSound2IfNotElevator:
+{
+  LDA $0E18 : DEC : BEQ +
+  LDA #$0071 : JSL $8090A3 ; library 2, max queued sounds = 15 (silence)
++
+  RTL
+}
+
 assert pc() <= $808111
 
 incsrc "spc_data.asm"
@@ -94,10 +103,26 @@ org $A0D8C0+$E : dw $2E7D ; owtch
 org $A0EA80+$E : dw $2F7E ; puyo
 org $A0EB40+$E : dw $3072 ; sova
 org $A0EE00+$E : dw $3173 ; powamp
+org $A0F500+$E : dw $3200 ; zebetite
 
 org $A0E340+$E : dw $0074 ; Zazabi
 
 org $A4F8D8 : dw $0033 ; halzyn lunge
+
+org $86D1A7 : LDA #$00C0 ; nightmare beam
+org $86D1AF : LDA #$00C0
+
+org $AACEA0 ; zebetite
+LDA #$00C0 : JSL $80914D ; library 3, max queued sounds = 6
+
+; elevator (moved to sound library 2)
+org $A7FE55
+LDA #$007D : JSL $8090A3 ; library 2, max queued sounds = 15
+
+org $A7FF11
+LDA #$0071 : JSL $8090A3 ; library 2, max queued sounds = 15 (silence)
+
+org $8A867F : JSL ClearSound2IfNotElevator
 
 ; lava damage
 org $9081E3 : BIT #$000F

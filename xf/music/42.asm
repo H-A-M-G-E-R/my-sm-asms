@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Vs. Nettori, Spike Spawn
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$F2,$B8,$05,$00
   db $19,$AF,$20,$B8,$02,$7A

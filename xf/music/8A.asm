@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Lower Sector 3 acid rise
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E0,$B8,$09,$EC
   db $19,$FF,$E8,$B8,$03,$EE

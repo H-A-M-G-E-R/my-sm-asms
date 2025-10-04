@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Nettori
+
 spcblock !p_sounds2Low+$72-1 nspc
   db Sound72, Sound73, Sound74, !zero, !zero, !zero, !zero, !zero, !zero, !zero, !zero
 endspcblock

@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Nightmare
+
 spcblock !p_sounds2Low+$72-1 nspc
   db Sound72, Sound73, Sound74, !zero, !zero, !zero, !zero, !zero, Sound7A, !zero, !zero
 endspcblock
@@ -103,6 +105,20 @@ Sound7A:
   db $FB
   db $FF
 
+SongSpecificSounds:
+  dw SoundNightmareBeam ; C0
+
+SoundNightmareBeam:
+  db $01 : dw .voice0
+.voice0
+  db $24
+  !c5,200,19
+  db $FF
+
+endspcblock
+
+spcblock !p_extra+3 nspc
+  dw SongSpecificSounds
 endspcblock
 
 dw $0000
