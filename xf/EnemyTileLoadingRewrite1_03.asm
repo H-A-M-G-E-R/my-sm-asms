@@ -132,7 +132,7 @@ org $8A8FAA : BRA 1
 org $A08BF3
 LoadEnemyGFXIndicesInPopulation:
 {
-PHX : LDA !EnemyPopulationEnemyID,x : STA !TargetEnemyID
+PHX : JSL $90FCC3 : STA !TargetEnemyID ; changed from LDA !EnemyPopulationEnemyID,x
 STY !EnemyIndex
 JSR LoadEnemyGFXIndices
 TYX : STA $7E7006,x : LDA $0F96,x : STA $7E7008,x ; GFX indices for respawn
