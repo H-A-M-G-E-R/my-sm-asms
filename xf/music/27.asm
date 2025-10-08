@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Sector X (DMX)
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$D8,$70,$B8,$00,$9E
   db $19,$FF,$E0,$B8,$00,$B0

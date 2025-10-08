@@ -48,7 +48,7 @@ ArmCannonBB:
 ArmCannonD0:
 ArmCannonE3:
 ArmCannonFA:
-db $08,$01,$EC,$EF,$EC,$EF,$EC,$EF
+db $08,$01,$EC,$EF,$EC,$EF,$EC,$EF,$EC,$EF,$ED,$EF,$EC,$EF
 
 ArmCannon28:
 ArmCannonB5:
@@ -100,7 +100,7 @@ ArmCannonBD:
 ArmCannonD2:
 ArmCannonE5:
 ArmCannonFC:
-db $06,$01,$EE,$FB,$EE,$FB,$EE,$FB
+db $06,$01,$EE,$FB,$EE,$FB,$EE,$FB,$EE,$FB,$EF,$FA,$EE,$FB
 
 ArmCannon77:
 db $06,$01,$EC,$FB,$ED,$FB,$EE,$FB,$ED,$FB,$EC,$FB,$EC,$FB
@@ -116,7 +116,7 @@ ArmCannonD1:
 ArmCannonE4:
 ArmCannonEF:
 ArmCannonFB:
-db $03,$01,$03,$FB,$03,$FB,$03,$FB
+db $03,$01,$03,$FB,$03,$FB,$03,$FB,$03,$FB,$02,$FB,$03,$FB
 
 ArmCannon78:
 db $03,$01,$03,$FB,$02,$FB,$01,$FB,$02,$FB,$03,$FB,$03,$FB
@@ -170,7 +170,7 @@ ArmCannonCF:
 ArmCannonE2:
 ArmCannonED:
 ArmCannonF9:
-db $01,$01,$03,$EF,$03,$EF,$03,$EF
+db $01,$01,$03,$EF,$03,$EF,$03,$EF,$03,$EF,$02,$EF,$03,$EF
 
 ArmCannon76:
 db $01,$01,$03,$EF,$02,$EF,$01,$EF,$02,$EF,$03,$EF,$03,$EF

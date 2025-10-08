@@ -85,7 +85,32 @@ INC !EnemyTilesOffsetDataIndex : INC !EnemyTilesOffsetDataIndex
 LDX !EnemySetEntry : INX #4 : STX !EnemySetEntry
 JMP .LoopEntries
 
-%padSafe($A08EB5)
+SetEnemyToBeHurt: ; expects $2A to contain damage taken
+{
+  LDX $0E54
+  LDA $2A ; damage
+  CMP.w #40
+  BCS +
+  LDA.w #4+1 : BRA ++
++
+  CMP.w #100
+  BCS +
+  LDA.w #8+1 : BRA ++
++
+  LDA.w #16+1
+++
+.pb
+  CMP $0F9C,x : BMI +
+    STA $0F9C,x ; flash timer
+  +
+  LDA $0F78,x : TAX
+  LDA $A0001C,x : CMP #$804C : BEQ + ; removes hit stun
+    LDX $0E54 : LDA $0F8A,x : ORA #$0002 : STA $0F8A,x ; set hurt ai
+  +
+  LDX $0E54 : RTS
+}
+
+%padSafe($A08EB6)
 }
 
 ; remove old routine to transfer enemy tiles when starting game
@@ -136,6 +161,14 @@ LoadEnemyGFXIndicesWhenSpawningFromX:
   TYX : JML $90FA38
 }
 
+CheckGadoraDying:
+{
+  LDA $0F9C,x : BNE +
+  LDA #$0014 : STA $0FAC,x : TDC
++
+  RTL
+}
+
 %padSafe($A08D3A)
 
 org $A092DB
@@ -149,6 +182,31 @@ org $A0932A : +
 }
 
 org $90F9D7 : JML LoadEnemyGFXIndicesWhenSpawningFromX
+
+
+org $A0A7A9 ; normal enemy shot
+JSR SetEnemyToBeHurt
+BRA + : org $A0A7CF : +
+
+org $A0A5FC ; normal enemy power bombed
+LDX $0E54
+LDA #$0018 : STA $0FA0,x
+JSR SetEnemyToBeHurt_pb
+BRA + : org $A0A62B : +
+
+org $A09497 ; enemy drawing
+LDA $0F9C,x : DEC : BIT #$0004 : BNE +
+TDC : BRA ++
+
+org $A094A9 : +
+org $A094C0 : ++
+
+; gadora death is at $A2A48C
+org $A2A48C
+JSL CheckGadoraDying : BNE + : org $A2A4BA : +
+
+org $A2AACF
+LDA.w #40+1 : STA $0F9C,x : BRA $00
 
 ;;; Don't reload same tileset in door transition to speed it up
 !PrevTilesetTiles = $0E5A ; 3 bytes long

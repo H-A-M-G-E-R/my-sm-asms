@@ -1205,10 +1205,10 @@ DoShootAnim:
   db $02, $04 ; 2: Facing left - normal
   ;db $03, $04 ; 3: Facing right - aiming up
   ;db $04, $04 ; 4: Facing left  - aiming up
-  ;db $05, $04 ; 5: Facing right - aiming up-right
-  ;db $06, $04 ; 6: Facing left  - aiming up-left
-  ;db $07, $04 ; 7: Facing right - aiming down-right
-  ;db $08, $04 ; 8: Facing left  - aiming down-left
+  db $05, $04 ; 5: Facing right - aiming up-right
+  db $06, $04 ; 6: Facing left  - aiming up-left
+  db $07, $04 ; 7: Facing right - aiming down-right
+  db $08, $04 ; 8: Facing left  - aiming down-left
   dw $0000
 }
 

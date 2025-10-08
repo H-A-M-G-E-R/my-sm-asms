@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Warning: Unauthorized entry
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E0,$B8,$04,$C0
   db $19,$FF,$E0,$B8,$02,$7A

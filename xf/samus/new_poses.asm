@@ -179,8 +179,15 @@ dl SamusGfx_Top_Right_UsingAnElevator_Frame0 : dw 5*$20, 3*$20 ; A
 
 dl SamusGfx_Top_Right_Shooting_Frame0 : dw 5*$20, 4*$20 ; B
 dl SamusGfx_Top_Left_Shooting_Frame0 : dw 5*$20, 5*$20 ; C
+dl SamusGfx_Top_Right_DiagonalUp_Shooting_Frame0 : dw 4*$20, 5*$20 ; D
+dl SamusGfx_Top_Left_DiagonalUp_Shooting_Frame0 : dw 5*$20, 5*$20 ; E
+dl SamusGfx_Top_Right_DiagonalDown_Shooting_Frame0 : dw 5*$20, 4*$20 ; F
+dl SamusGfx_Top_Left_DiagonalDown_Shooting_Frame0 : dw 6*$20, 4*$20 ; 10
+dl SamusGfx_Bottom_DiagonalDown_Standing_Frame0 : dw 5*$20, 3*$20 ; 11
+dl SamusGfx_Bottom_DiagonalDown_Standing_Frame1 : dw 5*$20, 3*$20 ; 12
+dl SamusGfx_Bottom_DiagonalDown_Standing_Frame2 : dw 5*$20, 3*$20 ; 13
 
-db $FF ; filler byte so oam table addresses are odd
+skip align 2 offset 1 ; align so oam table addresses are odd
 
 StandingRightOamTableTop:
 dw $9830, $9830, $9830, $9830, SamusOam_Top_Right_Shooting_Frame0, $9830
@@ -190,6 +197,24 @@ StandingLeftOamTableTop:
 dw $9857, $9857, $9857, $9857, SamusOam_Top_Left_Shooting_Frame0, $9857
 StandingLeftOamTableBottom:
 dw $986D, $986D, $986D, $986D, $986D, $986D
+
+StandingRightDiagonalUpOamTableTop:
+dw $98B8, $98B8, $98B8, $98B8, SamusOam_Top_Right_DiagonalUp_Shooting_Frame0, $98B8
+StandingRightDiagonalUpOamTableBottom:
+dw $988A, $988A, $988A, $988A, $988A, $988A
+StandingLeftDiagonalUpOamTableTop:
+dw $98C4, $98C4, $98C4, $98C4, SamusOam_Top_Left_DiagonalUp_Shooting_Frame0, $98C4
+StandingLeftDiagonalUpOamTableBottom:
+dw $98A7, $98A7, $98A7, $98A7, $98A7, $98A7
+
+StandingRightDiagonalDownOamTableTop:
+dw $98D0, $98D0, $98D0, $98D0, SamusOam_Top_Right_DiagonalDown_Shooting_Frame0, $98D0
+StandingRightDiagonalDownOamTableBottom:
+dw SamusOam_Bottom_Right_DiagonalDown_Standing_Frame0, SamusOam_Bottom_Right_DiagonalDown_Standing_Frame1, SamusOam_Bottom_Right_DiagonalDown_Standing_Frame0, SamusOam_Bottom_Right_DiagonalDown_Standing_Frame0, $9846, SamusOam_Bottom_Right_DiagonalDown_Standing_Frame0
+StandingLeftDiagonalDownOamTableTop:
+dw $98DC, $98DC, $98DC, $98DC, SamusOam_Top_Left_DiagonalDown_Shooting_Frame0, $98DC
+StandingLeftDiagonalDownOamTableBottom:
+dw SamusOam_Bottom_Left_DiagonalDown_Standing_Frame0, SamusOam_Bottom_Left_DiagonalDown_Standing_Frame1, SamusOam_Bottom_Left_DiagonalDown_Standing_Frame0, SamusOam_Bottom_Left_DiagonalDown_Standing_Frame0, $986D, SamusOam_Bottom_Left_DiagonalDown_Standing_Frame0
 
 SamusOam_Top_Right_Shooting_Frame0:
 dw 3
@@ -204,6 +229,64 @@ dw 4
 %spritemapEntry(0, $1FC+1, $D7+$16, 0, 0, 2, 4, $12)
 %spritemapEntry(1, $1EE+1, $E3+$16, 0, 0, 2, 4, $03)
 
+SamusOam_Top_Right_DiagonalUp_Shooting_Frame0:
+dw 3
+%spritemapEntry(1, $002, $D9+$16, 0, 0, 2, 4, $02)
+%spritemapEntry(1, $1FA, $DA+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(0, $00A, $E2+$16, 0, 0, 2, 4, $14)
+
+SamusOam_Top_Left_DiagonalUp_Shooting_Frame0:
+dw 4
+%spritemapEntry(1, $1F6+1, $DA+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(0, $1EE+1, $DA+$16, 0, 0, 2, 4, $02)
+%spritemapEntry(0, $1EE+1, $E2+$16, 0, 0, 2, 4, $12)
+%spritemapEntry(1, $1ED+1, $D9+$16, 0, 0, 2, 4, $03)
+
+SamusOam_Top_Right_DiagonalDown_Shooting_Frame0:
+dw 3
+%spritemapEntry(1, $002, $E5+$16, 0, 0, 2, 4, $02)
+%spritemapEntry(1, $1F9, $DC+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(0, $001, $EC+$16, 0, 0, 2, 4, $04)
+
+SamusOam_Top_Left_DiagonalDown_Shooting_Frame0:
+dw 4
+%spritemapEntry(1, $1F7+1, $DB+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(0, $1EF+1, $EB+$16, 0, 0, 2, 4, $04)
+%spritemapEntry(0, $1F7+1, $EB+$16, 0, 0, 2, 4, $05)
+%spritemapEntry(1, $1EE+1, $E4+$16, 0, 0, 2, 4, $02)
+
+SamusOam_Bottom_Right_DiagonalDown_Standing_Frame0:
+dw 5
+%spritemapEntry(1, $1F6, $E8+$16, 0, 1, 2, 4, $08)
+%spritemapEntry(0, $1FE, $F8+$16, 0, 1, 2, 4, $0B)
+%spritemapEntry(0, $1F6, $F8+$16, 0, 1, 2, 4, $0C)
+%spritemapEntry(0, $006, $F0+$16, 0, 1, 2, 4, $0A)
+%spritemapEntry(0, $006, $F8+$16, 0, 1, 2, 4, $1A)
+
+SamusOam_Bottom_Right_DiagonalDown_Standing_Frame1:
+dw 5
+%spritemapEntry(1, $1F6, $F0+$16, 0, 1, 2, 4, $08)
+%spritemapEntry(0, $006, $F0+$16, 0, 1, 2, 4, $0A)
+%spritemapEntry(0, $006, $F8+$16, 0, 1, 2, 4, $1A)
+%spritemapEntry(0, $1FE, $E8+$16, 0, 1, 2, 4, $0B)
+%spritemapEntry(0, $1F6, $E8+$16, 0, 1, 2, 4, $0C)
+
+SamusOam_Bottom_Left_DiagonalDown_Standing_Frame0:
+dw 5
+%spritemapEntry(1, $1FA+1, $E8+$16, 0, 0, 2, 4, $08)
+%spritemapEntry(0, $1FA+1, $F8+$16, 0, 0, 2, 4, $0B)
+%spritemapEntry(0, $002+1, $F8+$16, 0, 0, 2, 4, $0C)
+%spritemapEntry(0, $1F2+1, $F0+$16, 0, 0, 2, 4, $0A)
+%spritemapEntry(0, $1F2+1, $F8+$16, 0, 0, 2, 4, $1A)
+
+SamusOam_Bottom_Left_DiagonalDown_Standing_Frame1:
+dw 5
+%spritemapEntry(1, $1FA+1, $F0+$16, 0, 0, 2, 4, $08)
+%spritemapEntry(0, $1F2+1, $F0+$16, 0, 0, 2, 4, $0A)
+%spritemapEntry(0, $1F2+1, $F8+$16, 0, 0, 2, 4, $1A)
+%spritemapEntry(0, $1FA+1, $E8+$16, 0, 0, 2, 4, $0B)
+%spritemapEntry(0, $002+1, $E8+$16, 0, 0, 2, 4, $0C)
+
 SamusAnimationDefinition_StandingRight:
 db $01,$00,$01,$00, $01,$01,$01,$01, $01,$02,$01,$02, $00,$00,$00,$00
 db $17,$0B,$01,$02, $01,$00,$01,$00
@@ -211,6 +294,24 @@ db $17,$0B,$01,$02, $01,$00,$01,$00
 SamusAnimationDefinition_StandingLeft:
 db $01,$00,$01,$00, $01,$01,$01,$01, $01,$02,$01,$02, $00,$00,$00,$00
 db $17,$0C,$01,$02, $01,$00,$01,$00
+
+SamusAnimationDefinition_StandingRightDiagonalUp:
+db $01,$04,$01,$05, $01,$06,$01,$03, $01,$05,$01,$04, $00,$00,$00,$00
+db $17,$0D,$01,$04, $01,$04,$01,$05
+
+SamusAnimationDefinition_StandingLeftDiagonalUp:
+db $01,$06,$01,$05, $01,$04,$01,$03, $01,$05,$01,$04, $00,$00,$00,$00
+db $17,$0E,$01,$04, $01,$06,$01,$05
+
+SamusAnimationDefinition_StandingRightDiagonalDown:
+db $01,$09,$0A,$11, $01,$0A,$0A,$12, $01,$08,$0A,$13, $00,$00,$00,$00
+db $17,$0F,$01,$02, $01,$09,$0A,$11
+
+SamusAnimationDefinition_StandingLeftDiagonalDown:
+db $01,$08,$0A,$11, $01,$09,$0A,$12, $01,$0A,$0A,$13, $00,$00,$00,$00
+db $17,$10,$01,$02, $01,$08,$0A,$11
+
+assert pc() <= $92D7D0
 
 org 2*$5B+$92D94E
 dw SamusAnimationDefinition_SkiddingRight, SamusAnimationDefinition_SkiddingLeft
@@ -225,8 +326,24 @@ org 2*1+$92945D
 dw (StandingRightOamTableBottom-$808D)/2 ; was $2C5
 dw (StandingLeftOamTableBottom-$808D)/2 ; was $2CF
 
+org 2*5+$929263
+dw (StandingRightDiagonalUpOamTableTop-$808D)/2 ; was $2E0
+dw (StandingLeftDiagonalUpOamTableTop-$808D)/2 ; was $2E6
+dw (StandingRightDiagonalDownOamTableTop-$808D)/2 ; was $2EC
+dw (StandingLeftDiagonalDownOamTableTop-$808D)/2 ; was $2F2
+
+org 2*5+$92945D
+dw (StandingRightDiagonalUpOamTableBottom-$808D)/2 ; was $2E3
+dw (StandingLeftDiagonalUpOamTableBottom-$808D)/2 ; was $2E9
+dw (StandingRightDiagonalDownOamTableBottom-$808D)/2 ; was $2EF
+dw (StandingLeftDiagonalDownOamTableBottom-$808D)/2 ; was $2F5
+
 org 2*1+$92D94E
 dw SamusAnimationDefinition_StandingRight, SamusAnimationDefinition_StandingLeft
+
+org 2*5+$92D94E
+dw SamusAnimationDefinition_StandingRightDiagonalUp, SamusAnimationDefinition_StandingLeftDiagonalUp
+dw SamusAnimationDefinition_StandingRightDiagonalDown, SamusAnimationDefinition_StandingLeftDiagonalDown
 
 org $8BF760 ; not much freespace for new samus tiles
 SamusGfx_Top_Left_Skidding_Frame0:

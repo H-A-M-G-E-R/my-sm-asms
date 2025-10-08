@@ -1,6 +1,8 @@
 ; Patches for Meta's X-Fusion hack (https://metroidconstruction.com/hack.php?id=837) that makes it feel a bit more like Fusion.
 ; Patch it (or xf_improvements.ips) on xf_v1.2_gba-eng-fre-jap-ger.
 ; The improved SPC engine with my new sounds is from (https://github.com/H-A-M-G-E-R/SM-SPC/tree/xf).
+
+; Known issue: Sector X enemies' graphics are wrong
 asar 1.91
 
 lorom
@@ -363,25 +365,28 @@ ContactDamage:
     STA $28 ; $28 = contact vulnerability
     JSL $A0B6FF ; $2A = contact damage * contact vulnerability
     LSR $2A : BEQ NoDamage ; half calculated damage
-    LDY $0E54 ; Y = [enemy index]
-    LDX $0F78,y : LDA $A0000D,x : AND #$00FF : BNE +
-        LDA #$0004 ; default is 4
-    +
-    STA $0F9C,y ; set flash timer
-    LDA $0F8A,y : ORA #$0002 : STA $0F8A,y ; set hurt ai
-    LDA $0F8C,y : SEC : SBC $2A : BCS + ; deal damage to enemy
+    JSR SetEnemyToBeHurt ; see EnemyTileLoadingRewrite1_03.asm, also sets X to [enemy index]
+    LDA $0F8C,x : SEC : SBC $2A : BCS + ; deal damage to enemy
         TDC
     +
-    STA $0F8C,y
-    LDA $0F9E,y : BNE + ; queue enemy cry if not frozen
-    LDX $0F78,y : LDA $A0000E,x : BEQ +
-        JSL $8090B7
-    +
+    STA $0F8C,x
+    JSL QueueEnemyCry
     NoDamage:
     RTS
 
+QueueEnemyCry:
+    LDX $0E54
+    LDA $0F9E,x : BNE + ; queue enemy cry if not frozen
+    LDA $0F78,x : TAX : LDA $A0000E,x : BEQ +
+        JSL $8090B7
+    +
+    LDX $0E54
+    RTL
+
 ContactDamageTable:
     dw 500,300,2000,200 ; speed boosting, shinesparking, screw attacking, pseudo screwing respectively
+
+%padSafe($A0A597)
 
 ; prevents iframes from dropping to 0 when there are enemies present and samus is speedboosting/shinesparking/(pseudo) screwing
 org $A09A90 : BRA + : org $A09A9A : + ; for extended spritemap
@@ -390,6 +395,16 @@ org $A0A096 : BRA + : org $A0A0B8 : + ; for non-extended spritemap
 ; lower iframes from 96 to 60
 org $A09864 : LDA.w #60
 org $A09923 : LDA.w #60
+
+org $A09FC4 ; enemy grapple death
+{
+  JSL QueueEnemyCry
+  TXY : LDA $0F78,x : TAX : LDA $A00022,x : TYX
+  JSL $A0A3AF
+  LDX $0E54
+  RTL
+}
+%padSafe($A09FDF)
 
 ; fix an enemy set causing wrong frozen palette
 org $B48282
