@@ -14,7 +14,7 @@ endspcblock
 
 spcblock 6*$16+!p_instrumentTable nspc
   db $16,$FF,$E0,$00,$01,$EA
-  db $17,$FF,$E0,$00,$02,$81
+  db $17,$FF,$E0,$00,$02,$84
 endspcblock
 
 spcblock 4*$16+!p_sampleTable nspc
@@ -67,12 +67,13 @@ SoundZazabiHurt:
   %make_sound_subnote("!c5", -7/64*12, 200, 2)
   %make_sound_subnote("!c5", 35/64*12, 200, 2)
   %make_sound_subnote("!c5", 51/64*12, 200, 2)
-  db $F9,$FF,$F7
-  %make_sound_subnote("!c5", 59/64*12, 200, 13)
+  %make_sound_subnote("!c5", 59/64*12, 200, 3)
+  db $F9,$FF,$FA
+  %make_sound_subnote("!c5", 59/64*12, 200, 10)
   dw $FF
 
   SampleZazabiOpenMouth: incbin "zazabi_open_mouth_8000_noloop.brr"
-  SampleZazabiHurt: incbin "zazabi_hurt_10463.823504_16.brr"
+  SampleZazabiHurt: incbin "zazabi_hurt_10512_16_fixed.brr"
 endspcblock
 
 dw $0000

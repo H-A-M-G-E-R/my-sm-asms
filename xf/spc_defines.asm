@@ -1,16 +1,19 @@
 ; Change these below if you repoint the SPC engine.
-!p_spcEngine = $307
+!p_spcEngine = $2FF
 !p_instrumentTable = $1E80
 !p_sampleTable = $2000
 !p_sampleData = $2100
 !p_sampleDataEnd = $8640
 !p_extra = $E0
 
-!p_chargingBeamSound = $1130
-!p_resumeChargingBeamSound = $1159
+!p_chargingBeamSound = $10A4
+!p_resumeChargingBeamSound = $10CD
 
-!p_sounds2Low = $1392
-!p_sounds2High = $1411
+!p_sounds2Low = $12FA
+!p_sounds2High = $1379
+
+!p_sounds3Low = $1A58
+!p_sounds3High = $1A87
 
 !p_sample04 = $3135
 !p_sample0B = $5CD6
@@ -25,9 +28,6 @@
 !sampleChargingBeam1 = $37
 
 !zero = $11
-
-!noteEndInTicks = $E5
-!disablePsychoacousticAdjustment = $E6
 
 !c2 = "db $80"
 !cs2 = "db $81"
@@ -106,10 +106,6 @@
 !tie = "db $C8"
 !rest = "db $C9"
 
-macro percNote(instr)
-  db <instr>+$CA
-endmacro
-
 !instr = "db $E0"
 !pan = "db $E1"
 !dynamicPan = "db $E2"
@@ -136,7 +132,6 @@ endmacro
 !echoParameters = "db $F7"
 !dynamicEcho = "db $F8"
 !pitchSlide = "db $F9"
-!percBase = "db $FA"
 
 !setNoteLengthTable = "db $FB, $00"
 !echoFirFilter = "db $FB, $01"

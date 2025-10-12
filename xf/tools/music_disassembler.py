@@ -362,7 +362,7 @@ def extract_trackers(block_size, p_aram):
     out += f"\nassert pc() <= $10000-({max_echo}*$800)\n"
     out += "endspcblock\n\n"
     out += "spcblock !p_extra nspc\n"
-    out += "  dw Trackers-8 : db 0\n"
+    out += "  dw Trackers-8\n"
     out += "endspcblock\n\n"
     return out
 

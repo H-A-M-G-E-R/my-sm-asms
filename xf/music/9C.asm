@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; 3, 2, 1... boom bamm bamm blam pow-BUUUUURRROOOOOYYYEEAAUUHHH!!!
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FB,$E0,$B8,$05,$83
   db $19,$FB,$E0,$B8,$05,$83
@@ -269,7 +271,7 @@ assert pc() <= $10000-(5*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

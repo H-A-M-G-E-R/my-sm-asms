@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; The Xenometroid
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$F7,$E5,$B8,$02,$7B
   db $19,$FF,$F1,$B8,$01,$28
@@ -341,7 +343,7 @@ assert pc() <= $10000-(1*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

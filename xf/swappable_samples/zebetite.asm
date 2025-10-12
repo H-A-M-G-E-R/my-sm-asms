@@ -37,7 +37,7 @@ SoundZebetiteHurt2:
   SampleZebetiteHurt: incbin "zebetite_hurt_13379_noloop.brr"
 endspcblock
 
-spcblock !p_extra+3 nspc
+spcblock !p_extra+2 nspc
   dw SongSpecificSounds
 endspcblock
 

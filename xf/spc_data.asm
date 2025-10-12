@@ -761,6 +761,7 @@ SwappableSamplePointers:
   dl SwappableSampleSova ; 30
   dl SwappableSamplePowamp ; 31
   dl SwappableSampleZebetite ; 32
+  dl SwappableSampleEvir ; 33
 
 check bankcross off
 
@@ -944,7 +945,7 @@ Sample_487ca836f684610d37adb9f2e8f5d41b: dw filesize("music/Sample_487ca836f6846
 Sample_ddd487c9bae3c9e4cd5f013218704614: dw filesize("music/Sample_ddd487c9bae3c9e4cd5f013218704614.brr") : incbin "music/Sample_ddd487c9bae3c9e4cd5f013218704614.brr"
 Sample_64ca79c82f5165d33781b6a33c15a0e0: dw filesize("music/Sample_64ca79c82f5165d33781b6a33c15a0e0.brr") : incbin "music/Sample_64ca79c82f5165d33781b6a33c15a0e0.brr"
 Sample_235717614e1e5674ae0ef641c422feaf: dw filesize("music/Sample_235717614e1e5674ae0ef641c422feaf.brr") : incbin "music/Sample_235717614e1e5674ae0ef641c422feaf.brr"
-Sample_aa8041956e85a1b08499011624d59627: dw filesize("music/Sample_aa8041956e85a1b08499011624d59627.brr") : incbin "music/Sample_aa8041956e85a1b08499011624d59627.brr"
+Sample_aa8041956e85a1b08499011624d59627: dw filesize("music/fire_alert_10512_noloop.brr") : incbin "music/fire_alert_10512_noloop.brr"
 Sample_d391220b3132f7ed7be1121ada000db3: dw filesize("music/Sample_d391220b3132f7ed7be1121ada000db3.brr") : incbin "music/Sample_d391220b3132f7ed7be1121ada000db3.brr"
 Sample_8a3f4ee7cee8ce18a51d1d096404eda5: dw filesize("music/Sample_8a3f4ee7cee8ce18a51d1d096404eda5.brr") : incbin "music/Sample_8a3f4ee7cee8ce18a51d1d096404eda5.brr"
 Sample_588ad9d77b6e7f35ca37ba2344ca43b4: dw filesize("music/Sample_588ad9d77b6e7f35ca37ba2344ca43b4.brr") : incbin "music/Sample_588ad9d77b6e7f35ca37ba2344ca43b4.brr"
@@ -1064,6 +1065,7 @@ SwappableSamplePuyo: incbin "swappable_samples/puyo.nspc"
 SwappableSampleSova: incbin "swappable_samples/sova.nspc"
 SwappableSamplePowamp: incbin "swappable_samples/powamp.nspc"
 SwappableSampleZebetite: incbin "swappable_samples/zebetite.nspc"
+SwappableSampleEvir: incbin "swappable_samples/evir.nspc"
 
 padbyte $FF : pad $FFFFFF : db $FF
 check bankcross full

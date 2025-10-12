@@ -201,6 +201,8 @@ TDC : BRA ++
 org $A094A9 : +
 org $A094C0 : ++
 
+org $A09583 : BRA $01 ; fix flash for frozen enemy
+
 ; gadora death is at $A2A48C
 org $A2A48C
 JSL CheckGadoraDying : BNE + : org $A2A4BA : +

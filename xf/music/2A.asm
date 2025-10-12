@@ -62,7 +62,6 @@ Pattern586A: dw Track59F4, Track5A11, Track5A32, Track5A4C, Track5A70, 0, 0, 0
 Pattern587A: dw Track5AB2, Track5AE0, Track5AED, Track5AF9, Track5B17, 0, 0, 0
 
 Track588A:
-  !percBase,$27
   !musicVolume,210
   !tempo,27
   !volume,230
@@ -806,7 +805,6 @@ Tracker6:
 Pattern5C13: dw Track5C23, Track5C37, Track5C86, Track5CE0, Track5D40, Track5D66, 0, 0
 
 Track5C23:
-  !percBase,$27
   !musicVolume,200
   !tempo,21
   !instr,$1F
@@ -1102,7 +1100,7 @@ assert pc() <= $10000-(2*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

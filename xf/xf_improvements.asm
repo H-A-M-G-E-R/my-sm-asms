@@ -428,3 +428,5 @@ incsrc "extended_spritemap_draw_fix.asm"
 incsrc "spc.asm"
 
 incsrc "EnemyTileLoadingRewrite1_03.asm"
+
+incsrc "faster startup.asm"

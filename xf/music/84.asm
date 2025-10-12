@@ -1220,7 +1220,7 @@ assert pc() <= $10000-(5*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

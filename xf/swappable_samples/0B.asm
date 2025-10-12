@@ -4,11 +4,11 @@ incsrc "../spc_defines.asm"
 
 ; elevator
 
-spcblock !p_sounds2Low+$7D-1 nspc
+spcblock !p_sounds3Low+$0B-1 nspc
   db SoundElevator
 endspcblock
 
-spcblock !p_sounds2High+$7D-1 nspc
+spcblock !p_sounds3High+$0B-1 nspc
   db SoundElevator>>8
 endspcblock
 
@@ -22,7 +22,7 @@ endspcblock
 
 spcblock $A800-$9F80+!p_sampleDataEnd+$400-filesize("elevator_10491.144192_16.brr")-25 nspc
 SoundElevator:
-  db $11 : dw .voice0 ; 3
+  db $01 : dw .voice0 ; 3
 .voice0
   db $F5,$100/64 : !b7 ; 6
   db $3F ; 7

@@ -14,7 +14,7 @@ endspcblock
 
 pushpc
 org $9F80-$9F80+!p_sampleDataEnd+$400
-  Sample18: skip filesize("Sample_aa8041956e85a1b08499011624d59627.brr")
+  Sample18: skip filesize("fire_alert_10512_noloop.brr")
   Trackers:
 pullpc
 
@@ -65,7 +65,7 @@ assert pc() <= $10000-(0*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

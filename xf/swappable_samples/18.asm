@@ -117,7 +117,7 @@ SoundNightmareBeam:
 
 endspcblock
 
-spcblock !p_extra+3 nspc
+spcblock !p_extra+2 nspc
   dw SongSpecificSounds
 endspcblock
 

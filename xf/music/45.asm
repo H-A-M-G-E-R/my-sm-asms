@@ -954,7 +954,6 @@ Track5D03:
   !end
 
 Track5D10:
-  !percBase,$27
   !tempo,25
   !musicVolume,184
   !instr,$1E
@@ -1904,7 +1903,7 @@ assert pc() <= $10000-(2*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

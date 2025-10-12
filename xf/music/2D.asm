@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; hehe that sector x battletoads beat
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E0,$B8,$04,$00
   db $19,$FF,$E0,$B8,$04,$2E
@@ -594,7 +596,7 @@ assert pc() <= $10000-(3*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000

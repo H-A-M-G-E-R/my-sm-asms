@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; X Infestation Detected!
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FE,$E0,$B8,$00,$9E
   db $19,$FB,$E7,$B8,$01,$4C
@@ -1011,7 +1013,7 @@ assert pc() <= $10000-(2*$800)
 endspcblock
 
 spcblock !p_extra nspc
-  dw Trackers-8 : db 0
+  dw Trackers-8
 endspcblock
 
 dw $0000
