@@ -96,8 +96,8 @@ dw Tr10, Tr11, Tr12, Tr13, Tr14, Tr15, Tr16, Tr17, Tr18, Tr19, Tr1A, Tr1B, Tr1C,
 dw    0,    0,    0,    0,    0, Tr25, Tr26, Tr27, Tr28, Tr29, Tr2A, Tr2B, Tr2C, Tr2D, Tr2E,    0
 dw    0, Tr31, Tr32,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0, Tr41,    0,    0,    0, Tr45, Tr46,    0,    0, Tr49, Tr4A,    0,    0, Tr4D, Tr4E, Tr4F
-dw Tr50, Tr51, Tr52, Tr53, Tr54,    0,    0,    0,    0,    0,    0, Tr5B, Tr5C,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0, Tr67, Tr68, Tr69, Tr6A, Tr6B, Tr6C, Tr6D, Tr6E, Tr6F
+dw Tr50, Tr51, Tr52, Tr53, Tr54,    0,    0,    0,    0,    0,    0, Tr5B, Tr5C,    0,    0, Tr5F
+dw Tr60,    0,    0,    0,    0,    0,    0, Tr67, Tr68, Tr69, Tr6A, Tr6B, Tr6C, Tr6D, Tr6E, Tr6F
 dw Tr70, Tr71, Tr72, Tr73, Tr74, Tr75, Tr76, Tr77, Tr78, Tr79, Tr7A, Tr7B, Tr7C, Tr7D, Tr7E, Tr7F
 dw Tr80, Tr81, Tr82, Tr83, Tr84, Tr85, Tr86,    0,    0, Tr89, Tr8A, Tr8B, Tr8C, Tr8D, Tr8E,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, Tr9B,    0,    0,    0,    0
@@ -1179,6 +1179,22 @@ db !none, !up, $F0 ; facing right - grabbed by Draygon - moving
 db !none, !down, $F0 ; facing right - grabbed by Draygon - moving
 db !end
 
+Tr5F: ; 5Fh: Facing right - hanging on ledge
+db !up, !none, $61 ; facing right - pulling up from hanging
+db !down, !none, $29 ; facing right - falling
+db !jump, !left, $84 ; facing left  - wall jump
+db !jump, !right, $61 ; facing right - pulling up from hanging
+db !jump, !none, $4D ; facing right - normal jump - not aiming - not moving - gun not extended
+db !end
+
+Tr60: ; 60h: Facing left  - hanging on ledge
+db !up, !none, $62 ; facing left  - pulling up from hanging
+db !down, !none, $2A ; facing left  - falling
+db !jump, !right, $83 ; facing right - wall jump
+db !jump, !left, $62 ; facing left  - pulling up from hanging
+db !jump, !none, $4E ; facing left  - normal jump - not aiming - not moving - gun not extended
+db !end
+
 DoShootAnim:
 {
   LDA !NewProjectile : BEQ .ret ; return if no new projectile
@@ -1221,6 +1237,70 @@ ShinesparkWindupCheckForFACA: ; for Initialise Samus pose - shinespark / crystal
   JMP $FACA ; restore from hijack
 }
 
+;;; ledgegrab stuff
+
+; solid vertical collision result = 3
+SetHangingOnLedgeProspectivePose:
+{
+  LDY #$005F ; hanging on ledge pose
+  LDA $0A1E : AND #$00FF : CMP #$0004 : BNE +
+    INY
+  +
+  STY $0A28
+  LDA #$0005 : STA $0A2E ; prospective pose change command = solid vertical collision
+  RTS
+}
+
+JumpTransitionWhileHangingOnLedgeCheck:
+{
+  LDA $0A23 : AND #$00FF : CMP #$0007 : BNE +
+  ; previous movement type == hanging on ledge, do a small jump
+  LDA $09A2 : BIT #!gravitySuit : BNE .air
+  JSL $90EC3E
+  LDA $195E : BMI .lavaCheck
+  CMP $12 : BPL .air
+  LDA $197E : BIT #$0004 : BNE .air
+
+.water
+  LDX #$0004 : BRA .merge
+
+.lavaCheck
+  LDA $1962 : BMI .air
+  CMP $12 : BPL .air
+
+.lava
+  LDX #$0008 : BRA .merge
+
+.air
+  TDC : TAX
+
+.merge
+  LDA.w .speeds,x : STA $0B2E : LDA.w .speeds+2,x : STA $0B2C
+  STZ $0A9E
+  TDC : INC : STA $0B36
+  RTS
+
+.speeds
+  dw $0003,$0000 ; air
+  dw $0001,$F000 ; water
+  dw $0002,$0000 ; lava/acid
+
++
+  JMP $FC66 ; Handle jump transition - normal jumping
+}
+
+;;; animation delay tables (continued from "new_poses.asm")
+
+PullingIntoTunnelDelayTableRight:
+db $04, $FC : dw $0100 : db $1D,$79
+
+PullingIntoTunnelDelayTableLeft:
+db $04, $FC : dw $0100 : db $41,$7A
+
+StandingAnimationDelayTable:
+db $12, $12, $12, $FF
+db $04, $04, $FF ; shooting
+
 %padSafe($91AFE4)
 
 org $91EC10 : JMP DoShootAnim
@@ -1228,6 +1308,10 @@ org $90A3AD : BRA + : org $90A3CA : +
 
 org 2*2+$91F4A2 : dw $F59A ; relocate Initialise Samus pose - normal jumping
 org 2*$1B+$91F4A2 : dw ShinesparkWindupCheckForFACA
+
+org $91E8CC+3*2 : dw SetHangingOnLedgeProspectivePose
+org $91EFD0+3*2 : dw $F1D3 ; Prospective pose change command 5 - solid vertical collision: just cancel y speed
+org $91FBCF+2*2 : dw JumpTransitionWhileHangingOnLedgeCheck
 
 org $91F543
 %padSafe($91F59A)

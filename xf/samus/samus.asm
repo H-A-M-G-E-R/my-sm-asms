@@ -1,12 +1,13 @@
 lorom
 
-incsrc "new_poses.asm"
-incsrc "transition_table.asm"
-incsrc "arm_cannon_data.asm"
-
 !screwAttack = $0008
 !spaceJump = $0200
 !gravitySuit = $0020
+
+incsrc "new_poses.asm"
+incsrc "transition_table.asm"
+incsrc "arm_cannon_data.asm"
+incsrc "palette.asm"
 
 ; we need to free up space in bank $91 for my new samus code and poses
 org $91E776

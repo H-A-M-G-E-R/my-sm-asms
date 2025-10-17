@@ -2,6 +2,8 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
+; Ending monologue
+
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$E9,$B8,$00,$9E
   db $19,$FF,$E0,$B8,$02,$7B

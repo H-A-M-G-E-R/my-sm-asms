@@ -151,6 +151,20 @@ DoRShot:
   RTS
 }
 
+GotoHangingOnLedgeMovementHandler:
+JSL HangingOnLedgeMovementHandler
+RTS
+
+GotoPullingFromHangingMovementHandler:
+JSL PullingFromHangingMovementHandler
+RTS
+
+MoveSamusHorizontally_l:
+JSR $8EA9 : RTL
+
+MoveSamusUp_l:
+JSR $93EC : RTL
+
 assert pc() <= $90BCBE
 
 org $90B80D ; HUD selection handler - nothing / power bombs
@@ -237,9 +251,9 @@ dw $DD3D ; 3: Spin jumping
 dw $BF9D ; 4: Morph ball - on ground
 dw $DD3D ; 5: Crouching
 dw $DD3D ; 6: Falling
-dw $BF9D ; 7: Unused. Glitchy morph ball / spin jump
+dw $DD3D ; 7: Hanging on ledge
 dw $BF9D ; 8: Morph ball - falling
-dw $BF9D ; 9: Unused
+dw $DD3D ; 9: Pulling up from hanging
 dw $DD3D ; Ah: Knockback / crystal flash ending
 dw $DD6F ; Bh: Unused
 dw $DD6F ; Ch: Unused

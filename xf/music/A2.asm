@@ -2,7 +2,7 @@ asar 1.91
 norom : org 0
 incsrc "../spc_defines.asm"
 
-; Intro cutscene
+; Intro cutscene / B.S.L. explodes
 
 spcblock 6*$18+!p_instrumentTable nspc
   db $18,$FF,$F2,$B8,$02,$A0
