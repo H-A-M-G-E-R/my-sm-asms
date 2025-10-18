@@ -136,14 +136,14 @@ dw SamusOam_Empty
 
 SamusOam_Left_Skidding_Frame0:
 dw $0008
-%spritemapEntry(1, $1F7, $DF+$16, 0, 0, 2, 4, $00)
-%spritemapEntry(1, $1F8, $DE+$16, 0, 0, 2, 4, $02)
-%spritemapEntry(1, $1F8, $E8+$16, 0, 0, 2, 4, $08)
-%spritemapEntry(0, $1F8, $F8+$16, 0, 0, 2, 4, $0B)
-%spritemapEntry(0, $000, $F8+$16, 0, 0, 2, 4, $0C)
-%spritemapEntry(0, $1F0, $F0+$16, 0, 0, 2, 4, $0A)
-%spritemapEntry(0, $1F0, $F8+$16, 0, 0, 2, 4, $1A)
-%spritemapEntry(1, $1F0, $DE+$16, 0, 0, 2, 4, $04)
+%spritemapEntry(1, $1F7+1, $DF+$16, 0, 0, 2, 4, $00)
+%spritemapEntry(1, $1F8+1, $DE+$16, 0, 0, 2, 4, $02)
+%spritemapEntry(1, $1F8+1, $E8+$16, 0, 0, 2, 4, $08)
+%spritemapEntry(0, $1F8+1, $F8+$16, 0, 0, 2, 4, $0B)
+%spritemapEntry(0, $000+1, $F8+$16, 0, 0, 2, 4, $0C)
+%spritemapEntry(0, $1F0+1, $F0+$16, 0, 0, 2, 4, $0A)
+%spritemapEntry(0, $1F0+1, $F8+$16, 0, 0, 2, 4, $1A)
+%spritemapEntry(1, $1F0+1, $DE+$16, 0, 0, 2, 4, $04)
 SamusOam_Right_Skidding_Frame0:
 dw $0008
 %spritemapEntry(1, $1FA, $DF+$16, 0, 0, 2, 4, $00)

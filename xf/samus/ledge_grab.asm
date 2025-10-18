@@ -215,7 +215,7 @@ PullingFromHangingMovementHandler:
     STA $0A94
   +
 
-  LDA $0A1C : DEC : LSR : CMP.w #($65-1)/2 : BEQ .pullingIntoTunnel
+  LDA $0A1C : DEC : LSR : CMP.w #($65-1)/2 : BNE + : JMP .pullingIntoTunnel : +
   CMP.w #($63-1)/2 : BNE + : JMP .pullingForward : +
   TDC : INC : STA $0B36 ; y direction = up
   LDA $0A96 : CMP #$0002 : BNE .notDonePullingUp
@@ -238,6 +238,8 @@ PullingFromHangingMovementHandler:
 
 .isTunnel
   LDA $0AFA : CLC : ADC.w #$C-$7 : STA $0AFA
+  LDA $09A2 : BIT #$0004 : BEQ .noMorph
+  LDA #$000E : STA $05D7 ; set morphing glow palette
   LDY #$0065 ; super special prospective pose = pulling into tunnel
 
 .merge
@@ -246,6 +248,11 @@ PullingFromHangingMovementHandler:
   ++
   STY $0A2C
   LDA #$0003 : STA $0A32 ; super special prospective pose change command = transition animation finished
+  RTL
+
+.noMorph
+  ; is tunnel but no morph, fall
+  LDA #$0002 : STA $0DC6
   RTL
 
 .notDonePullingUp

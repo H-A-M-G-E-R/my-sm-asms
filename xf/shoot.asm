@@ -50,12 +50,13 @@ SamusNewStateHandlerAndProjectiles:
 }
 HandleProjectilesLong:
 {
-  LDA $0A78 : BNE .timeIsFrozen
   PHB : PHK : PLB
+  JSL CalculateArmCannonPos
+  LDA $0A78 : BNE .timeIsFrozen
   JSR HandleNewProjectile
   JSR $AECE ; handle projectiles
-  PLB
 .timeIsFrozen
+  PLB
   RTL
 }
 SamusNewStateHandler:

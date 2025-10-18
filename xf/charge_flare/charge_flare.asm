@@ -23,12 +23,95 @@ TDC : INC : STA !FlareAnimTimer+0 : STA !FlareAnimTimer+6
 LDA #$FFFF : STA $0CD0
 PLP : RTS
 
+org $90BA83 ; fire projectile at position calculated by CalculateArmCannonPos
+LDA $0C04,y : AND #$000F : ASL : TAX ; projectile direction
+LDA $0D1A : CLC : ADC.l ProjectileXOffsets,x : STA $0B64,y
+LDA $0D1C : CLC : ADC.l ProjectileYOffsets,x : STA $0B78,y
+CLC : RTS
+
+ProjectileXOffsets:
+  dw 0 ; up, facing right
+  dw -4 ; up-right
+  dw -5 ; right
+  dw -4 ; down-right
+  dw 0 ; down, facing right
+  dw 0 ; down, facing left
+  dw 4 ; down-left
+  dw 5 ; left
+  dw 4 ; up-left
+  dw 0 ; up, facing left
+
+ProjectileYOffsets:
+  dw 5 ; up, facing right
+  dw 4 ; up-right
+  dw 0 ; right
+  dw -4 ; down-right
+  dw -5 ; down, facing right
+  dw -5 ; down, facing left
+  dw -4 ; down-left
+  dw 0 ; left
+  dw 4 ; up-left
+  dw 5 ; up, facing left
+
+%padSafe($90BAF7)
+
+org $9BC570 ; in Grapple beam function - fire / go to cancel
+JSL CalculateArmCannonPosWhileFiringGrapple
+LDA $0D16 : STA $0D08 ; grapple end x position
+LDA $0D18 : STA $0D0C ; grapple end y position
+JMP $C606
+%padSafe($9BC606)
+
+org $9BBEEB ; remove "Set Samus animation frame and position for connecting grapple stuck in place" (seems to be useless and cause that offset glitch)
+%padSafe($9BBF1B)
+org $91EFBC
+JMP $EF53
+
+org $9BBF1B ; Update grapple beam start position during grapple fire
+CalculateArmCannonPosWhileFiringGrapple:
+{
+  PHP : PHB : PHK : PLB : REP #$30
+  JSL CalculateArmCannonPos_noGrappleCheck
+  LDA $0D34 : ASL : TAX ; grapple direction
+  LDA $0D1A : CLC : ADC.w GrappleXOffsets,x : STA $0D16 ; grapple start x position
+  SEC : SBC $0AF6 : STA $0D02 ; grapple start x offset
+  LDA $0D1C : CLC : ADC.w GrappleYOffsets,x : STA $0D18 ; grapple start y position
+  SEC : SBC $0AFA : STA $0D04 ; grapple start y offset
+  PLB : PLP : RTL
+}
+
+GrappleXOffsets:
+  dw 0 ; up, facing right
+  dw -10 ; up-right
+  dw -14 ; right
+  dw -10 ; down-right
+  dw 0 ; down, facing right
+  dw 0 ; down, facing left
+  dw 10 ; down-left
+  dw 14 ; left
+  dw 10 ; up-left
+  dw 0 ; up, facing left
+
+GrappleYOffsets:
+  dw 14 ; up, facing right
+  dw 10 ; up-right
+  dw 0 ; right
+  dw -10 ; down-right
+  dw -14 ; down, facing right
+  dw -14 ; down, facing left
+  dw -10 ; down-left
+  dw 0 ; left
+  dw 10 ; up-left
+  dw 14 ; up, facing left
+
+%padSafe($9BBFA5)
+
 pullpc
 
 DoDatFlare:
 {
   PHB : PHK : PLB
-  JSR CalculateFlarePos
+  JSL CalculateArmCannonPos ; so the flare won't appear at the wrong place after door transitions
   LDA $0CD0 : CMP.W #16 : BCC .rtl : BNE +
     LDA.W #ChargingBeamAnim : STA !FlareAnimPtr+0
     LDA.W #ChargingSparksBeginAnim : STA !FlareAnimPtr+6
@@ -64,12 +147,31 @@ DoDatGrappleFlare:
   PLB : RTL
 }
 
-CalculateFlarePos:
+CalculateArmCannonPos:
 {
+  ; return if grappling
+  LDA $0D32 : CMP #$C4F0 : BNE .rtl
+
+.noGrappleCheck
   ; get spritemap Y offset
   LDA $0A1C : ASL : ASL : ASL : TAX
   LDA $91B62D,x : AND #$00FF : STA $18
+  ; get pose-specific arm cannon position
+  ; [[ArmCannonPosTable + [pose] * 2] + [anim frame] * 2]
+  TXY
+  LDA $0A1C : ASL : TAX : LDA.l ArmCannonPosTable,x : BPL .fallback
+  CLC : ADC $0A96 : ADC $0A96 : TAX
+  ; x
+  LDA.l ArmCannonPosTable&$FF0000,x : JSR .signExtend : CLC : ADC $0AF6 : STA $0D1A
+  ; y
+  LDA.l (ArmCannonPosTable&$FF0000)+1,x : JSR .signExtend : CLC : ADC $0AFA : SEC : SBC $18 : STA $0D1C
+.rtl
+  RTL
+
+.fallback
+  ; fallback
   ; get arm cannon direction
+  TYX
   LDA $91B62C,x : AND #$00FF : CMP #$00FF : BEQ .noFlare
   AND #$000F : ASL : TAX
   ; x
@@ -77,14 +179,23 @@ CalculateFlarePos:
   ; y
   LDA $90C1C2,x : CLC : ADC $0AFA : SEC : SBC $18 : STA $0D1C
   LDA $0A1F : AND #$00FF : DEC : BEQ .running
-  RTS
+  RTL
 
 .running
+  PHB : PEA $9000 : PLB : PLB
   JSL $90A808
-  RTS
+  PLB
+  RTL
 
 .noFlare
-  LDA #$8000 : STA $0D1A : STA $0D1C : RTS
+  LDA #$8000 : STA $0D1A : STA $0D1C : RTL
+
+.signExtend
+  AND #$00FF : BIT #$0080 : BEQ +
+    ORA #$FF00
+  +
+  RTS
+
 }
 
 UpdateFlarePartAnim:
@@ -147,6 +258,58 @@ DrawFlarePart:
 .skip
   RTS
 }
+
+ArmCannonPosTable:
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, .a5B, .a5C,    0,    0, .a5F
+dw .a60, .a61, .a62, .a63, .a64, .a65, .a66,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+
+.a5B ; Facing right - skidding
+db 13,-26+22
+
+.a5C ; Facing left  - skidding
+db -11+1,-28+22
+
+.a5F ; Facing right - hanging on ledge
+db 10,-35+23, 9,-38+23, 8,-37+23
+db  9,-38+23, 9,-38+23, 9,-38+23, 9,-38+23, 0,0, 0,0
+db  8,-30+23
+
+.a60 ; Facing left  - hanging on ledge
+db -8+1,-32+23, -8+1,-35+23, -8+1,-35+23
+db -8+1,-35+23, -8+1,-35+23, -8+1,-35+23, -8+1,-35+23, 0,0, 0,0
+db -8+1,-32+23
+
+.a61 ; Facing right - pulling up from hanging
+db 10,-35+23, 9,-28+23, 9,-15+23
+
+.a62 ; Facing left  - pulling up from hanging
+db -8+1,-32+23, -8+1,-24+23, -6+1,-16+23
+
+.a63 ; Facing right - pulling forward from hanging
+db 7,-13+23, 7,-9+23, 10,-8+23, 14,-10+23 ; the last frame is 22,-10 in fusion
+
+.a64 ; Facing left  - pulling forward from hanging
+db -7+1,-12+23, -6+1,-10+23, -10+1,-9+23, -14+1,-10+23 ; the last frame is -22,-10 in fusion
+
+.a65 ; Facing right - pulling into tunnel
+db 4,-7+23
+
+.a66 ; Facing left  - pulling into tunnel
+db -4+1,-7+23
 
 ;;; Animations
 ChargingBeamAnim:

@@ -5,7 +5,7 @@ incsrc "../spc_defines.asm"
 ; "Sixty seconds to isolation lockdown."
 
 spcblock 6*$18+!p_instrumentTable nspc
-  db $18,$FF,$E0,$B8,$05,$04
+  db $18,$FF,$E0,$B8,$05,$08
 endspcblock
 
 spcblock 4*$18+!p_sampleTable nspc
@@ -38,7 +38,7 @@ Track5854:
   !endTremolo
   !endVibrato
   !tempo,62
-  !musicVolume,208
+  !musicVolume,255;208
   !volume,0
   db 24
   !c5
