@@ -8,6 +8,7 @@ incsrc "new_poses.asm"
 incsrc "transition_table.asm"
 incsrc "arm_cannon_data.asm"
 incsrc "palette.asm"
+incsrc "gfx.asm"
 
 ; we need to free up space in bank $91 for my new samus code and poses
 org $91E776
