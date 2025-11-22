@@ -113,7 +113,6 @@ ToggleArmCannonWhileSkidding:
   .unarmed
   STA $0A96 ; anim frame = 0 (unarmed)
 .rtl
-  LDA $0A1C ; restore from hijack
   RTL
 }
 StoreShinesparkWhileSkidding:
@@ -131,7 +130,7 @@ StoreShinesparkWhileSkidding:
 org $90F41E
 SamusCommand1C:
 {
-  LDA #$0A1F : AND #$00FF : CMP #$0003 : BEQ + : CMP #$0014 : BNE ++ ; if spinjumping or walljumping:
+  LDA $0A1F : AND #$00FF : CMP #$0003 : BEQ + : CMP #$0014 : BNE ++ ; if spinjumping or walljumping:
 +
   JSL UnderwaterCheck : BCS ++ ; If not underwater:
   LDA $09A2 : BIT #!screwAttack : BNE .screwAttack
@@ -265,10 +264,52 @@ JMP StoreShinesparkWhileSkidding
 
 org $908011 ; in Animate Samus
 JSL ToggleArmCannonWhileSkidding
-BRA $00 : DEC : LSR : CMP.W #($004D-1)/2
+BRA + : org $90801E : +
+
+org $908030
+JSR $82DC : PLP : RTS
+
+DoJumpAnim:
+LDA $0B36 : CMP #$0002 : BEQ .falling
+; jumping
+LDA $0A96 : CMP #$0002 : BNE .rts
+;LDA #$0004 : CLC : ADC $0A9C : STA $0A94
+LDA #$0004 : STA $0A94
+RTS
+
+.falling
+; falling
+LDA $0A96 : CMP #$0002 : BPL .rts
+LDA #$0002 : LDA $0A96 
+
+.rts
+RTS
+
+%padSafe($908065)
 
 org $90F1C8 ; in Samus command 7: set up Samus for elevator
 JSL SetSamusUsingElevatorPose
 
 org $90F295 ; in Samus command Bh: unlock Samus from facing forward
 JSR FinishSamusUsingElevatorPose
+
+org $90A42E ; Samus movement - normal jumping
+JSR $8FB3 ; Samus jumping movement
+JMP DoJumpAnim
+
+org $91FC66 ; Handle jump transition - normal jumping (continued fron transition_table.asm for ledgegrab)
+TAY : BEQ + ; branch if previous movement type == standing
+CMP #$0005 : BNE ++ ; return if previous movement type != crouching
+LDA $0AFA : SEC : SBC #$000A : STA $0AFA ; crouch jump boost
++
+JSL $9098BC ; Make Samus jump
+++
+RTS
+%padSafe($91FC99)
+
+org $91F5AF ; in Initialise Samus pose - normal jumping (setting pose transition shot direction removed in shoot.asm)
+; don't reset anim if already jumping
+LDA $0A23 : AND #$00FF : CMP #$0002 : BNE +
+  LDA #$8000 : STA $0A9A
++
+CLC : RTS

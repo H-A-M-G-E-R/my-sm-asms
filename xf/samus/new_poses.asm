@@ -47,6 +47,35 @@ dw StandingAnimationDelayTable, StandingAnimationDelayTable ; up
 dw StandingAnimationDelayTable, StandingAnimationDelayTable ; diagonal up
 dw StandingAnimationDelayTable, StandingAnimationDelayTable ; diagonal down
 
+; jumping
+org 2*$13+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; forward, not moving
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; up
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; down
+
+org 2*$4D+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; not aiming
+
+org 2*$51+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; forward, moving
+
+org 2*$69+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; diagonal up
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; diagonal down
+
+; falling
+org 2*$2B+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; up
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; down
+
+org 2*$67+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; forward
+
+org 2*$6D+$91B010
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; diagonal up
+dw MidAirAnimationDelayTable, MidAirAnimationDelayTable ; diagonal down
+
+
 org $91B36C
 WalljumpRightAnimationDelayTable:
 db $05, $05, $FD,$19

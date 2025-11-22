@@ -12,11 +12,6 @@ ArmCannon18:
 ArmCannon2E:
 db $86,$01,$04,$01,$EC,$FB,$F3,$02
 
-ArmCannon17:
-ArmCannon2D:
-db $83,$01,$05,$01,$03,$FB,$FE,$02
-
-ArmCannon15:
 ArmCannon2B:
 db $81,$01,$00,$01,$03,$EF,$FD,$E6
 
@@ -109,12 +104,9 @@ ArmCannon59:
 db $03,$01,$03,$FD,$03,$FD,$03,$FD
 
 ArmCannon07:
-ArmCannon6B:
-ArmCannon6F:
 ArmCannonAA:
 ArmCannonD1:
 ArmCannonE4:
-ArmCannonEF:
 ArmCannonFB:
 db $03,$01,$03,$FB,$03,$FB,$03,$FB,$03,$FB,$02,$FB,$03,$FB
 
@@ -139,15 +131,11 @@ ArmCannon67:
 db $02,$01,$04,$F9,$04,$F9,$04,$F9,$04,$F9,$04,$F9,$04,$F9,$04,$F9
 
 ArmCannon01:
-ArmCannon13:
 ArmCannon3B:
-ArmCannon51:
 ArmCannon89:
 ArmCannonA6:
 ArmCannonA8:
 ArmCannonE6:
-ArmCannonEC:
-ArmCannonEE:
 db $02,$01,$04,$F9,$04,$F9,$04,$F9,$04,$F9,$02,$F9,$04,$F9
 
 ArmCannon4A:
@@ -164,11 +152,8 @@ ArmCannon57:
 db $01,$01,$03,$F1,$03,$F1,$03,$F1
 
 ArmCannon05:
-ArmCannon69:
-ArmCannon6D:
 ArmCannonCF:
 ArmCannonE2:
-ArmCannonED:
 ArmCannonF9:
 db $01,$01,$03,$EF,$03,$EF,$03,$EF,$03,$EF,$02,$EF,$03,$EF
 
@@ -195,6 +180,9 @@ ArmCannon09:
 ArmCannon0A:
 ArmCannon0D:
 ArmCannon0E:
+ArmCannon13:
+ArmCannon15:
+ArmCannon17:
 ArmCannon19:
 ArmCannon1A:
 ArmCannon1B:
@@ -211,6 +199,7 @@ ArmCannon25:
 ArmCannon26:
 ArmCannon29:
 ArmCannon2A:
+ArmCannon2D:
 ArmCannon2F:
 ArmCannon30:
 ArmCannon31:
@@ -237,6 +226,7 @@ ArmCannon4D:
 ArmCannon4E:
 ArmCannon4F:
 ArmCannon50:
+ArmCannon51:
 ArmCannon53:
 ArmCannon54:
 ArmCannon5B:
@@ -251,6 +241,10 @@ ArmCannon63:
 ArmCannon64:
 ArmCannon65:
 ArmCannon66:
+ArmCannon69:
+ArmCannon6B:
+ArmCannon6D:
+ArmCannon6F:
 ArmCannon79:
 ArmCannon7A:
 ArmCannon7B:
@@ -336,6 +330,10 @@ ArmCannonE8:
 ArmCannonE9:
 ArmCannonEA:
 ArmCannonEB:
+ArmCannonEC:
+ArmCannonED:
+ArmCannonEE:
+ArmCannonEF:
 ArmCannonF0:
 db $00,$00,$00,$00
 

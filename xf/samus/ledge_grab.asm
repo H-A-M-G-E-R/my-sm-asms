@@ -94,7 +94,6 @@ HangingOnLedgeCheck:
 
 HangingOnLedgeMovementHandler:
 {
-  STZ $0DC6 ; Samus solid vertical collision result = no change
   ; kill X speed
   JSL $91DE53 ; Cancel speed boosting
   STZ $0B42 : STZ $0B44 : STZ $0B46 : STZ $0B4 : STZ $0B4A
@@ -205,8 +204,6 @@ LedgePullCollisionCheck:
 
 PullingFromHangingMovementHandler:
 {
-  STZ $0DC6 ; Samus solid vertical collision result = no change
-
   ; remove animation slowdown in liquids, just like fusion
   LDA $0A1C : ASL : TAX
   LDA $91B010,x : CLC : ADC $0A96 : TAX

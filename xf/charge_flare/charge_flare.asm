@@ -261,21 +261,71 @@ DrawFlarePart:
 
 ArmCannonPosTable:
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,  .a13,   0, .a15,    0, .a17,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, .a2B,    0, .a2D,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0, .a51,    0,    0,    0,    0,    0,    0,    0,    0,    0, .a5B, .a5C,    0,    0, .a5F
+dw .a60, .a61, .a62, .a63, .a64, .a65, .a66,    0,    0, .a69,    0, .a6B,    0, .a6D,    0, .a6F
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, .a5B, .a5C,    0,    0, .a5F
-dw .a60, .a61, .a62, .a63, .a64, .a65, .a66,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
-dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, .aEC, .aED, .aEE, .aEF
 dw    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0
+
+.a13 ; Facing right - normal jump - not aiming - not moving - gun extended
+.a51 ; Facing right - normal jump - not aiming - moving forward
+.aEC ; Facing right - grabbed by Draygon - not moving - not aiming
+.aEE ; Facing right - grabbed by Draygon - firing
+;db 18,-24+22, 17,-23+22, 16,-18+22, 17,-21+22, 17,-24+22, 18,-23+22
+db -12+8-(-4-18), -32-(-29+21)+22
+db -13+8-(-4-18), -31-(-29+21)+22
+db -14+8-(-4-18), -26-(-29+21)+22
+db -13+8-(-4-18), -29-(-29+21)+22
+db -13+8-(-4-18), -32-(-29+21)+22
+db -12+8-(-4-18), -31-(-29+21)+22
+
+.a69: ; Facing right - normal jump - aiming up-right
+.a6D: ; Facing right - falling - aiming up-right
+db 3-(3-17), -40-(-40+38)+22
+db 2-(3-17), -38-(-40+38)+22
+db 1-(3-17), -32-(-40+38)+22
+db 2-(3-17), -36-(-40+38)+22
+db 2-(3-17), -39-(-40+38)+22
+db 2-(3-17), -41-(-40+38)+22
+
+.a6B ; Facing right - normal jump - aiming down-right
+.a6F ; Facing right - falling - aiming down-right
+db 2-(2-16), -31-(-31+17)+22
+db 2-(2-16), -31-(-31+17)+22
+db 1-(2-16), -26-(-31+17)+22
+db 2-(2-16), -29-(-31+17)+22
+db 2-(2-16), -32-(-31+17)+22
+db 2-(2-16), -30-(-31+17)+22
+
+.a15 ; Facing right - normal jump - aiming up
+.a2B ; Facing right - falling - aiming up
+.aED ; Facing right - grabbed by Draygon - not moving - aiming up-right
+db -3-(-3-5), -50-(-48+46)+22
+db -3-(-3-5), -46-(-48+46)+22
+db -3-(-3-5), -41-(-48+46)+22
+db -3-(-3-5), -45-(-48+46)+22
+db -3-(-3-5), -48-(-48+46)+22
+db -3-(-3-5), -48-(-48+46)+22
+
+.a17: ; Facing right - normal jump - aiming down
+.a2D: ; Facing right - falling - aiming down
+.aEF: ; Facing right - grabbed by Draygon - not moving - aiming down-right
+db -3-(-3-5), -24-(-24+2)+22
+db -3-(-3-5), -24-(-24+2)+22
+db -3-(-3-5), -24-(-24+2)+22
+db -3-(-3-5), -24-(-24+2)+22
+db -3-(-3-5), -24-(-24+2)+22
+db -3-(-3-5), -24-(-24+2)+22
 
 .a5B ; Facing right - skidding
 db 13,-26+22
@@ -335,10 +385,10 @@ dw FlareInst_Goto,.loop
 
 ChargingSparksBeginAnim:
 .loop
-dw 2,ChargingSparksBegin_Frame0,ChargingSparksBeginDma
-dw 2,ChargingSparksBegin_Frame1,ChargingSparksBeginDma
-dw 2,ChargingSparksBegin_Frame2,ChargingSparksBeginDma
-dw 2,ChargingSparksBegin_Frame3,ChargingSparksBeginDma
+dw 4,ChargingSparksBegin_Frame0,ChargingSparksBeginDma
+dw 4,ChargingSparksBegin_Frame1,ChargingSparksBeginDma
+dw 4,ChargingSparksBegin_Frame2,ChargingSparksBeginDma
+dw 4,ChargingSparksBegin_Frame3,ChargingSparksBeginDma
 dw FlareInst_Goto,.loop
 
 ChargingSparksChargedAnim:

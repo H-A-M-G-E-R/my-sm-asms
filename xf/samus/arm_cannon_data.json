@@ -542,20 +542,12 @@
         }
     },
     "0x13": {
-        "direction": "right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 4,
-                "y": -7
-            },
-            "1": {
-                "x": 4,
-                "y": -7
-            },
-            "2": {
-                "x": 4,
-                "y": -7
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -578,18 +570,12 @@
         }
     },
     "0x15": {
-        "direction": "up_right",
-        "mode": "over_samus",
-        "direction2": "up_facing_right",
-        "mode2": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -17
-            },
-            "1": {
-                "x": -3,
-                "y": -26
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -610,18 +596,12 @@
         }
     },
     "0x17": {
-        "direction": "down_right",
-        "mode": "over_samus",
-        "direction2": "down_facing_left",
-        "mode2": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -5
-            },
-            "1": {
-                "x": -2,
-                "y": 2
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -854,18 +834,12 @@
         }
     },
     "0x2D": {
-        "direction": "down_right",
-        "mode": "over_samus",
-        "direction2": "down_facing_left",
-        "mode2": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -5
-            },
-            "1": {
-                "x": -2,
-                "y": 2
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -1298,20 +1272,12 @@
         }
     },
     "0x51": {
-        "direction": "right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 4,
-                "y": -7
-            },
-            "1": {
-                "x": 4,
-                "y": -7
-            },
-            "2": {
-                "x": 4,
-                "y": -7
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -1650,20 +1616,12 @@
         }
     },
     "0x69": {
-        "direction": "up_right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -17
-            },
-            "1": {
-                "x": 3,
-                "y": -17
-            },
-            "2": {
-                "x": 3,
-                "y": -17
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -1686,20 +1644,12 @@
         }
     },
     "0x6B": {
-        "direction": "down_right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -5
-            },
-            "1": {
-                "x": 3,
-                "y": -5
-            },
-            "2": {
-                "x": 3,
-                "y": -5
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -1722,20 +1672,12 @@
         }
     },
     "0x6D": {
-        "direction": "up_right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -17
-            },
-            "1": {
-                "x": 3,
-                "y": -17
-            },
-            "2": {
-                "x": 3,
-                "y": -17
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -1758,20 +1700,12 @@
         }
     },
     "0x6F": {
-        "direction": "down_right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -5
-            },
-            "1": {
-                "x": 3,
-                "y": -5
-            },
-            "2": {
-                "x": 3,
-                "y": -5
+                "x": 0,
+                "y": 0
             }
         }
     },
@@ -3360,74 +3294,42 @@
         }
     },
     "0xEC": {
-        "direction": "right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 4,
-                "y": -7
-            },
-            "1": {
-                "x": 4,
-                "y": -7
-            },
-            "2": {
-                "x": 4,
-                "y": -7
+                "x": 0,
+                "y": 0
             }
         }
     },
     "0xED": {
-        "direction": "up_right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -17
-            },
-            "1": {
-                "x": 3,
-                "y": -17
-            },
-            "2": {
-                "x": 3,
-                "y": -17
+                "x": 0,
+                "y": 0
             }
         }
     },
     "0xEE": {
-        "direction": "right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 4,
-                "y": -7
-            },
-            "1": {
-                "x": 4,
-                "y": -7
-            },
-            "2": {
-                "x": 4,
-                "y": -7
+                "x": 0,
+                "y": 0
             }
         }
     },
     "0xEF": {
-        "direction": "down_right",
-        "mode": "over_samus",
+        "direction": "up_facing_right",
+        "mode": "none",
         "offsets": {
             "0": {
-                "x": 3,
-                "y": -5
-            },
-            "1": {
-                "x": 3,
-                "y": -5
-            },
-            "2": {
-                "x": 3,
-                "y": -5
+                "x": 0,
+                "y": 0
             }
         }
     },

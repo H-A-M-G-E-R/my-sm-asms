@@ -394,16 +394,12 @@ OA_B_9B:
   dw SamusOam_9698
 
 OA_T_01:
-OA_T_13:
 OA_T_35:
 OA_T_3B:
-OA_T_51:
 OA_T_89:
 OA_T_A8:
 OA_T_D5:
 OA_T_D9:
-OA_T_EC:
-OA_T_EE:
   dw SamusOam_9830
   dw SamusOam_9830
   dw SamusOam_9830
@@ -428,14 +424,10 @@ OA_B_D9:
   dw SamusOam_9846
 
 OA_T_02:
-OA_T_14:
 OA_T_36:
 OA_T_3C:
-OA_T_52:
 OA_T_8A:
 OA_T_A9:
-OA_T_BA:
-OA_T_BC:
 OA_T_D6:
 OA_T_DA:
   dw SamusOam_9857
@@ -486,8 +478,6 @@ OA_B_F8:
   dw SamusOam_98A7
 
 OA_T_05:
-OA_T_69:
-OA_T_6D:
 OA_T_CF:
 OA_T_F9:
   dw SamusOam_98B8
@@ -534,8 +524,6 @@ OA_B_FA:
   dw SamusOam_98A7
 
 OA_T_07:
-OA_T_6B:
-OA_T_6F:
 OA_T_AA:
 OA_T_D1:
 OA_T_FB:
@@ -711,33 +699,95 @@ OA_T_12:
   dw SamusOam_9CA7
   dw SamusOam_9C9B
 
+OA_T_13:
+OA_T_51:
+OA_T_67:
+OA_T_EC:
+OA_T_EE:
+  dw SamusOam_Top_Right_Forward_MidAir_Frame0
+  dw SamusOam_Top_Right_Forward_MidAir_Frame1
+  dw SamusOam_Top_Right_Forward_MidAir_Frame2
+  dw SamusOam_Top_Right_Forward_MidAir_Frame3
+  dw SamusOam_Top_Right_Forward_MidAir_Frame0
+  dw SamusOam_Top_Right_Forward_MidAir_Frame1
+
+OA_T_14:
+OA_T_52:
+OA_T_68:
+OA_T_BA:
+OA_T_BC:
+  dw SamusOam_Top_Left_Forward_MidAir_Frame0
+  dw SamusOam_Top_Left_Forward_MidAir_Frame1
+  dw SamusOam_Top_Left_Forward_MidAir_Frame2
+  dw SamusOam_Top_Left_Forward_MidAir_Frame3
+  dw SamusOam_Top_Left_Forward_MidAir_Frame0
+  dw SamusOam_Top_Left_Forward_MidAir_Frame1
+
 OA_B_13:
+OA_B_15:
+OA_B_2B:
 OA_B_51:
+OA_B_67:
+OA_B_69:
+OA_B_6B:
+OA_B_6D:
+OA_B_6F:
 OA_B_EC:
+OA_B_ED:
 OA_B_EE:
-  dw SamusOam_A010
-  dw SamusOam_A039
-  dw SamusOam_A02D
+  dw SamusOam_Bottom_Right_MidAir_Frame0
+  dw SamusOam_Bottom_Right_MidAir_Frame1
+  dw SamusOam_Bottom_Right_MidAir_Frame2
+  dw SamusOam_Bottom_Right_MidAir_Frame3
+  dw SamusOam_Bottom_Right_MidAir_Frame4
+  dw SamusOam_Bottom_Right_MidAir_Frame5
+
+OA_T_69:
+OA_T_6D:
+  dw SamusOam_Top_Right_DiagonalUp_MidAir_Frame0
+  dw SamusOam_Top_Right_DiagonalUp_MidAir_Frame1
+  dw SamusOam_Top_Right_DiagonalUp_MidAir_Frame2
+  dw SamusOam_Top_Right_DiagonalUp_MidAir_Frame3
+  dw SamusOam_Top_Right_DiagonalUp_MidAir_Frame4
+  dw SamusOam_Top_Right_DiagonalUp_MidAir_Frame5
+
+OA_T_6B:
+OA_T_6F:
+  dw SamusOam_Top_Right_DiagonalDown_MidAir_Frame0
+  dw SamusOam_Top_Right_DiagonalDown_MidAir_Frame0
+  dw SamusOam_Top_Right_DiagonalDown_MidAir_Frame2
+  dw SamusOam_Top_Right_DiagonalDown_MidAir_Frame3
+  dw SamusOam_Top_Right_DiagonalDown_MidAir_Frame4
+  dw SamusOam_Top_Right_DiagonalDown_MidAir_Frame5
 
 OA_B_14:
+OA_B_16:
+OA_B_2C:
 OA_B_52:
+OA_B_68:
+OA_B_6A:
+OA_B_6C:
+OA_B_6E:
+OA_B_70:
 OA_B_BA:
+OA_B_BB:
 OA_B_BC:
-  dw SamusOam_A0B0
-  dw SamusOam_A0D9
-  dw SamusOam_A0CD
+  dw SamusOam_Bottom_Left_MidAir_Frame0
+  dw SamusOam_Bottom_Left_MidAir_Frame1
+  dw SamusOam_Bottom_Left_MidAir_Frame2
+  dw SamusOam_Bottom_Left_MidAir_Frame3
+  dw SamusOam_Bottom_Left_MidAir_Frame4
+  dw SamusOam_Bottom_Left_MidAir_Frame5
 
 OA_T_15:
 OA_T_2B:
 OA_T_ED:
-  dw SamusOam_98B8
-  dw SamusOam_987E
-
-OA_B_15:
-OA_B_69:
-OA_B_ED:
-  dw SamusOam_A01C
-  dw SamusOam_A004
+  dw SamusOam_Top_Right_Up_MidAir_Frame0
+  dw SamusOam_Top_Right_Up_MidAir_Frame1
+  dw SamusOam_Top_Right_Up_MidAir_Frame2
+  dw SamusOam_Top_Right_Up_MidAir_Frame3
+  dw SamusOam_Top_Right_Up_MidAir_Frame4
+  dw SamusOam_Top_Right_Up_MidAir_Frame5
 
 OA_T_16:
 OA_T_2C:
@@ -745,23 +795,25 @@ OA_T_BB:
   dw SamusOam_98C4
   dw SamusOam_989B
 
-OA_B_16:
-OA_B_6A:
-OA_B_BB:
-  dw SamusOam_A0BC
-  dw SamusOam_A0A4
-
 OA_T_17:
 OA_T_2D:
 OA_T_EF:
-  dw SamusOam_98D0
-  dw SamusOam_9CB3
+  dw SamusOam_Top_Right_Down_MidAir_Frame0
+  dw SamusOam_Top_Right_Down_MidAir_Frame0
+  dw SamusOam_Top_Right_Down_MidAir_Frame0
+  dw SamusOam_Top_Right_Down_MidAir_Frame0
+  dw SamusOam_Top_Right_Down_MidAir_Frame0
+  dw SamusOam_Top_Right_Down_MidAir_Frame0
 
 OA_B_17:
 OA_B_2D:
 OA_B_EF:
-  dw SamusOam_A039
-  dw SamusOam_A045
+  dw SamusOam_Bottom_Right_Down_MidAir_Frame0
+  dw SamusOam_Bottom_Right_Down_MidAir_Frame1
+  dw SamusOam_Bottom_Right_Down_MidAir_Frame1
+  dw SamusOam_Bottom_Right_Down_MidAir_Frame1
+  dw SamusOam_Bottom_Right_Down_MidAir_Frame1
+  dw SamusOam_Bottom_Right_Down_MidAir_Frame1
 
 OA_T_18:
 OA_T_2E:
@@ -982,20 +1034,6 @@ OA_B_2A:
   dw SamusOam_A0BC
   dw SamusOam_A0CD
 
-OA_B_2B:
-OA_B_6D:
-OA_B_6F:
-  dw SamusOam_A02D
-  dw SamusOam_A039
-  dw SamusOam_A039
-
-OA_B_2C:
-OA_B_6E:
-OA_B_70:
-  dw SamusOam_A0CD
-  dw SamusOam_A0D9
-  dw SamusOam_A0D9
-
 OA_T_37:
   dw SamusOam_9E80
   dw SamusOam_9DB3
@@ -1184,50 +1222,6 @@ OA_T_54:
 OA_B_54:
   dw SamusOam_9D4B
   dw SamusOam_9D4B
-
-OA_T_67:
-  dw SamusOam_9830
-  dw SamusOam_9830
-  dw SamusOam_9830
-  dw SamusOam_Empty
-  dw SamusOam_Empty
-  dw SamusOam_9830
-  dw SamusOam_9830
-
-OA_B_67:
-  dw SamusOam_A02D
-  dw SamusOam_A039
-  dw SamusOam_A039
-  dw SamusOam_Empty
-  dw SamusOam_Empty
-  dw SamusOam_A02D
-  dw SamusOam_A004
-
-OA_T_68:
-  dw SamusOam_9857
-  dw SamusOam_9857
-  dw SamusOam_9857
-  dw SamusOam_Empty
-  dw SamusOam_Empty
-  dw SamusOam_9857
-  dw SamusOam_9857
-
-OA_B_68:
-  dw SamusOam_A0CD
-  dw SamusOam_A0D9
-  dw SamusOam_A0D9
-  dw SamusOam_Empty
-  dw SamusOam_Empty
-  dw SamusOam_A0CD
-  dw SamusOam_A0A4
-
-OA_B_6B:
-  dw SamusOam_A01C
-  dw SamusOam_A010
-
-OA_B_6C:
-  dw SamusOam_A0BC
-  dw SamusOam_A0B0
 
 OA_T_71:
 OA_T_F3:
@@ -5255,6 +5249,212 @@ dw 5
 %spritemapEntry(0, $002+1, $E8+$16, 0, 0, 2, 4, $0C)
 
 
+SamusOam_Bottom_Right_MidAir_Frame0:
+dw 4
+%spritemapEntry(1, -8, -26+22, 0, 1, 2, 4, $08)
+%spritemapEntry(0, -8+8, -10+22, 0, 1, 2, 4, $0A)
+%spritemapEntry(0, -8, -10+22, 0, 1, 2, 4, $0B)
+%spritemapEntry(0, -8, -2+22, 0, 1, 2, 4, $0C)
+
+SamusOam_Bottom_Right_MidAir_Frame1:
+dw 3
+%spritemapEntry(1, -8, -24+22, 0, 1, 2, 4, $08)
+%spritemapEntry(0, -8+8, -8+22, 0, 1, 2, 4, $0A)
+%spritemapEntry(0, -8, -8+22, 0, 1, 2, 4, $0B)
+
+SamusOam_Bottom_Right_MidAir_Frame2:
+dw 2
+%spritemapEntry(1, -8, -20+22, 0, 1, 2, 4, $08)
+%spritemapEntry(0, -8, -4+22, 0, 1, 2, 4, $0A)
+
+SamusOam_Bottom_Right_MidAir_Frame3:
+dw 3
+%spritemapEntry(1, -8, -23+22, 0, 1, 2, 4, $08)
+%spritemapEntry(0, -8+8, -7+22, 0, 1, 2, 4, $0A)
+%spritemapEntry(0, -8, -7+22, 0, 1, 2, 4, $0B)
+
+SamusOam_Bottom_Right_MidAir_Frame4:
+dw 2
+%spritemapEntry(1, -9, -25+22, 0, 1, 2, 4, $08)
+%spritemapEntry(1, -9, -9+22, 0, 1, 2, 4, $0A)
+
+SamusOam_Bottom_Right_MidAir_Frame5:
+dw 2
+%spritemapEntry(1, -8, -25+22, 0, 1, 2, 4, $08)
+%spritemapEntry(1, -8, -9+22, 0, 1, 2, 4, $0A)
+
+SamusOam_Top_Right_Forward_MidAir_Frame0:
+dw 2
+%spritemapEntry(0, 1, -44+22, 0, 1, 2, 4, $02)
+%spritemapEntry(1, -6, -36+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Forward_MidAir_Frame1:
+dw 2
+%spritemapEntry(0, 1, -43+22, 0, 1, 2, 4, $02)
+%spritemapEntry(1, -6, -35+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Forward_MidAir_Frame2:
+dw 2
+%spritemapEntry(0, 1, -38+22, 0, 1, 2, 4, $02)
+%spritemapEntry(1, -6, -30+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Forward_MidAir_Frame3:
+dw 2
+%spritemapEntry(0, 1, -41+22, 0, 1, 2, 4, $02)
+%spritemapEntry(1, -6, -33+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_DiagonalUp_MidAir_Frame0:
+dw 2
+%spritemapEntry(1, -6, -39+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -6+8, -39+22, 0, 0, 2, 4, $01)
+
+SamusOam_Top_Right_DiagonalUp_MidAir_Frame1:
+dw 2
+%spritemapEntry(1, -6, -37+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -6+8, -37+22, 0, 0, 2, 4, $01)
+
+SamusOam_Top_Right_DiagonalUp_MidAir_Frame2:
+dw 2
+%spritemapEntry(1, -6, -31+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -6+8, -31+22, 0, 0, 2, 4, $01)
+
+SamusOam_Top_Right_DiagonalUp_MidAir_Frame3:
+dw 2
+%spritemapEntry(1, -6, -35+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -6+8, -35+22, 0, 0, 2, 4, $01)
+
+SamusOam_Top_Right_DiagonalUp_MidAir_Frame4:
+dw 2
+%spritemapEntry(1, -6, -38+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -6+8, -38+22, 0, 0, 2, 4, $01)
+
+SamusOam_Top_Right_DiagonalUp_MidAir_Frame5:
+dw 2
+%spritemapEntry(1, -7, -40+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -7+8, -40+22, 0, 0, 2, 4, $01)
+
+SamusOam_Top_Right_DiagonalDown_MidAir_Frame0:
+dw 2
+%spritemapEntry(1, -7, -40+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, 1, -24+22, 0, 0, 2, 4, $02)
+
+SamusOam_Top_Right_DiagonalDown_MidAir_Frame2:
+dw 2
+%spritemapEntry(1, -8, -35+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, 0, -19+22, 0, 0, 2, 4, $02)
+
+SamusOam_Top_Right_DiagonalDown_MidAir_Frame3:
+dw 2
+%spritemapEntry(1, -7, -38+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, 1, -22+22, 0, 0, 2, 4, $02)
+
+SamusOam_Top_Right_DiagonalDown_MidAir_Frame4:
+dw 2
+%spritemapEntry(1, -7, -41+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, 1, -25+22, 0, 0, 2, 4, $02)
+
+SamusOam_Top_Right_DiagonalDown_MidAir_Frame5:
+dw 2
+%spritemapEntry(1, -7, -39+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, 1, -23+22, 0, 0, 2, 4, $02)
+
+SamusOam_Top_Right_Up_MidAir_Frame0:
+dw 1
+%spritemapEntry(1, -7, -40+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Up_MidAir_Frame1:
+dw 1
+%spritemapEntry(1, -7, -37+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Up_MidAir_Frame2:
+dw 1
+%spritemapEntry(1, -7, -33+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Up_MidAir_Frame3:
+dw 1
+%spritemapEntry(1, -7, -36+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Up_MidAir_Frame4:
+dw 1
+%spritemapEntry(1, -7, -39+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Up_MidAir_Frame5:
+dw 1
+%spritemapEntry(1, -7, -38+22, 0, 0, 2, 4, $00)
+
+SamusOam_Top_Right_Down_MidAir_Frame0:
+dw 2
+%spritemapEntry(1, -4, -30+22, 0, 0, 2, 4, $00)
+%spritemapEntry(1, -4, -14+22, 0, 0, 2, 4, $02)
+
+SamusOam_Bottom_Right_Down_MidAir_Frame0:
+dw 2
+%spritemapEntry(1, -14, -30+22, 0, 1, 2, 4, $08)
+%spritemapEntry(1, -14, -14+22, 0, 1, 2, 4, $0A)
+
+SamusOam_Bottom_Right_Down_MidAir_Frame1:
+dw 2
+%spritemapEntry(1, -12, -30+22, 0, 1, 2, 4, $08)
+%spritemapEntry(1, -12, -14+22, 0, 1, 2, 4, $0A)
+
+SamusOam_Bottom_Left_MidAir_Frame0:
+dw 4
+%spritemapEntry(1, -8+1, -26+22, 0, 0, 2, 4, $08)
+%spritemapEntry(0, -8+1, -10+22, 0, 0, 2, 4, $0A)
+%spritemapEntry(0, -8+8+1, -10+22, 0, 0, 2, 4, $0B)
+%spritemapEntry(0, 0+1, -2+22, 0, 0, 2, 4, $0C)
+
+SamusOam_Bottom_Left_MidAir_Frame1:
+dw 3
+%spritemapEntry(1, -8+1, -24+22, 0, 0, 2, 4, $08)
+%spritemapEntry(0, -8+1, -8+22, 0, 0, 2, 4, $0A)
+%spritemapEntry(0, -8+8+1, -8+22, 0, 0, 2, 4, $0B)
+
+SamusOam_Bottom_Left_MidAir_Frame2:
+dw 2
+%spritemapEntry(1, -8+1, -20+22, 0, 0, 2, 4, $08)
+%spritemapEntry(0, 0+1, -4+22, 0, 0, 2, 4, $0A)
+
+SamusOam_Bottom_Left_MidAir_Frame3:
+dw 3
+%spritemapEntry(1, -8+1, -23+22, 0, 0, 2, 4, $08)
+%spritemapEntry(0, -8+1, -7+22, 0, 0, 2, 4, $0A)
+%spritemapEntry(0, -8+8+1, -7+22, 0, 0, 2, 4, $0B)
+
+SamusOam_Bottom_Left_MidAir_Frame4:
+dw 2
+%spritemapEntry(1, -7+1, -25+22, 0, 0, 2, 4, $08)
+%spritemapEntry(1, -7+1, -9+22, 0, 0, 2, 4, $0A)
+
+SamusOam_Bottom_Left_MidAir_Frame5:
+dw 2
+%spritemapEntry(1, -8+1, -25+22, 0, 0, 2, 4, $08)
+%spritemapEntry(1, -8+1, -9+22, 0, 0, 2, 4, $0A)
+
+SamusOam_Top_Left_Forward_MidAir_Frame0:
+dw 3
+%spritemapEntry(1, -10+1, -36+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, -9+1, -44+22, 0, 0, 2, 4, $02)
+%spritemapEntry(0, -18+1, -28+22, 0, 0, 2, 4, $03)
+
+SamusOam_Top_Left_Forward_MidAir_Frame1:
+dw 3
+%spritemapEntry(1, -10+1, -35+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, -9+1, -43+22, 0, 0, 2, 4, $02)
+%spritemapEntry(0, -18+1, -27+22, 0, 0, 2, 4, $03)
+
+SamusOam_Top_Left_Forward_MidAir_Frame2:
+dw 3
+%spritemapEntry(1, -10+1, -30+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, -9+1, -38+22, 0, 0, 2, 4, $02)
+%spritemapEntry(0, -18+1, -22+22, 0, 0, 2, 4, $03)
+
+SamusOam_Top_Left_Forward_MidAir_Frame3:
+dw 3
+%spritemapEntry(1, -10+1, -33+22, 0, 0, 2, 4, $00)
+%spritemapEntry(0, -9+1, -41+22, 0, 0, 2, 4, $02)
+%spritemapEntry(0, -18+1, -25+22, 0, 0, 2, 4, $03)
+
 SamusOam_Top_Right_HangingOnLedge_Frame0:
 dw $0002
 %spritemapEntry(1, $1FC, $D9+$17, 0, 0, 2, 4, $04)
@@ -5793,6 +5993,53 @@ SamusTileDef_Bottom_DiagonalDown_Standing_Frame0: dl SamusGfx_Bottom_DiagonalDow
 SamusTileDef_Bottom_DiagonalDown_Standing_Frame1: dl SamusGfx_Bottom_DiagonalDown_Standing_Frame1 : dw 5*$20, 3*$20 ; 12
 SamusTileDef_Bottom_DiagonalDown_Standing_Frame2: dl SamusGfx_Bottom_DiagonalDown_Standing_Frame2 : dw 5*$20, 3*$20 ; 13
 
+SamusTileDef_Bottom_MidAir_Frame0: dl SamusGfx_Bottom_MidAir_Frame0 : dw 5*$20, 2*$20
+SamusTileDef_Bottom_MidAir_Frame1: dl SamusGfx_Bottom_MidAir_Frame1 : dw 4*$20, 2*$20
+SamusTileDef_Bottom_MidAir_Frame2: dl SamusGfx_Bottom_MidAir_Frame2 : dw 3*$20, 2*$20
+SamusTileDef_Bottom_MidAir_Frame3: dl SamusGfx_Bottom_MidAir_Frame3 : dw 4*$20, 2*$20
+SamusTileDef_Bottom_MidAir_Frame4: dl SamusGfx_Bottom_MidAir_Frame4 : dw 4*$20, 4*$20
+SamusTileDef_Bottom_MidAir_Frame5: dl SamusGfx_Bottom_MidAir_Frame5 : dw 4*$20, 4*$20
+
+SamusTileDef_Top_Right_Forward_MidAir_Frame0: dl SamusGfx_Top_Right_Forward_MidAir_Frame0 : dw 3*$20, 2*$20
+SamusTileDef_Top_Right_Forward_MidAir_Frame1: dl SamusGfx_Top_Right_Forward_MidAir_Frame1 : dw 3*$20, 2*$20
+SamusTileDef_Top_Right_Forward_MidAir_Frame2: dl SamusGfx_Top_Right_Forward_MidAir_Frame2 : dw 3*$20, 2*$20
+
+SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame0: dl SamusGfx_Top_Right_DiagonalUp_MidAir_Frame0 : dw 3*$20, 3*$20
+SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame1: dl SamusGfx_Top_Right_DiagonalUp_MidAir_Frame1 : dw 3*$20, 3*$20
+SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame2: dl SamusGfx_Top_Right_DiagonalUp_MidAir_Frame2 : dw 3*$20, 3*$20
+
+SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame0: dl SamusGfx_Top_Right_DiagonalDown_MidAir_Frame0 : dw 3*$20, 2*$20
+SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame1: dl SamusGfx_Top_Right_DiagonalDown_MidAir_Frame1 : dw 3*$20, 2*$20
+SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame2: dl SamusGfx_Top_Right_DiagonalDown_MidAir_Frame2 : dw 3*$20, 2*$20
+
+SamusTileDef_Top_Right_Up_MidAir_Frame0: dl SamusGfx_Top_Right_Up_MidAir_Frame0 : dw 2*$20, 2*$20
+SamusTileDef_Top_Right_Up_MidAir_Frame1: dl SamusGfx_Top_Right_Up_MidAir_Frame1 : dw 2*$20, 2*$20
+SamusTileDef_Top_Right_Up_MidAir_Frame2: dl SamusGfx_Top_Right_Up_MidAir_Frame2 : dw 2*$20, 2*$20
+
+SamusTileDef_Top_Right_Down_MidAir_Frame0: dl SamusGfx_Top_Right_Down_MidAir_Frame0 : dw 4*$20, 4*$20
+SamusTileDef_Bottom_Down_MidAir_Frame0: dl SamusGfx_Bottom_Down_MidAir_Frame0 : dw 4*$20, 4*$20
+SamusTileDef_Top_Right_Down_MidAir_Frame1: dl SamusGfx_Top_Right_Down_MidAir_Frame1 : dw 4*$20, 4*$20
+SamusTileDef_Bottom_Down_MidAir_Frame1: dl SamusGfx_Bottom_Down_MidAir_Frame1 : dw 4*$20, 4*$20
+
+SamusTileDef_Top_Left_Forward_MidAir_Frame0: dl SamusGfx_Top_Left_Forward_MidAir_Frame0 : dw 4*$20, 2*$20
+SamusTileDef_Top_Left_Forward_MidAir_Frame1: dl SamusGfx_Top_Left_Forward_MidAir_Frame1 : dw 4*$20, 2*$20
+SamusTileDef_Top_Left_Forward_MidAir_Frame2: dl SamusGfx_Top_Left_Forward_MidAir_Frame2 : dw 4*$20, 2*$20
+
+SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame0: dl SamusGfx_Top_Left_DiagonalUp_MidAir_Frame0 : dw 3*$20, 3*$20
+SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame1: dl SamusGfx_Top_Left_DiagonalUp_MidAir_Frame1 : dw 3*$20, 3*$20
+SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame2: dl SamusGfx_Top_Left_DiagonalUp_MidAir_Frame2 : dw 3*$20, 3*$20
+
+SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame0: dl SamusGfx_Top_Left_DiagonalDown_MidAir_Frame0 : dw 4*$20, 4*$20
+SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame1: dl SamusGfx_Top_Left_DiagonalDown_MidAir_Frame1 : dw 4*$20, 4*$20
+SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame2: dl SamusGfx_Top_Left_DiagonalDown_MidAir_Frame2 : dw 4*$20, 4*$20
+
+SamusTileDef_Top_Left_Up_MidAir_Frame0: dl SamusGfx_Top_Left_Up_MidAir_Frame0 : dw 3*$20, 2*$20
+SamusTileDef_Top_Left_Up_MidAir_Frame1: dl SamusGfx_Top_Left_Up_MidAir_Frame1 : dw 3*$20, 2*$20
+SamusTileDef_Top_Left_Up_MidAir_Frame2: dl SamusGfx_Top_Left_Up_MidAir_Frame2 : dw 3*$20, 2*$20
+
+SamusTileDef_Top_Left_Down_MidAir_Frame0: dl SamusGfx_Top_Left_Down_MidAir_Frame0 : dw 4*$20, 4*$20
+SamusTileDef_Top_Left_Down_MidAir_Frame1: dl SamusGfx_Top_Left_Down_MidAir_Frame1 : dw 4*$20, 4*$20
+
 SamusTileDef_Top_HangingOnLedge_Frame0: dl SamusGfx_Top_HangingOnLedge_Frame0 : dw 6*$20, 6*$20 ; 14
 SamusTileDef_Top_HangingOnLedge_Frame1: dl SamusGfx_Top_HangingOnLedge_Frame1 : dw 6*$20, 6*$20 ; 15
 SamusTileDef_Top_HangingOnLedge_Frame2: dl SamusGfx_Top_HangingOnLedge_Frame2 : dw 6*$20, 6*$20 ; 16
@@ -6220,32 +6467,68 @@ TA_12:
   dw TD_T_2_18, TD_B_2_09
 
 TA_13:
-TA_14:
 TA_51:
-TA_52:
-TA_BA:
-TA_BC:
+TA_67:
 TA_EC:
 TA_EE:
-  dw TD_T_1_00, TD_B_4_02
-  dw TD_T_1_01, TD_B_4_05
-  dw TD_T_1_02, TD_B_4_04
+  dw SamusTileDef_Top_Right_Forward_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Right_Forward_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Right_Forward_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Right_Forward_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Right_Forward_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Right_Forward_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
+
+TA_14:
+TA_52:
+TA_68:
+TA_BA:
+TA_BC:
+  dw SamusTileDef_Top_Left_Forward_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Left_Forward_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Left_Forward_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Left_Forward_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Left_Forward_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Left_Forward_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
 
 TA_15:
-TA_16:
-TA_BB:
+TA_2B:
 TA_ED:
-  dw TD_T_1_04, TD_B_4_03
-  dw TD_T_1_0C, TD_B_4_02
+  dw SamusTileDef_Top_Right_Up_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Right_Up_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Right_Up_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Right_Up_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Right_Up_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Right_Up_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
+
+TA_16:
+TA_2C:
+TA_BB:
+  dw SamusTileDef_Top_Left_Up_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Left_Up_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Left_Up_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Left_Up_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Left_Up_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Left_Up_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
 
 TA_17:
-TA_18:
 TA_2D:
+TA_EF:
+  dw SamusTileDef_Top_Right_Down_MidAir_Frame0, SamusTileDef_Bottom_Down_MidAir_Frame0
+  dw SamusTileDef_Top_Right_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Right_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Right_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Right_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Right_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+
+TA_18:
 TA_2E:
 TA_BD:
-TA_EF:
-  dw TD_T_1_08, TD_B_4_05
-  dw TD_T_1_10, TD_B_4_06
+  dw SamusTileDef_Top_Left_Down_MidAir_Frame0, SamusTileDef_Bottom_Down_MidAir_Frame0
+  dw SamusTileDef_Top_Left_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Left_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Left_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Left_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
+  dw SamusTileDef_Top_Left_Down_MidAir_Frame1, SamusTileDef_Bottom_Down_MidAir_Frame1
 
 TA_19:
 TA_1A:
@@ -6324,11 +6607,6 @@ TA_2A:
   dw TD_T_4_00, TD_B_0_00
   dw TD_T_4_01, TD_B_4_03
   dw TD_T_2_12, TD_B_4_04
-
-TA_2B:
-TA_2C:
-  dw TD_T_1_04, TD_B_4_04
-  dw TD_T_1_0C, TD_B_4_05
 
 TA_2F:
 TA_30:
@@ -6412,37 +6690,41 @@ TA_54:
   dw TD_T_3_00, TD_B_3_00
   dw TD_T_3_00, TD_B_3_00
 
-TA_67:
-TA_68:
-  dw TD_T_1_00, TD_B_4_04
-  dw TD_T_1_01, TD_B_4_05
-  dw TD_T_1_01, TD_B_4_05
-  dw TD_T_1_00, TD_B_0_00
-  dw TD_T_1_00, TD_B_0_00
-  dw TD_T_1_00, TD_B_4_04
-  dw TD_T_1_02, TD_B_4_02
-
 TA_69:
+TA_6D:
+  dw SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Right_DiagonalUp_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
+
 TA_6A:
-  dw TD_T_1_04, TD_B_4_03
-  dw TD_T_1_05, TD_B_4_02
+TA_6E:
+  dw SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Left_DiagonalUp_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
 
 TA_6B:
-TA_6C:
-  dw TD_T_1_08, TD_B_4_03
-  dw TD_T_1_09, TD_B_4_02
-
-TA_6D:
-TA_6E:
-  dw TD_T_1_04, TD_B_4_04
-  dw TD_T_1_05, TD_B_4_05
-  dw TD_T_1_05, TD_B_4_05
-
 TA_6F:
+  dw SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Right_DiagonalDown_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
+
+TA_6C:
 TA_70:
-  dw TD_T_1_08, TD_B_4_04
-  dw TD_T_1_09, TD_B_4_05
-  dw TD_T_1_09, TD_B_4_05
+  dw SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame0
+  dw SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame1
+  dw SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame2, SamusTileDef_Bottom_MidAir_Frame2
+  dw SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame3
+  dw SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame1, SamusTileDef_Bottom_MidAir_Frame4
+  dw SamusTileDef_Top_Left_DiagonalDown_MidAir_Frame0, SamusTileDef_Bottom_MidAir_Frame5
 
 TA_71:
 TA_72:
