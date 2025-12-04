@@ -37,8 +37,11 @@ JSR GetDataAndIncY : STA $2142 : JSR GetDataAndIncY : STA $2143 ; APU IO 2..3 = 
 CPX #$0001 : TDC : ROL : STA $2141 ; If block size = 0: APU IO 1 = 0 (EOF), else APU IO 1 = 1 (arbitrary non-zero value)
 ADC #$7F ; Set overflow if block size != 0, else clear overflow
 PLA : STA $2140 ; APU IO 0 = kick
+BVC + ; If block size = 0: return
 - : CMP $2140 : BNE - ; Wait until APU IO 0 echoes
-BVS UploadDataBlock ; If block size != 0: go to UploadDataBlock
+BRA UploadDataBlock ; Go to UploadDataBlock
+
++
 PLB : PLP : RTS
 
 GetDataAndIncY:

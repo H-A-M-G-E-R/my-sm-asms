@@ -52,8 +52,8 @@ MusicUpload:
         CPX #$0001 : TDC : ROL : STA $2141
         ADC #$7F
         PLA : STA $2140
-        - : CMP $2140 : BNE - 
         BVC .done
+        - : CMP $2140 : BNE - ; wait for apu
         JSR .getByteAndIncY : XBA ; first byte
         BRA .uploadMusicByte
         .nextMusicByte
