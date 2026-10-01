@@ -29,7 +29,7 @@ org $80FFD8 : db $06 ; expand SRAM to 10000h bytes ($70:0000..7FFF and $71:0000.
 org $808693 : PLP : RTS ; skip SRAM check but don't skip region check
 
 org $828D08 : BRA $01 ; skip backing up BG2 tilemap
-org $828ED1 : dw $1000 ; skip clearing BG2 tilemap
+;org $828ED1 : dw $1000 ; skip clearing BG2 tilemap (no longer needed because of the PLP : RTL put in $82:8EB8)
 org $829377 : BRA $01 ; skip restoring BG2 tilemap
 org $828D47 : BRA $02 ; skip clearing fx tilemap
 org $80A15F : BRA $06 ; skip loading fx tilemap, library background, BG1 and custom BG2
