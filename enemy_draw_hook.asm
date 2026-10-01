@@ -1,6 +1,7 @@
 ; Enemy Draw Hook, by H A M
 ; Adds a hook to execute before drawing an enemy.
 ; This allows enemies to have trails, effects and more.
+; Uses freespace in bank $A0, cout's freespace.asm required.
 ; Set the hook by setting !EnemyDrawHook,x where x is the enemy index.
 ; After the hook, SEC to draw the enemy normally, CLC to not draw it
 
