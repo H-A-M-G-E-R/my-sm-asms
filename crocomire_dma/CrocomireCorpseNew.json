@@ -1,0 +1,4639 @@
+{
+ "game": "sm",
+ "name": "CrocomireCorpse",
+ "gfx": "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",
+ "palette": [
+  4278190192,
+  4294506744,
+  4294473752,
+  4294453264,
+  4289208336,
+  4284487696,
+  4281864200,
+  4293974224,
+  4293968040,
+  4290809968,
+  4287125568,
+  4283969560,
+  4294500352,
+  4291856384,
+  4289746944,
+  4278190080
+ ],
+ "gfx_offset": 256,
+ "palette_offset": 7,
+ "spritemaps": [
+  {
+   "name": "CrocomireCorpseSpritemap_0_A4E74A",
+   "spritemap": [
+    {
+     "x": -28,
+     "y": 24,
+     "big": false,
+     "tile": 422,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 24,
+     "big": false,
+     "tile": 447,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 24,
+     "big": false,
+     "tile": 431,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 28,
+     "y": 16,
+     "big": true,
+     "tile": 458,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 16,
+     "big": true,
+     "tile": 456,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 16,
+     "big": true,
+     "tile": 454,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 28,
+     "y": 0,
+     "big": true,
+     "tile": 452,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 0,
+     "big": true,
+     "tile": 450,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 0,
+     "big": true,
+     "tile": 448,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": -24,
+     "big": false,
+     "tile": 438,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 28,
+     "y": -16,
+     "big": true,
+     "tile": 429,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": -16,
+     "big": true,
+     "tile": 427,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -16,
+     "big": true,
+     "tile": 425,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -16,
+     "big": true,
+     "tile": 423,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -32,
+     "big": true,
+     "tile": 420,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -32,
+     "big": true,
+     "tile": 418,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -36,
+     "y": -32,
+     "big": true,
+     "tile": 416,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_1_A4E7A1",
+   "spritemap": [
+    {
+     "x": 20,
+     "y": 24,
+     "big": false,
+     "tile": 422,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 24,
+     "big": false,
+     "tile": 447,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 24,
+     "big": false,
+     "tile": 431,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -44,
+     "y": 16,
+     "big": true,
+     "tile": 458,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -28,
+     "y": 16,
+     "big": true,
+     "tile": 456,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 16,
+     "big": true,
+     "tile": 454,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -44,
+     "y": 0,
+     "big": true,
+     "tile": 452,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -28,
+     "y": 0,
+     "big": true,
+     "tile": 450,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 0,
+     "big": true,
+     "tile": 448,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -24,
+     "big": false,
+     "tile": 438,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -44,
+     "y": -16,
+     "big": true,
+     "tile": 429,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -28,
+     "y": -16,
+     "big": true,
+     "tile": 427,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": -16,
+     "big": true,
+     "tile": 425,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": -16,
+     "big": true,
+     "tile": 423,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": -32,
+     "big": true,
+     "tile": 420,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": -32,
+     "big": true,
+     "tile": 418,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": -32,
+     "big": true,
+     "tile": 416,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_2_A4E7F8",
+   "spritemap": [
+    {
+     "x": 24,
+     "y": 12,
+     "big": false,
+     "tile": 363,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 12,
+     "big": false,
+     "tile": 362,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -4,
+     "big": true,
+     "tile": 360,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -20,
+     "big": true,
+     "tile": 358,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 356,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 0,
+     "big": true,
+     "tile": 354,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 356,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 354,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -4,
+     "big": true,
+     "tile": 384,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -20,
+     "big": true,
+     "tile": 352,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_3_A4E82C",
+   "spritemap": [
+    {
+     "x": -32,
+     "y": 12,
+     "big": false,
+     "tile": 363,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 12,
+     "big": false,
+     "tile": 362,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -4,
+     "big": true,
+     "tile": 360,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -20,
+     "big": true,
+     "tile": 358,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 0,
+     "big": true,
+     "tile": 356,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 354,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 356,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 354,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -4,
+     "big": true,
+     "tile": 384,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -20,
+     "big": true,
+     "tile": 352,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_4_A4E860",
+   "spritemap": [
+    {
+     "x": 32,
+     "y": 16,
+     "big": true,
+     "tile": 398,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 16,
+     "big": true,
+     "tile": 394,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 16,
+     "big": true,
+     "tile": 396,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 24,
+     "big": false,
+     "tile": 379,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 16,
+     "big": false,
+     "tile": 271,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 16,
+     "big": false,
+     "tile": 287,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -25,
+     "y": 24,
+     "big": false,
+     "tile": 378,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": 24,
+     "big": false,
+     "tile": 378,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -48,
+     "y": 16,
+     "big": false,
+     "tile": 392,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -40,
+     "y": 16,
+     "big": false,
+     "tile": 393,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": 16,
+     "big": false,
+     "tile": 408,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 16,
+     "big": false,
+     "tile": 409,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 0,
+     "big": true,
+     "tile": 390,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": 0,
+     "big": true,
+     "tile": 388,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -48,
+     "y": 0,
+     "big": true,
+     "tile": 386,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_5_A4E8AD",
+   "spritemap": [
+    {
+     "x": -48,
+     "y": 16,
+     "big": true,
+     "tile": 398,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 16,
+     "big": true,
+     "tile": 394,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": 16,
+     "big": true,
+     "tile": 396,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 24,
+     "big": false,
+     "tile": 379,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 16,
+     "big": false,
+     "tile": 271,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 16,
+     "big": false,
+     "tile": 287,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 17,
+     "y": 24,
+     "big": false,
+     "tile": 378,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 24,
+     "big": false,
+     "tile": 378,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 40,
+     "y": 16,
+     "big": false,
+     "tile": 392,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 32,
+     "y": 16,
+     "big": false,
+     "tile": 393,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 16,
+     "big": false,
+     "tile": 408,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 16,
+     "big": false,
+     "tile": 409,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 390,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 0,
+     "big": true,
+     "tile": 388,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 32,
+     "y": 0,
+     "big": true,
+     "tile": 386,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_6_A4E8FA",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -8,
+     "big": true,
+     "tile": 366,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -8,
+     "big": true,
+     "tile": 364,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_7_A4E906",
+   "spritemap": [
+    {
+     "x": -16,
+     "y": -8,
+     "big": true,
+     "tile": 366,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -8,
+     "big": true,
+     "tile": 364,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_8_A4E912",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 352,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_9_A4E919",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 384,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_10_A4E920",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 354,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_11_A4E927",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 356,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_12_A4E92E",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 358,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_13_A4E935",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 360,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_14_A4E93C",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -4,
+     "big": false,
+     "tile": 363,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -4,
+     "big": false,
+     "tile": 362,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_15_A4E948",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 4,
+     "big": false,
+     "tile": 392,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": false,
+     "tile": 393,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 386,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_16_A4E959",
+   "spritemap": [
+    {
+     "x": -7,
+     "y": 8,
+     "big": false,
+     "tile": 378,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 8,
+     "big": false,
+     "tile": 378,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 408,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 409,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -16,
+     "big": true,
+     "tile": 388,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_17_A4E974",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 5,
+     "big": false,
+     "tile": 271,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 13,
+     "big": false,
+     "tile": 379,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 5,
+     "big": false,
+     "tile": 287,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -11,
+     "big": true,
+     "tile": 390,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_18_A4E98A",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 394,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_19_A4E991",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 396,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_20_A4E998",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 398,
+     "palette": 7,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_21_A4E99F",
+   "spritemap": [
+    {
+     "x": -61,
+     "y": 26,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -77,
+     "y": 30,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 7,
+     "big": false,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -1,
+     "big": false,
+     "tile": 282,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 7,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -9,
+     "big": true,
+     "tile": 267,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 11,
+     "big": true,
+     "tile": 480,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -34,
+     "y": 18,
+     "big": true,
+     "tile": 480,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -48,
+     "y": 25,
+     "big": true,
+     "tile": 480,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_22_A4E9CE",
+   "spritemap": [
+    {
+     "x": -79,
+     "y": 19,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -95,
+     "y": 19,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 9,
+     "big": false,
+     "tile": 282,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -7,
+     "big": false,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 1,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -7,
+     "big": true,
+     "tile": 267,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -34,
+     "y": 5,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -50,
+     "y": 15,
+     "big": true,
+     "tile": 490,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -64,
+     "y": 15,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_23_A4E9FD",
+   "spritemap": [
+    {
+     "x": -52,
+     "y": 28,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -68,
+     "y": 30,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 8,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -10,
+     "y": 13,
+     "big": true,
+     "tile": 480,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 20,
+     "big": true,
+     "tile": 480,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -38,
+     "y": 27,
+     "big": true,
+     "tile": 480,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_24_A4EA22",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 8,
+     "big": false,
+     "tile": 282,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -8,
+     "big": false,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 267,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -43,
+     "y": 17,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -59,
+     "y": 17,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": 3,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -14,
+     "y": 13,
+     "big": true,
+     "tile": 490,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -28,
+     "y": 13,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_25_A4EA51",
+   "spritemap": [
+    {
+     "x": -64,
+     "y": 12,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -80,
+     "y": 12,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 8,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 12,
+     "big": true,
+     "tile": 482,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": 12,
+     "big": true,
+     "tile": 482,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -48,
+     "y": 12,
+     "big": true,
+     "tile": 482,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_26_A4EA76",
+   "spritemap": [
+    {
+     "x": 2,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -14,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -22,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -30,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -14,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -10,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_27_A4EAA0",
+   "spritemap": [
+    {
+     "x": 5,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -11,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -19,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -27,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -11,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -9,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_28_A4EACA",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -7,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_29_A4EAF4",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_30_A4EB1E",
+   "spritemap": [
+    {
+     "x": 3,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 17,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 9,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -7,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -15,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_31_A4EB48",
+   "spritemap": [
+    {
+     "x": 9,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 6,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_32_A4EB72",
+   "spritemap": [
+    {
+     "x": 16,
+     "y": -7,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 11,
+     "y": -7,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 32,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 9,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 3,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_33_A4EB9C",
+   "spritemap": [
+    {
+     "x": 9,
+     "y": -8,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 6,
+     "y": -8,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 9,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 8,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 8,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 9,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 9,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_34_A4EBC6",
+   "spritemap": [
+    {
+     "x": 3,
+     "y": -11,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": -11,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 17,
+     "y": 6,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 9,
+     "y": 5,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": 5,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -7,
+     "y": 7,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -15,
+     "y": 7,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_35_A4EBF0",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 6,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 5,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 7,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 7,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_36_A4EC1A",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": 6,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 5,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 5,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 7,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 7,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -11,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -7,
+     "y": -11,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_37_A4EC44",
+   "spritemap": [
+    {
+     "x": 5,
+     "y": 7,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": 6,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -11,
+     "y": 6,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -19,
+     "y": 8,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -27,
+     "y": 8,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -11,
+     "y": -10,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -9,
+     "y": -10,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_38_A4EC6E",
+   "spritemap": [
+    {
+     "x": 2,
+     "y": 8,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": 7,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -14,
+     "y": 7,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -22,
+     "y": 8,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -30,
+     "y": 8,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -14,
+     "y": -9,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -10,
+     "y": -9,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 1,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_39_A4EC98",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 4,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 5,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 5,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 5,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -7,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_40_A4ECC2",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 4,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 5,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 5,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 5,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -13,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -11,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_41_A4ECEC",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 4,
+     "big": false,
+     "tile": 279,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "big": false,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 5,
+     "big": false,
+     "tile": 277,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": 5,
+     "big": false,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": 5,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": true,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -15,
+     "big": true,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -15,
+     "big": true,
+     "tile": 299,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_42_A4ED16",
+   "spritemap": [
+    {
+     "x": 45,
+     "y": 26,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 61,
+     "y": 30,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 7,
+     "big": false,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -1,
+     "big": false,
+     "tile": 282,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 7,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -9,
+     "big": true,
+     "tile": 267,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "big": true,
+     "tile": 480,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 18,
+     "y": 18,
+     "big": true,
+     "tile": 480,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 32,
+     "y": 25,
+     "big": true,
+     "tile": 480,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_43_A4ED45",
+   "spritemap": [
+    {
+     "x": 63,
+     "y": 19,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 79,
+     "y": 19,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 9,
+     "big": false,
+     "tile": 282,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -7,
+     "big": false,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 1,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -7,
+     "big": true,
+     "tile": 267,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 18,
+     "y": 5,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 34,
+     "y": 15,
+     "big": true,
+     "tile": 490,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 48,
+     "y": 15,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_44_A4ED74",
+   "spritemap": [
+    {
+     "x": 36,
+     "y": 28,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 52,
+     "y": 30,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 8,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": 13,
+     "big": true,
+     "tile": 480,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 20,
+     "big": true,
+     "tile": 480,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 22,
+     "y": 27,
+     "big": true,
+     "tile": 480,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_45_A4ED99",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 8,
+     "big": false,
+     "tile": 282,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -8,
+     "big": false,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 0,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 267,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 27,
+     "y": 17,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 43,
+     "y": 17,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": 3,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -2,
+     "y": 13,
+     "big": true,
+     "tile": 490,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 13,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_46_A4EDC8",
+   "spritemap": [
+    {
+     "x": -26,
+     "y": -6,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -10,
+     "y": -6,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -83,
+     "y": -6,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -99,
+     "y": -6,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -35,
+     "y": -6,
+     "big": true,
+     "tile": 482,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -51,
+     "y": -6,
+     "big": true,
+     "tile": 482,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -67,
+     "y": -6,
+     "big": true,
+     "tile": 482,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_47_A4EDED",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -16,
+     "big": false,
+     "tile": 282,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": false,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 267,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 61,
+     "y": -37,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 77,
+     "y": -37,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -20,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 32,
+     "y": -30,
+     "big": true,
+     "tile": 490,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 46,
+     "y": -30,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_48_A4EE1C",
+   "spritemap": [
+    {
+     "x": 10,
+     "y": -6,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -6,
+     "big": true,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 67,
+     "y": -6,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 83,
+     "y": -6,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 19,
+     "y": -6,
+     "big": true,
+     "tile": 482,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 35,
+     "y": -6,
+     "big": true,
+     "tile": 482,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 51,
+     "y": -6,
+     "big": true,
+     "tile": 482,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_49_A4EE41",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 8,
+     "big": false,
+     "tile": 282,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -8,
+     "big": false,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 0,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 267,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 27,
+     "y": -10,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 43,
+     "y": -10,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": 7,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": -3,
+     "big": true,
+     "tile": 490,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 12,
+     "y": -3,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_50_A4EE70",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 8,
+     "big": true,
+     "tile": 264,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 266,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 42,
+     "y": -6,
+     "big": true,
+     "tile": 484,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 58,
+     "y": -6,
+     "big": true,
+     "tile": 486,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": 11,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "big": true,
+     "tile": 490,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 27,
+     "y": 1,
+     "big": true,
+     "tile": 488,
+     "palette": 1,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_51_A4EE95",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 8,
+     "big": false,
+     "tile": 282,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -8,
+     "big": false,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 267,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -43,
+     "y": -10,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -59,
+     "y": -10,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": 7,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -14,
+     "y": -3,
+     "big": true,
+     "tile": 490,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -28,
+     "y": -3,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_52_A4EEC4",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -16,
+     "big": false,
+     "tile": 282,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -16,
+     "y": 0,
+     "big": false,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -24,
+     "y": -16,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 267,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -77,
+     "y": -37,
+     "big": true,
+     "tile": 484,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -93,
+     "y": -37,
+     "big": true,
+     "tile": 486,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -20,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -48,
+     "y": -30,
+     "big": true,
+     "tile": 490,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -62,
+     "y": -30,
+     "big": true,
+     "tile": 488,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_53_A4EEF3",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_54_A4EF09",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_55_A4EF1F",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_56_A4EF35",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_57_A4EF4B",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": 0,
+     "big": false,
+     "tile": 263,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 261,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_58_A4EF61",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": 0,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 273,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 272,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_59_A4EF72",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": -8,
+     "big": false,
+     "tile": 263,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 261,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_60_A4EF88",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": -8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 273,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 272,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_61_A4EF99",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 460,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_62_A4EFA0",
+   "spritemap": [
+    {
+     "x": -32,
+     "y": 0,
+     "big": false,
+     "tile": 383,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -8,
+     "big": false,
+     "tile": 367,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 0,
+     "big": false,
+     "tile": 380,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": false,
+     "tile": 364,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 358,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 352,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_63_A4EFC0",
+   "spritemap": [
+    {
+     "x": -32,
+     "y": 0,
+     "big": false,
+     "tile": 400,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -8,
+     "big": false,
+     "tile": 384,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 0,
+     "big": false,
+     "tile": 380,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": false,
+     "tile": 364,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 358,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 352,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_64_A4EFE0",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": 0,
+     "big": false,
+     "tile": 381,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": false,
+     "tile": 365,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": 0,
+     "big": false,
+     "tile": 401,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -8,
+     "big": false,
+     "tile": 385,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 358,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 352,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_65_A4F000",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 352,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 360,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 0,
+     "big": false,
+     "tile": 382,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": false,
+     "tile": 366,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_66_A4F016",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 354,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -16,
+     "big": true,
+     "tile": 362,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CrocomireCorpseSpritemap_67_A4F022",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 356,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  }
+ ],
+ "ext_hitboxes": [],
+ "ext_spritemaps": []
+}
