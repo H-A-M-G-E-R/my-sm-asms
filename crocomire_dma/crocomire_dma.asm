@@ -1,7 +1,7 @@
 ; Crocomire DMA Freeup, by H A M
 ; DMAs Crocomire's arm graphics to save sprite tile VRAM.
 ; Overwrites blinking eye tiles with melting tiles when he dies.
-; He don't use extra enemy tiles anymore.
+; He doesn't use extra enemy tiles anymore.
 ; Uses freespace in bank $A4, and any bank to store new GFX.
 ; Requires my Enemy Draw Hook ASM, cout's freespace.asm (https://metroidconstruction.com/resource.php?id=842);
 ; and my Ridley DMA Freeup for the DoDMADef function.
