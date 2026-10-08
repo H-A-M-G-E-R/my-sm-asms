@@ -4,6 +4,7 @@
 ; from extra enemy tiles to the end of normal enemy tiles.
 ; Repoints several of torizo's GFX in bank $AA to another bank's freespace to free up space in bank $AA.
 ; Uses freespace in any bank to store new GFX.
+; Makes torizo's GFX be able to be freely repointed.
 ; Requires my Enemy Draw Hook ASM, cout's freespace.asm (https://metroidconstruction.com/resource.php?id=842);
 ; and my Ridley DMA Freeup for the DoDMADef function.
 
