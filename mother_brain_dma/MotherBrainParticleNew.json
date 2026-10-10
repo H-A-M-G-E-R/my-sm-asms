@@ -1,0 +1,1469 @@
+{
+ "game": "sm",
+ "name": "MotherBrainParticle",
+ "gfx": "AAAAAAAABgYJCRAaKD4qOgAAAAAAAAYACQAaAD4AOgAAAAAAAADQ0Gj4IHi8/AgYAAAAAAAA0AD4AHgA/AAYAAAAAAARHS0zKDUgKiMkUWIAAAAAHQA/AD0AKgAnAHMAAAAAAHBwCDg0zDSMgGAY2AAAAABwADgA/AC8AOAA2AAAAAsPFRsqNiU9Mzp6eWV/AAAPAB8APgA9ADsAewB/AAAAMDBMfOT8XPwu/kb+5/8AADAAfAD8APwA/gD+AP8ABw9ETDg7FTfR9aDgDS0JOQ8ATAA7ADcA9QDgAC0AOQAAAAwMwOSgogAAkJAtPQcPAAAMAOQAogAAAJAAPQAPAAAAAgKQkCAgAABISAAAAAAAAAIAkAAgAAAASAAAAAAAAAAEBAAABATAwEBADAwFBQAABAAAAAQAwABAAAwABQAIAAAACAgICBwICAgcFBQACAgICAAIAAgUHBQcABQcHAgACAAAAAAACAgICAgICAgICAgICAgICAAIAAgACAAICAgMCBwIHAgcCAgAHBQUAAAIBAwUHBQcFBwUFAAUHBwAAAAACHjFPwh4AAAAAAAAAABAAJgAAwCYAEAAAAAAAAAAAAAgIFN3ICAAAAAAAAAAAAAAUAAPAFAAAAAAAAAAAAAAAAAAExcAAAAAAAAAAAAAAAAQAC8AEAAAAAAAAAABARQcERkICgcHAAAAAAAAAQAcABkACgAHAAAAAAAAAAjICKgIGEjYMDAAAAAAAADIAKgAGADYADAAAAAAAAAAV2ghNHh+CTwtPhYXAQEAAH8ANQB+AD0APwAXAAEAAADUDAomEi4ErHh4gICAgAAA3AAuAD4ArAB4AIAAgAAAAEx/eX87OzAzYnEdHiYnAAB/AH8AOwAzAHMAHwAnAAAA5OSansXH5ecu7shI4OAAAOQAngDHAOcA7gDIAOAAAADA5MDIJCQwMImNDQ8iIwMD5ADIACQAMACNAA8AIwADABweGh4sLAgIkpJCQhQUAAAeAB4ALAAIAJIAQgAUAAAAgIDAwAAAAAAhIUhIBgYCAoAAwAAAAAAAIQBIAAYAAgAAAAAAEBAyMgAAAAABAQQEAAAAABAAMgAAAAAAAQAEAAAAAAAQECg4EBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoOFRsOERUbCg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAoKBAQAAAAAAAAAAAAABAAOAAQAAAAAAAAABAQABAQECg4ADgAOBAoABAQABAAAAAoACgAAABEACgAEBAQEAAQAAAQECg4EBAAABAAEAAQABAAKAAAACgAAAAQEBAQABAAABAQAAAAAAAAEAAQABAAEAAoABAAAAAAAAAAAAAIAAAAFAAIAAAAAAAAAAAACAgICBwcCAgAAAAAAAAIAAAAHAgICBQAAAAAAAAACAgICBQcFBwcHAAAAAAAAAgAAAAcCAgAFAAIAAAAAAAICAgIFBwUFBwcCAgAAAgAAAAAAAAAAAAICAgAPDwAAAgIAAAAAAgIAAgUFEJ+AAAAAAAABARAAJOQfEQ+JgAAAAAAAAAEAABB0YvPQGYAAAAAAAAAAAAAAABAQL29AAAAAAAAAAAAAAAAFFRC/wAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAANPTAAAmIm5Q9opoVB4iXFQAAAAAJgB+AP4AfAA+AFwAAAAQEHBAxPx+MuSacGgoOAAAEABwAPwAfgD+AHgAOAAAAFh4Dn6StpHfCu7S2kJ+KDh4AH4AtgDfAO4A2gB+ADgAEjKJiUDABAQRkYCBABAiJjIAiQDAAAQAkQCBABAAJgASEoCAAAAAAAEBgIAAACIiEgCAAAAAAAABAIAAAAAiAAEBAAIICAwMIDAQ8MAgwCABAAIADAAUAAgAAAAAAAAAAAEEBAICGBgIOAAwAAAAAAEABgAOAAQAAAAAAAAAAAABAQACCAgMDAAQAAAAAAAAAQACAAwAFAAIAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAAAEAAoABAAAAAAAAAA",
+ "palette": [
+  4278190192,
+  4291875064,
+  4292397056,
+  4289757184,
+  4288167936,
+  4293394680,
+  4288676016,
+  4283433056,
+  4278253680,
+  4278231112,
+  4278214696,
+  4288716960,
+  4285558896,
+  4282400832,
+  4280295496,
+  4282401016
+ ],
+ "gfx_offset": 368,
+ "palette_offset": 5,
+ "spritemaps": [
+  {
+   "name": "MotherBrainParticleSpritemap_0_8D93DB",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -27,
+     "big": false,
+     "tile": 397,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 14,
+     "y": -17,
+     "big": false,
+     "tile": 412,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -22,
+     "y": -17,
+     "big": false,
+     "tile": 412,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 37,
+     "y": -8,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 26,
+     "y": -42,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -33,
+     "y": -42,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -45,
+     "y": -8,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -19,
+     "y": -8,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": -8,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": -19,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -11,
+     "y": -19,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_1_8D9414",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -31,
+     "big": false,
+     "tile": 398,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 17,
+     "y": -19,
+     "big": false,
+     "tile": 413,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -25,
+     "y": -19,
+     "big": false,
+     "tile": 413,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -24,
+     "big": false,
+     "tile": 412,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": false,
+     "tile": 381,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -8,
+     "big": false,
+     "tile": 381,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": false,
+     "tile": 412,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_2_8D9439",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -34,
+     "big": false,
+     "tile": 399,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": -24,
+     "big": false,
+     "tile": 414,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -32,
+     "y": -24,
+     "big": false,
+     "tile": 414,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -27,
+     "y": -8,
+     "big": false,
+     "tile": 382,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": -8,
+     "big": false,
+     "tile": 382,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 10,
+     "y": -26,
+     "big": false,
+     "tile": 413,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -26,
+     "big": false,
+     "tile": 413,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_3_8D945E",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -38,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 29,
+     "y": -26,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -36,
+     "y": -26,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -34,
+     "y": -8,
+     "big": false,
+     "tile": 383,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 27,
+     "y": -8,
+     "big": false,
+     "tile": 383,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": -32,
+     "big": false,
+     "tile": 414,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -32,
+     "big": false,
+     "tile": 414,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_4_8D9483",
+   "spritemap": [
+    {
+     "x": 10,
+     "y": -13,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -20,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -44,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 32,
+     "y": -28,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -13,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -38,
+     "y": -28,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -40,
+     "y": -8,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 32,
+     "y": -8,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": -36,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -28,
+     "y": -36,
+     "big": false,
+     "tile": 415,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_5_8D94B7",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -22,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 34,
+     "y": -29,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 10,
+     "y": -13,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -17,
+     "y": -13,
+     "big": false,
+     "tile": 395,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -40,
+     "y": -29,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -31,
+     "y": -40,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -8,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -12,
+     "y": -20,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 5,
+     "y": -20,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": -8,
+     "big": false,
+     "tile": 394,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 35,
+     "y": -8,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": -40,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -47,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -43,
+     "y": -8,
+     "big": false,
+     "tile": 396,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_6_8D94FF",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -6,
+     "big": false,
+     "tile": 400,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_7_8D9506",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -5,
+     "big": false,
+     "tile": 401,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_8_8D950D",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 402,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_9_8D9514",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 403,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_10_8D951B",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 404,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_11_8D9522",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 405,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_12_8D9529",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 406,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_13_8D9530",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 378,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_14_8D9537",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": 0,
+     "big": false,
+     "tile": 380,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 379,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_15_8D9543",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": 4,
+     "big": false,
+     "tile": 380,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 379,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_16_8D954F",
+   "spritemap": [
+    {
+     "x": -18,
+     "y": -14,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 368,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_17_8D955B",
+   "spritemap": [
+    {
+     "x": -20,
+     "y": -18,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -15,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 368,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -9,
+     "big": true,
+     "tile": 370,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_18_8D9571",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": -24,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -22,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -19,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -16,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 8,
+     "big": true,
+     "tile": 368,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": 1,
+     "big": true,
+     "tile": 370,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -10,
+     "big": true,
+     "tile": 372,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_19_8D9596",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": -26,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -23,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -20,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -17,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 14,
+     "big": true,
+     "tile": 368,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 7,
+     "big": true,
+     "tile": 370,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 372,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 374,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_20_8D95C0",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": -27,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -18,
+     "y": -24,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -21,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 19,
+     "y": 13,
+     "big": true,
+     "tile": 370,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 6,
+     "big": true,
+     "tile": 372,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -2,
+     "big": true,
+     "tile": 374,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -15,
+     "big": true,
+     "tile": 376,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_21_8D95E5",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": -28,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -17,
+     "y": -25,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -20,
+     "y": -22,
+     "big": false,
+     "tile": 411,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 18,
+     "y": 12,
+     "big": true,
+     "tile": 372,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 2,
+     "big": true,
+     "tile": 374,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -5,
+     "big": true,
+     "tile": 376,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_22_8D9605",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": -29,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -26,
+     "big": false,
+     "tile": 411,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 18,
+     "y": 10,
+     "big": true,
+     "tile": 374,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -1,
+     "big": true,
+     "tile": 376,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_23_8D961B",
+   "spritemap": [
+    {
+     "x": -24,
+     "y": -29,
+     "big": false,
+     "tile": 411,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 18,
+     "y": 7,
+     "big": true,
+     "tile": 376,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_24_8D9627",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": -8,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_25_8D962E",
+   "spritemap": [
+    {
+     "x": -6,
+     "y": -12,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -9,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_26_8D963A",
+   "spritemap": [
+    {
+     "x": -10,
+     "y": -18,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -16,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -13,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -10,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_27_8D9650",
+   "spritemap": [
+    {
+     "x": -10,
+     "y": -20,
+     "big": false,
+     "tile": 407,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -17,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -14,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -11,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_28_8D9666",
+   "spritemap": [
+    {
+     "x": -10,
+     "y": -21,
+     "big": false,
+     "tile": 408,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -18,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -15,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_29_8D9677",
+   "spritemap": [
+    {
+     "x": -10,
+     "y": -22,
+     "big": false,
+     "tile": 409,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": -19,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -16,
+     "big": false,
+     "tile": 411,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_30_8D9688",
+   "spritemap": [
+    {
+     "x": -10,
+     "y": -23,
+     "big": false,
+     "tile": 410,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -2,
+     "y": -20,
+     "big": false,
+     "tile": 411,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainParticleSpritemap_31_8D9694",
+   "spritemap": [
+    {
+     "x": -10,
+     "y": -23,
+     "big": false,
+     "tile": 411,
+     "palette": 5,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  }
+ ],
+ "ext_hitboxes": [],
+ "ext_spritemaps": []
+}

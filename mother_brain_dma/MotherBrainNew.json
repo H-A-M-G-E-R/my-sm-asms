@@ -1,0 +1,3407 @@
+{
+ "game": "sm",
+ "name": "MotherBrain",
+ "gfx": "/wCAAIAAvgCqAKoAqgCAAAAAAAAAAAAAAAAAAAAAAAD/AAEAAQDrAKsAqwDvAAEAAAAAAAAAAAAAAAAAAAAAAM3LkJaGloCoCC+AkAOsYFAvEHYJViloF+8Q8A//APgHS4DBgGsgiUESQ1hxjB0ALP8b/wdvn94vXLd+i55hL9EDAwQELQnLg56PTs+DQynp/Af7Dvb8fdhy0DPAPfAW+AAAQACw4DDQwDDAMFCwMOD4gPBA8BCwAPAw8DBwAPAQAQEGh0VmOzwZHh0fDQ8ZHwYAiEBoEDAAACAgAHAAYADAr/Yf5Xuuc2T77vCn+YN/EAAAAAAAAAAAAAEAAAAAAB0bKiYUDDAQImJAwAEBFBXnAN4B/wB/AH0A/wB+gCoAKTcjOxsbQ0MNHSQkMjIUBsAAxADkALwA3yCnWLNM1ikAAAAAAAAAAAAAAAACAw4NAAAAAAAAAAAAAAMADAAQACAgACAAICAAMBBwUHRccF8gACAAIAAgADBA/ADzAPAAcI8a57vHhfvx/87OMjJwcAAAAAAAAAAAAAAxALVId4jXODf4V9gTnLi/vb8vPz4+AAAAACAAYABAAEAAwADBABAAIBAwUAiYgF/uMe8x93owCHAI+ABnACAAAAAAAAEAAAAAAAAAAADAwKCgsDAwcAAAAAAAAIAAIABQAMAIiACAAKQAtACnAKUAtQCAAP8AAAAAAAAAAAAAAAAAAAAAAAEAAQABAAEAAQABAAEA/wAAAAAAAAAAAAAAAAAAAAAAQCHFBCEiEBAECggYM/MAAG2S2yDfAOkG7hEZ5vsE/wChEDS8AAEAAbDQBAS317PTs02/Qcc6/wD/APsA+AD8AOgg3Ii9VBWdiRGIAAGJgYDf+H/2/yH/AN8A2wDJAGEAAAAAQADAAABAgIAAgAAAAOAA4ADgAOAA4ADAAIAAgAA1OhUacH9dfz9fTm4pLxYdQABgAIAAgACAAJEA0wBjAL9/3j74GGaeP8+J/3d7vbMAAAEABwABAAAAAACAAMAAAAAJCQEBAAAAAAAAAAAAAD8AFgAOAAcAAQAAAAAAAAAAE0BRExuEjIOHAAMBAQAA0yyVKtwgbxB2CPsEDQIDAOnvL+/QMN8/4R/+Acc4zzAQABAADwAAAAAAAAAAAAAAPVIvUEN8q6zR3n/w13jXO/AA8ABwgHAAIAAAAAAAAAAhYeCgYaFys/W2N3Sdu0XrZpj7BPsE7wD/AGeID0APEKOiFBeFh0rODIwEDBgYiAhdAO8As0juEatQ7xD/AP8A8ZrWNErsdfEh2fwBO8ZTrAcADwAfAA4ABgACAAAAAABwcMDAqPi0zHSMukY6xrrGiAA8AAYAAwADAAAAAQABAAAAAAACAAwAFQEMADMAVAQAAAAANwM/Hz4XHw9/P/t/AAAAAEAQMNCQwCgYQl642AAAAADo2CDwMPDg+KD+JPwAAAAAAQEHBw8PGB8xPjI9AAADAAsEFwgvEF8gfwA/QQAAAABg4Ez84h/x7/k3bIMAAAD45hj9Av8A/wD/AO+QAAAAAAAAAAAAAMDAMPAI+AAAAAAAAMAAIMDYIPQI+gR6h5BuzDf0C65ROuWN8gO8/wD+Yf8w/wD/AP8E/wK/QAA4hJyens3PBscw8xqbWPk6xJ1inmHPMMc48wybZPkGAAAAAAAAAAAAAICAAIBAwAAAAACAAECAQICgQKBA0CAAAAAAAQEFBQgOEh8THDE+AAACAQkGFQouEV8gXyA/RgAAAABW/sX/xP+C/Q+F4gIAAAf4/gH/AP8A/wCPcOIdAAAAAICAIKAg4Aj4Rn4CHoAAwACwQLhA5hj5Bn6BHuEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABAgPwAzAxwcPcZemK3OfwA8wD+/PP+j//g/53/wP//////AICGx0wPOF8cL1FqITYDhIcAyABQoGAAMED8ALhAeAAP8OX7Cg7V21Hfm59qahQUAAAAAPEA4ADgAOAAlQDrAIr2hv5EfGR8KDi4uDAwAAABAAEAggCCAMYARgDMAPwAMQAaAAoADgAFAAAAAAAAAP8/Px8fCx8PHw0fAAgAAAAkQKjgQEAwEMgYAAAAAAAAvPwc6Ljg6Pjk2PwIAAAAAB8gPzwkPQIeER4BHggPBg8/QL9AvULeIV8gXyAvEC8QCela3lBv6ddWbwx7THvS/emW3iF/oP8Qf4B/gn+D/wGMfIO/kY8wNzj7APmefvNv/QK/QJ9gN8j7BPkG/gH/AHB/ER2EhSfnIeGY+CI+ER9/gB3ihXrnGOEe+Ae+QV8gaJilVfYWSs6Wmmp2Pz4CAfgH9Ur2Cc4xnml+hT/AA/1g4GDgEPAwcCBwGDigsCi46BDoEPQIdIh0iDrEsky6RCwzBzgJPi8vEB4ADwgPAAc/Qz9AP0AvUB4hLxAvEBcIYK+tE+tWmiUDPIU+pD8k7++Qv0D/EL9BP8C/QL9A7xD/AIAAgACrAKoAqwC6AIAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAALsAqgC6ACMAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAuACoACAAoAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAIAAuACoAKAAuAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAOAAoAAgAOAAAAAAAAAAAAAAAAAAAAAAAAAA/wABAAEAAQABAAEAAQABAAAAAAAAAAAAAAAAAAAAAADwANMerz69O3l2fXveXtgY/v7h/8Hxz+Kfxo8CoeDn/qq2dEyo2FCwoGAAwICAAAC+QXyC+ATwCOAQwCCAQIAABAcEBwIDAAEBAQAAAAAAABcIFwgLBAUCBQICAQEAAADjbAGPCd873orvgvNDeyE97xCPcN8g/wDvEPMMe4S9QhgeGB8MDwMDAQEAAAAAAABeIT8AHwALBAUCAgEBAAAABAcBAQAAAAAAAAAAAAAAACcYGQYGAQEAAAAAAAAAAAAi48D42/8UHwEBAAAAAAAA4xz4B/8AH+DhHhwDAwAAABAQAFAIOJT0ICAQEAAAAAAS7FKsOsT2CCTYHODwAAAAAQMBAQAAAAAAAAAAAAAAAAsEBQICAQEAAAAAAAAAAACgywHxhfkAfBAfDA8DAwAA6xTxDv0C/ANfoG8QGwQGAYAAgACAAIAAgACAAIAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAABAAEAAQABAAEAAQABAP8AAAAAAAAAAAAAAAAAAAAAAKCgUPDjT+hHA6ywsFhYAAC/QP8A7xjvF69Qv0BbpPwA/wCAAKAArgCqAKoArgCAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAACLAIoAqgBTAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAALgAqAAgAKAAAAAAAAAAAAAAAAAAAAAAAAAA/wABAAEAAQABAAEAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQECAwADAAAAAAAAAQACAQUCCwQLBC88FBtLd0x8EDEBwsrNp6t/AJ9g/wB8gzXKyzTPMK9QAAAAAAAAAAAAAAAAAQEBAQAAAAAAAAAAAwAGAQUCDQIAAAAAAAAODgUnptdxivgbAAAAADAO7hEn2PcI/wD7BAAAAAAAAAAAgIBAwMBAIOAAAAAAAAAAgIBAwCDAMOAQAAAAAAAAAQEBAQAAAQFCQgAAAAEAAwECDQJ0C5lm5hkAAGBgSPi82PT8lOxwTJDu8ABokPgG/AL8Av4AfIr+DAAAAAAAAAAAAAEBDBAuRH4AAAAAAAADAB0CLRJ+D/4xAAAAADs9VWonNZMCgwYDmwAAPAB/AP8Cd4iTbId4m2QAAAAAAAAAAICA+Gh8jAuFAAAAAMAAEOCIcPoE/AOPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACDAAACAgDAwzNwi7kR3EQAAAIAA8AD8AP4Q/8z/IvcAEQCAAKAArgCqAKgArgCAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAADgAKAAIADgAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAABAAEAAQABAAEAAQABAP8AAAAAAAAAAAAAAAAAAAAAAAUHBgYBAQEBAAAAAAAAAAAXCBcIFwgdAg4BBwAAAAAARHyI+KDgwMAAAAAAAAAAAP0C/gDoENAgYICAAAAAAAAAAAIDAwIFBgUGBwcTHAodDAMbBBMMFwg3CD8AfwBfIIDD5hfHJI9Mm1ySnR2bBTvHOP8A7xDfIP8Av0C/QH+AoGCgYIBAQMCAgICAAAAAAOAQ4BDAMMAggGCAQACAAIAREQICAQEAAAAAAAAAAAAAuUbuEXEOCAcAAwIBAQAAAOrWlOxsFPjsVFhQcCAAAAD+APwCfpD+AFygdIgo0PAAAGCAgAAAAAAAAAAAAAAAAG6RsUDAAAAAAAAAAAAAAAAYGwICAgIAAAAAAAAAAAAAW6TCPYJ9xDt/AAAAAAAAADJTWKhxUQYJNj4UFAgIAABzjPkmf4A/wL5B1CtpFj8AwMA7++U/0i0e39XVAAAAAM8w+wT/AP8J3yD1CirV4QAAAAAAAAAGBgkJEBooPio6AAAAAAAABgAJABoAPgA6AAAAAAAAANDQaPggeLz8CBgAAAAAAADQAPgAeAD8ABgAAAAAABEdLTMoNSAqIyRRYgAAAAAdAD8APQAqACcAcwAAAAAAcHAIODTMNIyAYBjYAAAAAHAAOAD8ALwA4ADYAAAACw8VGyo2JT0zOnp5ZX8AAA8AHwA+AD0AOwB7AH8AAAAwMEx85Pxc/C7+Rv7n/wAAMAB8APwA/AD+AP4A/wAHD0RMODsVN9H1oOANLQk5DwBMADsANwD1AOAALQA5AAAADAzA5KCiAACQkC09Bw8AAAwA5ACiAAAAkAA9AA8AAAACApCQICAAAEhIAAAAAAAAAgCQACAAAABIAAAAAAAAAAQEAAAEBMDAQEAMDAUFAAAEAAAABADAAEAADAAFAAgAAAAICAgIHAgICBwUFAAICAgIAAgACBQcFBwAFBwcCAAIAAAAAAAICAgICAgICAgICAgICAgIAAgACAAIAAgICAwIHAgcCBwICAAcFBQAAAgEDBQcFBwUHBQUABQcHAAAAAAIeMU/CHgAAAAAAAAAAEAAmAADAJgAQAAAAAAAAAAAACAgU3cgIAAAAAAAAAAAAABQAA8AUAAAAAAAAAAAAAAAAAATFwAAAAAAAAAAAAAAABAALwAQAAAAAAAAAAEBFBwRGQgKBwcAAAAAAAABABwAGQAKAAcAAAAAAAAACMgIqAgYSNgwMAAAAAAAAMgAqAAYANgAMAAAAAAAAABXaCE0eH4JPC0+FhcBAQAAfwA1AH4APQA/ABcAAQAAANQMCiYSLgSseHiAgICAAADcAC4APgCsAHgAgACAAAAATH95fzs7MDNicR0eJicAAH8AfwA7ADMAcwAfACcAAADk5Jqexcfl5y7uyEjg4AAA5ACeAMcA5wDuAMgA4AAAAMDkwMgkJDAwiY0NDyIjAwPkAMgAJAAwAI0ADwAjAAMAHB4aHiwsCAiSkkJCFBQAAB4AHgAsAAgAkgBCABQAAACAgMDAAAAAACEhSEgGBgICgADAAAAAAAAhAEgABgACAAAAAAAQEDIyAAAAAAEBBAQAAAAAEAAyAAAAAAABAAQAAAAAABAQKDgQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACg4VGw4RFRsKDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQECgoEBAAAAAAAAAAAAAAEAA4ABAAAAAAAAAAEBAAEBAQKDgAOAA4ECgAEBAAEAAAACgAKAAAAEQAKAAQEBAQABAAABAQKDgQEAAAEAAQABAAEAAoAAAAKAAAABAQEBAAEAAAEBAAAAAAAAAQABAAEAAQACgAEAAAAAAAAAAAAAgAAAAUAAgAAAAAAAAAAAAICAgIHBwICAAAAAAAAAgAAAAcCAgIFAAAAAAAAAAICAgIFBwUHBwcAAAAAAAACAAAABwICAAUAAgAAAAAAAgICAgUHBQUHBwICAAACAAAAAAAAAAAAAgICAA8PAAACAgAAAAACAgACBQUQn4AAAAAAAAEBEAAk5B8RD4mAAAAAAAAAAQAAEHRi89AZgAAAAAAAAAAAAAAAEBAvb0AAAAAAAAAAAAAAAAUVEL/AAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAA09MAACYiblD2imhUHiJcVAAAAAAmAH4A/gB8AD4AXAAAABAQcEDE/H4y5JpwaCg4AAAQAHAA/AB+AP4AeAA4AAAAWHgOfpK2kd8K7tLaQn4oOHgAfgC2AN8A7gDaAH4AOAASMomJQMAEBBGRgIEAECImMgCJAMAABACRAIEAEAAmABISgIAAAAAAAQGAgAAAIiISAIAAAAAAAAEAgAAAACIAAQEAAggIDAwgMBDwwCDAIAEAAgAMABQACAAAAAAAAAAAAQQEAgIYGAg4ADAAAAAAAQAGAA4ABAAAAAAAAAAAAAEBAAIICAwMABAAAAAAAAABAAIADAAUAAgAAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAAAAQACgAEAAAAAAAAAA=",
+ "palette": [
+  4278190192,
+  4294484040,
+  4291317760,
+  4284485632,
+  4280287232,
+  4291348648,
+  4288190592,
+  4285032536,
+  4281348136,
+  4294482024,
+  4291328080,
+  4288174144,
+  4284497960,
+  4281344024,
+  4294506744,
+  4278190080,
+  4278190192,
+  4294484040,
+  4291317760,
+  4284485632,
+  4280287232,
+  4291348648,
+  4288190592,
+  4285032536,
+  4281348136,
+  4294482024,
+  4291328080,
+  4288174144,
+  4284497960,
+  4281344024,
+  4294506744,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190192,
+  4278190080,
+  4278190080,
+  4278190080,
+  4280289280,
+  4285032528,
+  4283453504,
+  4281874472,
+  4279769112,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4278190080,
+  4285032528,
+  4278190080
+ ],
+ "gfx_offset": 256,
+ "palette_offset": 0,
+ "spritemaps": [
+  {
+   "name": "MotherBrainSpritemap_0_A9A586",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 1,
+     "big": false,
+     "tile": 300,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 4,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": true,
+     "tile": 270,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_1_A9A5BF",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 1,
+     "big": false,
+     "tile": 320,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 4,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": true,
+     "tile": 270,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_2_A9A5F8",
+   "spritemap": [
+    {
+     "x": 2,
+     "y": 9,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 4,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": true,
+     "tile": 270,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_3_A9A62C",
+   "spritemap": [
+    {
+     "x": -1,
+     "y": 14,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 4,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": true,
+     "tile": 270,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_4_A9A660",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": 16,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": 4,
+     "big": true,
+     "tile": 264,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": true,
+     "tile": 270,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 266,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 301,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 262,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_5_A9A694",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 288,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_6_A9A69B",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 1,
+     "big": false,
+     "tile": 307,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 318,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 316,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 296,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 12,
+     "big": false,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 330,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -4,
+     "big": true,
+     "tile": 284,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_7_A9A6D9",
+   "spritemap": [
+    {
+     "x": 12,
+     "y": 1,
+     "big": false,
+     "tile": 306,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 318,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 316,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 296,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 12,
+     "big": false,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 330,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -4,
+     "big": true,
+     "tile": 284,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_8_A9A717",
+   "spritemap": [
+    {
+     "x": 2,
+     "y": 9,
+     "big": true,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 318,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 316,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 296,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 12,
+     "big": false,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 330,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -4,
+     "big": true,
+     "tile": 284,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_9_A9A750",
+   "spritemap": [
+    {
+     "x": -1,
+     "y": 14,
+     "big": true,
+     "tile": 292,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 318,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 316,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 296,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 12,
+     "big": false,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 330,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -4,
+     "big": true,
+     "tile": 284,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_10_A9A789",
+   "spritemap": [
+    {
+     "x": -4,
+     "y": 16,
+     "big": true,
+     "tile": 294,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": true,
+     "tile": 260,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -16,
+     "big": true,
+     "tile": 318,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -28,
+     "big": true,
+     "tile": 316,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -12,
+     "big": true,
+     "tile": 296,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 4,
+     "big": true,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": 12,
+     "big": false,
+     "tile": 331,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -16,
+     "y": -20,
+     "big": false,
+     "tile": 330,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -12,
+     "big": true,
+     "tile": 268,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -4,
+     "big": true,
+     "tile": 284,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_11_A9A7C2",
+   "spritemap": [
+    {
+     "x": 28,
+     "y": 28,
+     "big": false,
+     "tile": 327,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": 12,
+     "big": true,
+     "tile": 294,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 20,
+     "big": true,
+     "tile": 309,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 12,
+     "big": false,
+     "tile": 293,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": 4,
+     "big": false,
+     "tile": 324,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 4,
+     "y": 20,
+     "big": false,
+     "tile": 324,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 290,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 4,
+     "big": true,
+     "tile": 306,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": -4,
+     "big": true,
+     "tile": 291,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_12_A9A7F1",
+   "spritemap": [
+    {
+     "x": 29,
+     "y": 3,
+     "big": true,
+     "tile": 298,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 29,
+     "y": 11,
+     "big": true,
+     "tile": 314,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 13,
+     "y": 11,
+     "big": true,
+     "tile": 318,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 13,
+     "y": -5,
+     "big": true,
+     "tile": 316,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": 3,
+     "big": true,
+     "tile": 312,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": -5,
+     "big": true,
+     "tile": 296,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_13_A9A811",
+   "spritemap": [
+    {
+     "x": 32,
+     "y": 0,
+     "big": true,
+     "tile": 318,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 32,
+     "y": -16,
+     "big": true,
+     "tile": 318,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 0,
+     "big": true,
+     "tile": 316,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 314,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 16,
+     "y": -16,
+     "big": true,
+     "tile": 316,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 314,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_14_A9A83B",
+   "spritemap": [
+    {
+     "x": 29,
+     "y": -19,
+     "big": true,
+     "tile": 298,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 29,
+     "y": -27,
+     "big": true,
+     "tile": 314,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 13,
+     "y": -27,
+     "big": true,
+     "tile": 318,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 13,
+     "y": -11,
+     "big": true,
+     "tile": 316,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -3,
+     "y": -19,
+     "big": true,
+     "tile": 312,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -3,
+     "y": -11,
+     "big": true,
+     "tile": 296,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_15_A9A85B",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 346,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_16_A9A862",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 16,
+     "big": true,
+     "tile": 339,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": true,
+     "tile": 337,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_17_A9A86E",
+   "spritemap": [
+    {
+     "x": -13,
+     "y": 16,
+     "big": true,
+     "tile": 339,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -9,
+     "y": 0,
+     "big": true,
+     "tile": 337,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_18_A9A87A",
+   "spritemap": [
+    {
+     "x": -5,
+     "y": 14,
+     "big": false,
+     "tile": 321,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -21,
+     "y": 14,
+     "big": true,
+     "tile": 341,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -5,
+     "y": -2,
+     "big": true,
+     "tile": 344,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -13,
+     "y": -2,
+     "big": true,
+     "tile": 343,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_19_A9A890",
+   "spritemap": [
+    {
+     "x": 16,
+     "y": 0,
+     "big": false,
+     "tile": 352,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": false,
+     "tile": 336,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 350,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": true,
+     "tile": 348,
+     "palette": 1,
+     "bg_priority": 3,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_20_A9A8A6",
+   "spritemap": [
+    {
+     "x": 28,
+     "y": 28,
+     "big": false,
+     "tile": 327,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": 12,
+     "big": true,
+     "tile": 294,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 20,
+     "big": true,
+     "tile": 309,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 12,
+     "y": 12,
+     "big": false,
+     "tile": 293,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 20,
+     "y": 4,
+     "big": false,
+     "tile": 324,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": 4,
+     "y": 20,
+     "big": false,
+     "tile": 324,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -4,
+     "big": false,
+     "tile": 290,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 4,
+     "big": true,
+     "tile": 306,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 4,
+     "y": -4,
+     "big": true,
+     "tile": 291,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_21_A9A8D5",
+   "spritemap": [
+    {
+     "x": 29,
+     "y": 3,
+     "big": true,
+     "tile": 350,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 29,
+     "y": 11,
+     "big": true,
+     "tile": 366,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 13,
+     "y": 11,
+     "big": true,
+     "tile": 354,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 13,
+     "y": -5,
+     "big": true,
+     "tile": 352,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": 3,
+     "big": true,
+     "tile": 364,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -3,
+     "y": -5,
+     "big": true,
+     "tile": 348,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_22_A9A8F5",
+   "spritemap": [
+    {
+     "x": 40,
+     "y": 0,
+     "big": false,
+     "tile": 375,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 40,
+     "y": -8,
+     "big": false,
+     "tile": 375,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 0,
+     "big": true,
+     "tile": 323,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 24,
+     "y": -16,
+     "big": true,
+     "tile": 323,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 16,
+     "y": 0,
+     "big": true,
+     "tile": 322,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": true,
+     "tile": 320,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 16,
+     "y": -16,
+     "big": true,
+     "tile": 322,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": true,
+     "tile": 320,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_23_A9A91F",
+   "spritemap": [
+    {
+     "x": 29,
+     "y": -19,
+     "big": true,
+     "tile": 350,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 29,
+     "y": -27,
+     "big": true,
+     "tile": 366,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 13,
+     "y": -27,
+     "big": true,
+     "tile": 354,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 13,
+     "y": -11,
+     "big": true,
+     "tile": 352,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -3,
+     "y": -19,
+     "big": true,
+     "tile": 364,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -3,
+     "y": -11,
+     "big": true,
+     "tile": 348,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_24_A9A93F",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 346,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_25_A9A946",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 16,
+     "big": true,
+     "tile": 392,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": true,
+     "tile": 325,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_26_A9A952",
+   "spritemap": [
+    {
+     "x": -13,
+     "y": 16,
+     "big": true,
+     "tile": 394,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -9,
+     "y": 0,
+     "big": true,
+     "tile": 385,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_27_A9A95E",
+   "spritemap": [
+    {
+     "x": -5,
+     "y": 14,
+     "big": false,
+     "tile": 321,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -21,
+     "y": 14,
+     "big": true,
+     "tile": 341,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -5,
+     "y": -2,
+     "big": true,
+     "tile": 344,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -13,
+     "y": -2,
+     "big": true,
+     "tile": 343,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainSpritemap_28_A9A974",
+   "spritemap": [
+    {
+     "x": 16,
+     "y": 0,
+     "big": false,
+     "tile": 352,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 0,
+     "big": false,
+     "tile": 336,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 350,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -24,
+     "y": -8,
+     "big": true,
+     "tile": 348,
+     "palette": 3,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  }
+ ],
+ "ext_hitboxes": [
+  {
+   "name": "MotherBrainHitbox_0_A9A4AC",
+   "spritemap": "MotherBrainSpritemap_4_A9A660",
+   "hitbox": [
+    {
+     "left": -20,
+     "top": -21,
+     "right": 16,
+     "bottom": 23,
+     "touch": "$B5C6",
+     "shot": "$B507"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_1_A9A4BA",
+   "spritemap": "MotherBrainSpritemap_10_A9A789",
+   "hitbox": [
+    {
+     "left": -20,
+     "top": -21,
+     "right": 19,
+     "bottom": 23,
+     "touch": "$B5C6",
+     "shot": "$B507"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_2_A9A4C8",
+   "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+   "hitbox": []
+  },
+  {
+   "name": "MotherBrainHitbox_3_A9A4CA",
+   "spritemap": "MotherBrainSpritemap_19_A9A890",
+   "hitbox": [
+    {
+     "left": -23,
+     "top": -1,
+     "right": 23,
+     "bottom": 7,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_4_A9A4D8",
+   "spritemap": "MotherBrainSpritemap_27_A9A95E",
+   "hitbox": []
+  },
+  {
+   "name": "MotherBrainHitbox_5_A9A4DA",
+   "spritemap": "MotherBrainSpritemap_28_A9A974",
+   "hitbox": [
+    {
+     "left": -23,
+     "top": -2,
+     "right": 23,
+     "bottom": 7,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_6_A9A4E8",
+   "spritemap": null,
+   "hitbox": [
+    {
+     "left": -32,
+     "top": -24,
+     "right": 20,
+     "bottom": 52,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    },
+    {
+     "left": -24,
+     "top": -42,
+     "right": 13,
+     "bottom": -25,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_7_A9A502",
+   "spritemap": null,
+   "hitbox": []
+  },
+  {
+   "name": "MotherBrainHitbox_8_A9A504",
+   "spritemap": null,
+   "hitbox": [
+    {
+     "left": 4,
+     "top": -59,
+     "right": 28,
+     "bottom": -24,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    },
+    {
+     "left": 28,
+     "top": -41,
+     "right": 57,
+     "bottom": -30,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_9_A9A51E",
+   "spritemap": null,
+   "hitbox": [
+    {
+     "left": 4,
+     "top": -59,
+     "right": 28,
+     "bottom": -24,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    },
+    {
+     "left": 28,
+     "top": -41,
+     "right": 54,
+     "bottom": -30,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_10_A9A538",
+   "spritemap": null,
+   "hitbox": [
+    {
+     "left": 4,
+     "top": -59,
+     "right": 28,
+     "bottom": -24,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    },
+    {
+     "left": 29,
+     "top": -43,
+     "right": 45,
+     "bottom": -24,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_11_A9A552",
+   "spritemap": null,
+   "hitbox": [
+    {
+     "left": 4,
+     "top": -59,
+     "right": 28,
+     "bottom": -24,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    },
+    {
+     "left": 29,
+     "top": -48,
+     "right": 68,
+     "bottom": -40,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainHitbox_12_A9A56C",
+   "spritemap": null,
+   "hitbox": [
+    {
+     "left": 4,
+     "top": -59,
+     "right": 28,
+     "bottom": -24,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    },
+    {
+     "left": 28,
+     "top": -41,
+     "right": 58,
+     "bottom": -31,
+     "touch": "$B5C5",
+     "shot": "$B503"
+    }
+   ]
+  }
+ ],
+ "ext_spritemaps": [
+  {
+   "name": "MotherBrainExtSpritemap_0_A99FA0",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 25,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -10,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_1_A99FEA",
+   "ext_spritemap": [
+    {
+     "x": 28,
+     "y": 47,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 38,
+     "y": 19,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 33,
+     "y": 19,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -3,
+     "spritemap": "MotherBrainSpritemap_12_A9A7F1",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 2,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -11,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 6,
+     "y": 31,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 1,
+     "y": 33,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -25,
+     "y": -3,
+     "spritemap": "MotherBrainSpritemap_20_A9A8A6",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_2_A9A03C",
+   "ext_spritemap": [
+    {
+     "x": 40,
+     "y": 48,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 38,
+     "y": 19,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 35,
+     "y": 19,
+     "spritemap": "MotherBrainSpritemap_16_A9A862",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -3,
+     "spritemap": "MotherBrainSpritemap_12_A9A7F1",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 2,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -13,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 5,
+     "y": 31,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -1,
+     "y": 33,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -26,
+     "y": -3,
+     "spritemap": "MotherBrainSpritemap_20_A9A8A6",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_3_A9A08E",
+   "ext_spritemap": [
+    {
+     "x": 40,
+     "y": 51,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 38,
+     "y": 21,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 35,
+     "y": 22,
+     "spritemap": "MotherBrainSpritemap_16_A9A862",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -1,
+     "y": -2,
+     "spritemap": "MotherBrainSpritemap_12_A9A7F1",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 1,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -13,
+     "y": 57,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 5,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -1,
+     "y": 32,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -26,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_20_A9A8A6",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_4_A9A0E0",
+   "ext_spritemap": [
+    {
+     "x": 36,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 33,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 31,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_16_A9A862",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 1,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -16,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 3,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -4,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_5_A9A12A",
+   "ext_spritemap": [
+    {
+     "x": 21,
+     "y": 60,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 29,
+     "y": 31,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 27,
+     "y": 32,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -2,
+     "y": -2,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 2,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -16,
+     "y": 52,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 0,
+     "y": 26,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -5,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_6_A9A174",
+   "ext_spritemap": [
+    {
+     "x": 15,
+     "y": 64,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 35,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 26,
+     "y": 37,
+     "spritemap": "MotherBrainSpritemap_18_A9A87A",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -2,
+     "y": -1,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 6,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -10,
+     "y": 47,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 4,
+     "y": 22,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": -1,
+     "y": 24,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_7_A9A1BE",
+   "ext_spritemap": [
+    {
+     "x": 17,
+     "y": 60,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 32,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 24,
+     "y": 32,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -1,
+     "y": -2,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 2,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -8,
+     "y": 47,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 21,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 3,
+     "y": 23,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_8_A9A208",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 31,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 25,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -1,
+     "y": -3,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -10,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 31,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_9_A9A252",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 20,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 34,
+     "y": -9,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 31,
+     "y": -6,
+     "spritemap": "MotherBrainSpritemap_18_A9A87A",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -5,
+     "y": 3,
+     "spritemap": "MotherBrainSpritemap_14_A9A83B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -38,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 4,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -10,
+     "y": 18,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_10_A9A28C",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 36,
+     "y": 2,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 31,
+     "y": 4,
+     "spritemap": "MotherBrainSpritemap_18_A9A87A",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -5,
+     "y": -2,
+     "spritemap": "MotherBrainSpritemap_13_A9A811",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -28,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": -2,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -10,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 1,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_11_A9A2D6",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 46,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 31,
+     "y": 17,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 26,
+     "y": 18,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": -5,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_12_A9A7F1",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -12,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": -2,
+     "y": 0,
+     "spritemap": "$AAEA",
+     "hitbox": "MotherBrainHitbox_8_A9A504"
+    },
+    {
+     "x": -10,
+     "y": 44,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 16,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 17,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_12_A9A320",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_0_A9A586",
+     "hitbox": "MotherBrainHitbox_0_A9A4AC"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_13_A9A32A",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_1_A9A5BF",
+     "hitbox": "MotherBrainHitbox_0_A9A4AC"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_14_A9A334",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_2_A9A5F8",
+     "hitbox": "MotherBrainHitbox_0_A9A4AC"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_15_A9A33E",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_3_A9A62C",
+     "hitbox": "MotherBrainHitbox_0_A9A4AC"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_16_A9A348",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_4_A9A660",
+     "hitbox": "MotherBrainHitbox_0_A9A4AC"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_17_A9A352",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_6_A9A69B",
+     "hitbox": "MotherBrainHitbox_1_A9A4BA"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_18_A9A35C",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_7_A9A6D9",
+     "hitbox": "MotherBrainHitbox_1_A9A4BA"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_19_A9A366",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_8_A9A717",
+     "hitbox": "MotherBrainHitbox_1_A9A4BA"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_20_A9A370",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_9_A9A750",
+     "hitbox": "MotherBrainHitbox_1_A9A4BA"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_21_A9A37A",
+   "ext_spritemap": [
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "MotherBrainSpritemap_10_A9A789",
+     "hitbox": "MotherBrainHitbox_1_A9A4BA"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_22_A9A384",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 25,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AB70",
+     "hitbox": "MotherBrainHitbox_9_A9A51E"
+    },
+    {
+     "x": -10,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_23_A9A3CE",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 25,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$ABF6",
+     "hitbox": "MotherBrainHitbox_10_A9A538"
+    },
+    {
+     "x": -10,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_24_A9A418",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 25,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$AC76",
+     "hitbox": "MotherBrainHitbox_11_A9A552"
+    },
+    {
+     "x": -10,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  },
+  {
+   "name": "MotherBrainExtSpritemap_25_A9A462",
+   "ext_spritemap": [
+    {
+     "x": 18,
+     "y": 58,
+     "spritemap": "MotherBrainSpritemap_19_A9A890",
+     "hitbox": "MotherBrainHitbox_3_A9A4CA"
+    },
+    {
+     "x": 30,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_15_A9A85B",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 25,
+     "y": 30,
+     "spritemap": "MotherBrainSpritemap_17_A9A86E",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": -4,
+     "spritemap": "MotherBrainSpritemap_11_A9A7C2",
+     "hitbox": "MotherBrainHitbox_2_A9A4C8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$A98A",
+     "hitbox": "MotherBrainHitbox_6_A9A4E8"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "spritemap": "$ACE4",
+     "hitbox": "MotherBrainHitbox_12_A9A56C"
+    },
+    {
+     "x": -10,
+     "y": 56,
+     "spritemap": "MotherBrainSpritemap_28_A9A974",
+     "hitbox": "MotherBrainHitbox_5_A9A4DA"
+    },
+    {
+     "x": 7,
+     "y": 28,
+     "spritemap": "MotherBrainSpritemap_24_A9A93F",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    },
+    {
+     "x": 2,
+     "y": 29,
+     "spritemap": "MotherBrainSpritemap_27_A9A95E",
+     "hitbox": "MotherBrainHitbox_4_A9A4D8"
+    }
+   ]
+  }
+ ]
+}
