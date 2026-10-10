@@ -3,7 +3,9 @@ lorom
 
 ; Instant Unpause + Don't Reload BG3 Tiles, by H A M
 
-; Makes unpausing almost instant by taking advantage of an expanded SRAM to decompress tiles to it, and when unpausing, reloads the tiles from it!
+; 1.01: Now backs up tiles to SRAM when pausing. This removes the need of Kraid pause and unpause hooks.
+
+; Makes unpausing almost instant by taking advantage of an expanded SRAM to back up tiles to it, and when unpausing, reloads the tiles from it!
 ; Frees up $7E:DF5C..EF5B in the process.
 
 ; BG3 tiles now aren't reloaded when pausing and unpausing, so you can DMA it freely without worrying about it getting reset.
@@ -29,28 +31,30 @@ org $80FFD8 : db $06 ; expand SRAM to 10000h bytes ($70:0000..7FFF and $71:0000.
 org $808693 : PLP : RTS ; skip SRAM check but don't skip region check
 
 org $828D08 : BRA $01 ; skip backing up BG2 tilemap
-;org $828ED1 : dw $1000 ; skip clearing BG2 tilemap (no longer needed because of the PLP : RTL put in $82:8EB8)
 org $829377 : BRA $01 ; skip restoring BG2 tilemap
 org $828D47 : BRA $02 ; skip clearing fx tilemap
-org $80A15F : BRA $06 ; skip loading fx tilemap, library background, BG1 and custom BG2
 org $828DCA : LDA $5B ; fix bug caused by not clearing fx tilemap in the pause menu
 org $828E5D : STA $5B
 org $82A0C6 : STA $5B
 org $82936A : BRA $01 ; skip clearing samus/beam tiles when unpausing, frees up $82:A2BE..A2E2
 
 org $82E488 : BRA + : org $82E492 : + ; don't reload bg3 tiles during some door transition
+
+org $828D1D : JSL BackUpTilesAndLoadPauseMenuTiles
 org $828EB8 : PLP : RTL ; don't reload bg3 tiles when pausing
+BackUpTilesAndLoadPauseMenuTiles: ; back up tiles before loading pause menu tiles
+{
+  ; transfer vram $0000..3FFF to $71:0000..7FFF
+  STZ $2116 : LDA $2139
+  JSL $8091A9 : db $00,$81,$39 : dl $710000 : dw $8000
+  PHP : SEP #$20 : LDA #$01 : STA $420B
+  JMP $8E78 ; go to Load pause menu tiles
+}
+assert pc() <= $828EDA
 
-; decompress tiles to a different place ($71:0000) in door transitions
-org $82E421 : dl $715000
-org $82E432 : dl $710000
-org $82E449 : dl $710000
-org $82E453 : dl $712000
-org $82E45D : dl $714000
-org $82E477 : dl $715000
-org $82E481 : dl $716000
+org $80A15B : JSL ReloadTiles ; instead of decompressing tiles to vram, which is slow, transfer tiles from sram to vram
+BRA + : org $80A16B : + ; skip loading fx tilemap, library background, BG1 and custom BG2
 
-org $80A15B : JSL ReloadTiles
 org $82E780 : JMP LoadTilesWhenStartingGame
 org $828D51 ; freed up space here
 ReloadTiles:
@@ -224,33 +228,6 @@ DetermineKraidSinkingVRAMAddress:
 assert pc() <= $A7C815
 
 org $A7C1FB
-KraidPauseHook: ; that's the new pause hook
-{
-  ; transfer vram $2000..27FF to $71:4000..$71:4FFF
-  LDA #$2000 : STA $2116 : LDA $2139
-  JSL $8091A9 : db $00,$81,$39 : dl $714000 : dw $1000
-  TDC : INC : STA $420B
-
-  ; transfer vram $3E00..3FFF to $71:7C00..$71:7FFF
-  LDA #$3E00 : STA $2116 : LDA $2139
-  JSL $8091A9 : db $00,$81,$39 : dl $717C00 : dw $0400
-  TDC : INC : STA $420B
-  RTL
-}
-
-KraidUnpauseHook: ; that's the new unpause hook
-{
-  JSL $80836F ; set force blank and wait for nmi
-
-  ; don't need to transfer kraid's top half here because the instant unpause already transferred it
-  ; transfer $7E:6000..$7E:63FF to vram $3E00..3FFF
-  LDA #$3E00 : STA $2116
-  JSL $8091A9 : db $00,$01,$18 : dl $717C00 : dw $0400
-  LDX #$0001 : STX $420B
-
-  JML $808382 ; clear force blank and wait for nmi
-}
-
 ; dammit cannot set a custom vram destination of a library background in smart
 ; hope this will be fixed soon...
 LoadKraidLibraryBackgroundCommands:
@@ -269,9 +246,11 @@ LoadKraidLibraryBackgroundCommands:
 
 assert pc() <= $A7C360
 
-org $A7A96D : LDA #KraidPauseHook
-org $A7A967 : LDA #KraidUnpauseHook
-org $A7C4D4 : LDA #KraidUnpauseHook
+; remove kraid pause and unpause hooks because
+; we don't need to reload vram $2000..27FF and $3E00..3FFF because the instant unpause already transferred it
+org $A7A96D : LDA #$AAA5 ; RTL
+org $A7A967 : LDA #$AAA5
+org $A7C4D4 : LDA #$AAA5
 
 org $A7AA23 : JSR LoadKraidLibraryBackgroundCommands ; in kraid init, after Set up Kraid graphics with the tile priority cleared
 
