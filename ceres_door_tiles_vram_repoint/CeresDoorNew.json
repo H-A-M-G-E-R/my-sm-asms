@@ -1,0 +1,1229 @@
+{
+ "game": "sm",
+ "name": "CeresDoor",
+ "gfx": "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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+ "palette": [
+  4278190080,
+  4278225144,
+  4278212808,
+  4278196288,
+  4278190112,
+  4278210800,
+  4278206648,
+  4278200472,
+  4278200440,
+  4294506624,
+  4288167936,
+  4286054400,
+  4292923432,
+  4291338240,
+  4289753088,
+  4278253736
+ ],
+ "gfx_offset": 256,
+ "palette_offset": 0,
+ "spritemaps": [
+  {
+   "name": "CeresDoorSpritemap_0_A6F921",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 24,
+     "big": true,
+     "tile": 272,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 8,
+     "big": true,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": true,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -24,
+     "big": true,
+     "tile": 272,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 40,
+     "big": true,
+     "tile": 458,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 40,
+     "big": true,
+     "tile": 456,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 24,
+     "big": true,
+     "tile": 452,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 8,
+     "y": 8,
+     "big": true,
+     "tile": 454,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 8,
+     "y": -8,
+     "big": true,
+     "tile": 454,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -24,
+     "big": true,
+     "tile": 452,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": -40,
+     "big": true,
+     "tile": 450,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -40,
+     "big": true,
+     "tile": 448,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_1_A6F95F",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 24,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 16,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -32,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -24,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_2_A6F989",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 16,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 24,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -32,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -6,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -6,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_3_A6F9B3",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 24,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -32,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -4,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -4,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_4_A6F9D3",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -32,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 24,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -2,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_5_A6F9F3",
+   "spritemap": [
+    {
+     "x": -6,
+     "y": 24,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -6,
+     "y": -32,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -1,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -1,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": true
+    },
+    {
+     "x": -1,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    },
+    {
+     "x": -1,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": true,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_6_A6FA13",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 24,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -32,
+     "big": false,
+     "tile": 257,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 16,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -24,
+     "big": false,
+     "tile": 259,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_7_A6FA3D",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 16,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": 24,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -24,
+     "big": false,
+     "tile": 291,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 0,
+     "y": -32,
+     "big": false,
+     "tile": 275,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -2,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -2,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_8_A6FA67",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 24,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -32,
+     "big": false,
+     "tile": 256,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -4,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -4,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -4,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_9_A6FA87",
+   "spritemap": [
+    {
+     "x": 0,
+     "y": 24,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 0,
+     "y": -32,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -6,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -6,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -6,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_10_A6FAA7",
+   "spritemap": [
+    {
+     "x": -2,
+     "y": 24,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -2,
+     "y": -32,
+     "big": false,
+     "tile": 258,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -7,
+     "y": 0,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -7,
+     "y": 8,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -7,
+     "y": -8,
+     "big": false,
+     "tile": 290,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -7,
+     "y": -16,
+     "big": false,
+     "tile": 274,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_11_A6FAC7",
+   "spritemap": [
+    {
+     "x": 8,
+     "y": 8,
+     "big": false,
+     "tile": 32,
+     "palette": 0,
+     "bg_priority": 2,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_12_A6FACE",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": 64,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 32,
+     "big": true,
+     "tile": 280,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -48,
+     "big": true,
+     "tile": 280,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": 24,
+     "y": 32,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -128,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -96,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -80,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -112,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -64,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 64,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 24,
+     "y": 48,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 64,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 48,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": 8,
+     "y": 32,
+     "big": true,
+     "tile": 286,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 48,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": true,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 16,
+     "big": true,
+     "tile": 272,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": -16,
+     "big": true,
+     "tile": 276,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -32,
+     "big": true,
+     "tile": 272,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  },
+  {
+   "name": "CeresDoorSpritemap_13_A6FB2F",
+   "spritemap": [
+    {
+     "x": -8,
+     "y": -128,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -112,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -96,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -80,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -64,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -48,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -32,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": -16,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 0,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 16,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 32,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    },
+    {
+     "x": -8,
+     "y": 64,
+     "big": true,
+     "tile": 280,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": true
+    },
+    {
+     "x": -8,
+     "y": 48,
+     "big": true,
+     "tile": 278,
+     "palette": 0,
+     "bg_priority": 0,
+     "h_flip": false,
+     "v_flip": false
+    }
+   ]
+  }
+ ],
+ "ext_hitboxes": [],
+ "ext_spritemaps": []
+}
