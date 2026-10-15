@@ -2,6 +2,8 @@
 ; Adds a haze HDMA object that writes to CGRAM, scrolls,
 ; and works with power bombs, X-ray and BG3 tilemaps such as lava.
 ; Uses only one HDMA channel.
+
+; Requires cout's freespace.asm (https://metroidconstruction.com/resource.php?id=842).
 lorom
 
 ; HDMA object variables
