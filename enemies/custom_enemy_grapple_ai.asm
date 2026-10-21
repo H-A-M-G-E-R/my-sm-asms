@@ -59,8 +59,8 @@ EnemyGrappleCollision:
         CMP #$0008 : BCS .next
     +
         ; If |[enemy Y position] - [grapple beam end Y position]| - [enemy Y radius] < 8: go to BRANCH_HIT
-        LDA $0F7A,x : SEC : SBC $0D08 : BPL + : EOR #$FFFF : INC : +
-        SEC : SBC $0F82,x : BCC .hit
+        LDA $0F7E,x : SEC : SBC $0D0C : BPL + : EOR #$FFFF : INC : +
+        SEC : SBC $0F84,x : BCC .hit
         CMP #$0008 : BCC .hit
 
     .next
@@ -98,6 +98,7 @@ EnemyGrappleCollision:
     DEY : BEQ .attach
     CPY.w #$0004-1 : BEQ .attach
     ;CPY.w #$0005-1 : BEQ .attach
+-
     INY : TYA : BRA .return
 
 .attach
@@ -105,7 +106,7 @@ EnemyGrappleCollision:
     LDX $0E54
     LDA $0F7A,x : STA $0D08
     LDA $0F7E,x : STA $0D0C
-    TYA : BRA .return
+    BRA -
 }
 assert pc() <= $A09F6D
 
