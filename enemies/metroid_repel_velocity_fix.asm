@@ -1,5 +1,5 @@
 ; Metroid Repel Velocity Fix, by H A M
-; Fixes metroid reading projectile slot 0 when getting repelled by a projectile.
+; Fixes metroid always reading projectile slot 0 when getting repelled by a projectile.
 ; My fix actually works compared to Tundain's solution which doesn't work.
 ; Uses no freespace.
 
