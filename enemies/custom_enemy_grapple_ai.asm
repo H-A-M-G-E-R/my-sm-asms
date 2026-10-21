@@ -3,6 +3,7 @@
 ; Preserves other AI flags when setting grapple AI.
 ; Also fixes an edge case that if an enemy has just become intangible in its AI,
 ; it doesn't ignore grapple.
+; Uses no freespace in bank $A0.
 
 ; Notes:
 
