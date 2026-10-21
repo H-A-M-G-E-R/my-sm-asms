@@ -136,6 +136,8 @@ MetroidGrappleReaction:
     +
     STA $0FAD,x
 
+    LDA #$005A : JSL $8090CB ; Queue sound 5Ah, sound library 2, max queued sounds allowed = 6 (shot metroid)
+
 .return
     LDA #$0003 ; grapple reaction index = cancel grapple beam
     RTL
