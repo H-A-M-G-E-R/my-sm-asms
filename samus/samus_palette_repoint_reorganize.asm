@@ -143,7 +143,14 @@ LoadSamusVisorColor:
     LDA.l !freespace&$FF0000,x
     PLX : RTL
 }
+
+SetSamusDoorTransitionVisorColor:
+{
+    LDA $7EC388 : STA $7EC188 : RTL
+}
 assert pc() <= $91DE53
+
+org $82E52B : JSL SetSamusDoorTransitionVisorColor : BRA $01
 
 ; replace Determine Samus suit palette index with the new function
 org $90ECB6 : JSL DetermineSuitPalIndex_Long : RTS
