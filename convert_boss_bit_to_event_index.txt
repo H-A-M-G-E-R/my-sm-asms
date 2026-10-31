@@ -1,0 +1,5 @@
+To convert a boss bit to the event index:
+0x40 + area index * 8 + log2(boss bit)
+
+For example, Brinstar's miniboss:
+0x40 + 1 * 8 + log2(2) = 0x49
